@@ -10,10 +10,62 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_23_160009) do
+ActiveRecord::Schema.define(version: 2020_11_23_163931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feed_infos", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.bigint "lost_person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lost_person_id"], name: "index_feed_infos_on_lost_person_id"
+    t.index ["user_id"], name: "index_feed_infos_on_user_id"
+  end
+
+  create_table "lost_people", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "age"
+    t.text "last_known_location"
+    t.text "last_known_clothes"
+    t.integer "height"
+    t.string "body_type"
+    t.text "description"
+    t.datetime "disparition_date_time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "found", default: false
+    t.index ["user_id"], name: "index_lost_people_on_user_id"
+  end
+
+  create_table "search_parties", force: :cascade do |t|
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.string "meeting_location"
+    t.text "description"
+    t.integer "radius"
+    t.bigint "lost_person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lost_person_id"], name: "index_search_parties_on_lost_person_id"
+  end
+
+  create_table "search_party_attendancies", force: :cascade do |t|
+    t.json "itinerary", default: "{}", null: false
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
+    t.bigint "user_id", null: false
+    t.bigint "search_party_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["search_party_id"], name: "index_search_party_attendancies_on_search_party_id"
+    t.index ["user_id"], name: "index_search_party_attendancies_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -31,4 +83,10 @@ ActiveRecord::Schema.define(version: 2020_11_23_160009) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "feed_infos", "lost_people"
+  add_foreign_key "feed_infos", "users"
+  add_foreign_key "lost_people", "users"
+  add_foreign_key "search_parties", "lost_people"
+  add_foreign_key "search_party_attendancies", "search_parties"
+  add_foreign_key "search_party_attendancies", "users"
 end
