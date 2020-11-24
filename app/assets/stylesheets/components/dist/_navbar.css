@@ -1,6 +1,8 @@
 .navbar {
   background-color: white;
   height: 10%;
+  justify-content: space-between;
+  display: inline;
 }
 
 /* Navbar links */
@@ -37,4 +39,7 @@
     float: none;
     display: block;
   }
+}
+.sign-buttons {
+  margin: 0 auto;
 }

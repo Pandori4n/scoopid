@@ -1,4 +1,3 @@
-// Specific CSS for your home-page
 #home {
   align-items: center;
   display: flex;
@@ -10,12 +9,12 @@
   color: white;
   font-weight: bolder;
 }
+
 #sign-text-homepage {
   margin-top: 25px;
   text-align: justify;
   color: white;
 }
-
 
 .child {
   width: 300px;
