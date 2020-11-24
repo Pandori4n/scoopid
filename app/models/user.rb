@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :lost_people
+  has_many :lost_people, dependent: :destroy
   has_many :feed_infos
   has_many :search_party_attendancies
 
