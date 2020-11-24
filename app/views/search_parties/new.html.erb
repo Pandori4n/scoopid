@@ -1,0 +1,15 @@
+<%# <% if policy(SearchParty).create? %>
+  <%#= link_to "New Search Party", new_searchparty_path %>
+<%# end %> %>
+
+<div class="container">
+<h1>Create your search party</h1>
+  <%= simple_form_for [@searchparty] do |f| %>
+    <%= f.input :start_date_time %>
+    <%= f.input :end_date_time %>
+    <%= f.input :meeting_location %>
+    <%= f.input :description %>
+    <%= f.input :radius %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
