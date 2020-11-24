@@ -1,6 +1,6 @@
 .navbar {
   background-color: white;
-  height:10%;
+  height: 10%;
 }
 
 /* Navbar links */
@@ -8,17 +8,19 @@
   text-align: center;
   color: #8E8E8E;
   text-decoration: none;
-  font-family: 'Maven Pro',
-  sans-serif;
+  font-family: "Maven Pro", sans-serif;
 }
-.navbar p{
+
+.navbar p {
   font-size: 12px;
 }
-.navbar i{
-vertical-align: middle;
+
+.navbar i {
+  vertical-align: middle;
   margin: 0 auto;
   font-size: 25px !important;
 }
+
 /* Navbar links on mouse-over */
 .navbar a:hover {
   color: #000;
