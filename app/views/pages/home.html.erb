@@ -1,4 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to "Start", profile_path %>
+<div style="background-image: url('https://images.unsplash.com/photo-1487525219605-eadb39ae229c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1582&q=80'); background-position: center; background-repeat: no-repeat; background-size: fill; height:100vh;">
+  <div class="child header-container">
+    <h1 id="title-homepage" style="margin-top:45%;">Bienvenue sur Scoopid</h1>
+    <p id="sign-text-homepage">Afin de pouvoir mieux organiser les recherches, il est nécessaire d'être connecté pour accéder au reste de l'application.</p>
+  </div>
+  <div class="child sign-button align-self-center">
+    <%= link_to "Connexion", new_user_session_path, class:"button button-primary" %>
+    <%= link_to 'Créer un Compte', new_user_registration_path, class:"button button-secondary-alt" %>
+  </div>
+</div>
