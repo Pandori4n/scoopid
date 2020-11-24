@@ -1,7 +1,6 @@
 class LostPerson < ApplicationRecord
   belongs_to :user
 
-  has_many :users
   has_many :search_parties
   has_many :feed_infos
 
