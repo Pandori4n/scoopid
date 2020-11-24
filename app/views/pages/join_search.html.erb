@@ -2,16 +2,11 @@
 <p>Veuillez indiquer le code pour rejoindre une recherche</p>
 <p>Sinon veuillez indiquer une ville</p>
 
-  <%= form_tag search_party_path, method: :get do %>
-    <%= text_field_tag :code,
-      params[:code],
-      class: "form-control",
-      placeholder: "Code"
-    %>
-    <%= text_field_tag :city,
-      params[:city],
-      class: "form-control",
-      placeholder: "Recherchez par ville"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
+<%= form_tag join_search_path, method: :get do %>
+  <%= text_field_tag :authentication_token,
+    params[:authentication_token],
+    class: "form-control",
+    placeholder: "Code"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
