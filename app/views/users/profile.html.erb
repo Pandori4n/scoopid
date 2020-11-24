@@ -1,0 +1,6 @@
+<h1>choose</h1>
+
+<div class="container">
+<%= link_to "HOST", user_path(current_user, role: "host"), method: :patch, :class => "btn btn-primary" %>
+<%= link_to "VOLUNTEER", user_path(current_user, role: "volunteer"), method: :patch, :class => "btn btn-primary"%>
+</div>
