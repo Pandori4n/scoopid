@@ -13,13 +13,11 @@ class SearchPartyAttendenciesController < ApplicationController
   end
 
   # def show
-
   # end
 
-  # def update
-  #  @search_party_attendancy = SearchPartyAttendancy.find(params[:id])
-  #  @search_party_attendancy.update
-  #  redirect_to search_party_path(@search_party)
-  # end
-
+  def update
+    @search_party_attendancy = SearchPartyAttendancy.find(params[:id])
+    @search_party_attendancy.update
+    redirect_to search_party_path(@search_party)
+  end
 end
