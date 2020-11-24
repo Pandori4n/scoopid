@@ -17,7 +17,7 @@ lost_one.photo.attach(io: file1, filename: 'missy.jpg', content_type: 'image/jpg
 lost_one.save!
 p lost_one
 
-search = SearchParty.create!(start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), meeting_location: "16, villa Gaudelet, Paris", description: "Big search for liberty", radius: 10, lost_person: lost_one)
+search = SearchParty.create!(start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), meeting_location: "16, villa Gaudelet, Paris", description: "Big search for liberty", radius: 10, lost_person: lost_one, authentication_token: "ABCDE")
 p search
 
 geojson_one = {
