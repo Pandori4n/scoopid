@@ -4,25 +4,39 @@ class SearchPartiesController < ApplicationController
   #   @searchparties = policy_scope(SearchParty)
   # end
 
-  def new
+  def show
+    @search_party = SearchParty.find(params[:id])
     authorize @search_party
+  end
+
+  def new
     @search_party = SearchParty.new
+    authorize @search_party
   end
 
   def create
-    authorize @search_party
     @search_party = SearchParty.new(search_party_params)
-    @search_party.save 
-    redirect_to search_party_path(search_party)
+    authorize @search_party
+    @search_party.lost_person = current_user.lost_people.first
+    # @search_party.user = current_user
+    if @search_party.save
+      redirect_to search_party_path(@search_party)
+    else
+      render :new
+    end
   end
 
-  # def edit
-  #   authorize @search_party
-  # end
+  def edit
+    @search_party = SearchParty.find(params[:id])
+    authorize @search_party
+  end
 
-  # def update
-  #   authorize @search_party
-  # end
+  def update
+    @search_party = SearchParty.find(params[:id])
+    authorize @search_party
+    @search_party.update(search_party_params)
+    redirect_to search_party_path(@search_party)
+  end
 
   # def destroy
   #   authorize @search_party
