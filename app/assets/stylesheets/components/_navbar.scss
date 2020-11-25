@@ -1,6 +1,7 @@
+// Specific Navbar Styling
 .navbar {
   background-color: white;
-  height:10%;
+  height: 10%;
   justify-content: space-between;
   display: inline;
 }
@@ -11,20 +12,23 @@
   color: #8E8E8E;
   text-decoration: none;
   font-family: 'Maven Pro',
-  sans-serif;
+    sans-serif;
 }
-.navbar p{
+
+.navbar p {
   font-size: 12px;
 }
-.navbar i{
-vertical-align: middle;
+
+.navbar i {
+  vertical-align: middle;
   margin: 0 auto;
   font-size: 25px !important;
 }
 
-.navbar i:active{
+.navbar i:active {
   color: #000;
 }
+
 .navbar a:active {
   color: black;
 }
@@ -38,5 +42,5 @@ vertical-align: middle;
 }
 
 .sign-buttons {
-margin: 0 auto;
+  margin: 0 auto;
 }
