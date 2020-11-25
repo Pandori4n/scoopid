@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: :update
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :search_parties, only: [:new, :create, :show, :edit, :update]
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
   resources :lost_people do
     resources :search_party_attendencies, only: :create
   end
