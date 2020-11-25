@@ -1,12 +1,12 @@
 <div class="container form text-center col-md-6 mt-3">
-<h2>Research Form</h2>
+<h2>Edit Your Research Form</h2>
   <%= simple_form_for [@lost_person] do |f| %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :age %>
     <%= f.input :last_known_location %>
     <%= f.input :last_known_clothes %>
-    <%= f.input :height, placeholder: 'in cm...', input_html: { class: 'text-center' } %>
+    <%= f.input :height %>
     <%= f.input :body_type %>
     <%= f.input :description %>
     <%= f.input :disparition_date_time %>

@@ -24,6 +24,18 @@ class LostPeopleController < ApplicationController
     authorize @lost_person
   end
 
+  def edit
+    @lost_person = LostPerson.find(params[:id])
+    authorize @lost_person
+  end
+
+  def update
+    @lost_person = LostPerson.find(params[:id])
+    authorize @lost_person
+    @lost_person.update(lost_person_params)
+    redirect_to lost_person_path(@lost_person)
+  end
+
   private
 
   def lost_person_params
