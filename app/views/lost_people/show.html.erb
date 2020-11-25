@@ -1,0 +1,17 @@
+<div class="container d-flex justify-content-around text-center">
+  <div>
+    <h1>MISSING</h1>
+    <h2><%= @lost_person.first_name %> <%= @lost_person.last_name %> </h2>
+    <%= cl_image_tag @lost_person.photo.key, :width=>300, :fetch_format=>:auto, :crop=>“scale” %>
+      <p>Age: <%= @lost_person.age %>years</p>
+      <p>Last Known Location: <%= @lost_person.last_known_location %></p>
+      <p>Last Known Clothes: <%= @lost_person.last_known_clothes %></p>
+      <p>Height: <%= @lost_person.height %>cm</p>
+      <p>Body Type: <%= @lost_person.body_type %></p>
+      <p>Description: <%= @lost_person.description %></p>
+      <p>Disparition Date and Time: <%= @lost_person.disparition_date_time.strftime(“%d/%m/%Y %I:%M %p”) %></p>
+      <% if policy(@lost_person).edit? %>
+        <%= link_to “edit”, edit_lost_person_path(@lost_person), class: “fas fa-edit edit-icon grow-animation-btn-accept-decline” %>
+      <% end %>
+  </div>
+</div>
