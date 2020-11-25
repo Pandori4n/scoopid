@@ -1,5 +1,15 @@
 <% if user_signed_in? && current_user.role == "host" %>
-  <%= render "lost_people/show" %>
+      <div class="child header-container d-flex align-items-center flex-column">
+      <div class="margin-top-20-percent" style="margin-top:20%;">
+        <h1 id="title-homepage">Bienvenue sur Scoopid</h1>
+      </div>
+      <div class="margin-top-20-percent">
+        <p id="sign-text-homepage">Courage, ensemble nous y arriverons.</p>
+      </div>
+    </div>
+    <div class="child sign-button d-flex align-items-center flex-column" id="goto-search">
+      <%= link_to 'Continuer la recherche', lost_person_path(current_user.lost_people.last), class:"button button-primary"%>
+    </div>
 <% elsif user_signed_in? && current_user.role == "volunteer"%>
   <h1>Hello <%= current_user.first_name %></h1>
 <% elsif user_signed_in? && current_user.role == nil %>
