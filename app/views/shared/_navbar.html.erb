@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? || current_user.role == nil %>
   <div class="navbar fixed-bottom">
     <% if current_user.role == "host" %>
       <div class="navbar-host d-flex justify-content-between align-items-center">
