@@ -9,16 +9,22 @@
   text-align: center;
   color: white;
   font-weight: bolder;
+  padding-top: 10%;
+  font-size: 30px;
 }
+
 #sign-text-homepage {
   margin-top: 25px;
-  text-align: justify;
+  text-align: center;
   color: white;
+  font-size: 15px;
+}
+.pages-home .navbar {
+  display: none!important;
 }
 
-
 .child {
-  width: 300px;
+  width: 95%;
   padding: 10px 15px;
   margin: 0 auto;
 }
