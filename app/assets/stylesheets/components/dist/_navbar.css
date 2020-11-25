@@ -23,13 +23,11 @@
   font-size: 25px !important;
 }
 
-/* Navbar links on mouse-over */
-.navbar a:hover {
+.navbar i:active {
   color: #000;
 }
 
-/* Current/active navbar link */
-.active {
+.navbar a:active {
   color: black;
 }
 
