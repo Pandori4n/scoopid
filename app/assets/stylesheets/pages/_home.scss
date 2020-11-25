@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-body.pages-home{
+body.pages-home {
   background-image: url('https://images.unsplash.com/photo-1487525219605-eadb39ae229c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1582&q=80');
   background-position: center;
   background-repeat: no-repeat;
@@ -18,16 +18,30 @@ body.pages-home{
   text-align: center;
   color: white;
   font-weight: bolder;
+  padding-top: 10%;
+  font-size: 30px;
 }
+
 #sign-text-homepage {
   margin-top: 25px;
-  text-align: justify;
+  text-align: center;
   color: white;
+  font-size: 15px;
 }
 
+.pages-home .navbar {
+  display: none !important;
+}
 
 .child {
-  width: 300px;
+  width: 95%;
   padding: 10px 15px;
   margin: 0 auto;
+}
+
+#log-sign-buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 0;
+  right: 0;
 }
