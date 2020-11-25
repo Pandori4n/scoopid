@@ -1,0 +1,34 @@
+// Background image
+.login-container {
+  background-image: url('https://images.unsplash.com/photo-1487525219605-eadb39ae229c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1582&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+.login-content {
+  padding-top: 10%;
+}
+
+#connection-title {
+  font-weight: bold;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.form-actions {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.login-content a {
+  color: white;
+  font-size: 15px;
+}
+
+#connection-signup {
+  margin-top: 20%;
+  margin-bottom: 20%;
+}

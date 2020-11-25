@@ -5,6 +5,14 @@ class LostPersonPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    return true
+  end
+
+  def create?
+    return true
+  end
+
   # def update?
   #   record.user == user
   #   # - record: the lost person passed to the `authorize` method in controller
