@@ -1,10 +1,4 @@
 // Specific CSS for your home-page
-#home {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
 body.pages-home {
   background-image: url('https://images.unsplash.com/photo-1487525219605-eadb39ae229c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1582&q=80');
   background-position: center;
@@ -19,21 +13,23 @@ body.pages-home {
   color: white;
   font-weight: bolder;
   padding-top: 10%;
-  font-size: 30px;
+  font-size: 300%;
 }
 
 #sign-text-homepage {
   margin-top: 25px;
   text-align: center;
   color: white;
-  font-size: 15px;
+  font-size: 150%;
 }
 
-.pages-home .navbar {
-  display: none !important;
-}
+
+// .pages-home .navbar {
+//   display: none !important;
+// }
 
 .child {
+  position: relative;
   width: 95%;
   padding: 10px 15px;
   margin: 0 auto;
@@ -44,4 +40,15 @@ body.pages-home {
   bottom: 10%;
   left: 0;
   right: 0;
+  text-align: center;
+  justify-content: center;
 }
+
+#account-creation-linK {
+  color: white;
+  font-size: medium;
+  text-decoration: underline;
+  line-height: 1.5rem;
+  font-size: 110%;
+}
+
