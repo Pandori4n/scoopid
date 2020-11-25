@@ -2,11 +2,21 @@
   <div class="navbar fixed-bottom">
     <% if current_user.role == "host" %>
       <div class="navbar-host d-flex justify-content-between align-items-center">
-          <a class="active" href="#"><i class="far fa-file-alt menu-icons"></i><p>Fil d'Actualité</p></a>
-          <a href="#"><i class="far fa-map menu-icons"></i><p>Carte</p></a>
-          <a href="#"><i class="fas fa-search-location menu-icons"></i><p>Battues</p></a>
-          <a href="#"><i class="far fa-calendar-check menu-icons"></i><p>To Do</p></a>
-          <a href="#"><i class="far fa-address-card menu-icons"></i><p>Informations</p></a>
+          <%= link_to "" do %><i class="far fa-file-alt menu-icons"><p></br>Fil d'Actualité</p></i><% end %>
+          <%= link_to "" do %><i class="far fa-map menu-icons"><p></br>Carte</p></i><% end %>
+          <%= link_to "" do %><i class="fas fa-search-location menu-icons"><p></br>Battues</p></i><% end %>
+          <%= link_to "" do %><i class="far fa-calendar-check menu-icons"><p></br>To Do</p></i><% end %>
+          <%= link_to (lost_person_path(current_user.lost_people.last)) do %>
+            <% if params[:controller] == "lost_people" && params[:action] == "show" %>
+              <i class="far fa-address-card menu-icons active">
+                <p></br>Informations</p>
+              </i>
+            <% else %>
+              <i class="far fa-address-card menu-icons">
+                <p></br>Informations</p>
+              </i>
+            <% end %>
+          <% end%>
       </div>
     <% else %>
       <div class="navbar-volunteer d-flex justify-content-between">

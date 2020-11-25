@@ -7,7 +7,7 @@
 }
 
 /* Navbar links */
-.navbar a {
+.navbar a, p {
   text-align: center;
   color: #8E8E8E;
   text-decoration: none;
@@ -17,41 +17,39 @@
 }
 
 .navbar p {
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 0px;
+  font-weight: 400 !important;
 }
 
-.navbar i {
-  vertical-align: middle;
-  margin: 0 auto;
-  font-size: 25px !important;
-}
+// .navbar i {
+//   vertical-align: middle;
+//   margin: 0 auto;
+//   font-size: 25px !important;
+// }
 
-.navbar a.active {
-  color: #000;
-}
-
-.navbar a:active {
-  color: black;
-}
-
-/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
-@media screen and (max-width: 500px) {
-  .navbar a {
-    float: none;
-    display: block;
-  }
-}
 
 .sign-buttons {
   margin: 0 auto;
 }
 
-.navbar li{
-  float:left;
-  display: inline;
-}
 
 .navbar-host, .navbar-volunteer {
   height: 100%;
+}
+
+.navbar .fas, .far{
+  color: #8E8E8E;
+  margin:0 auto;
+}
+.navbar .fas a{
+  font-weight: 400!important;
+}
+
+i.active {
+  color: black !important;
+}
+
+.active p{
+  color: black !important;
 }
