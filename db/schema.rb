@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_24_151826) do
+ActiveRecord::Schema.define(version: 2020_11_25_151144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 2020_11_24_151826) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.bigint "volunteer_id", null: false
+    t.bigint "host_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["host_id"], name: "index_chatrooms_on_host_id"
+    t.index ["volunteer_id"], name: "index_chatrooms_on_volunteer_id"
   end
 
   create_table "feed_infos", force: :cascade do |t|
@@ -62,6 +72,16 @@ ActiveRecord::Schema.define(version: 2020_11_24_151826) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "found", default: false
     t.index ["user_id"], name: "index_lost_people_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "search_parties", force: :cascade do |t|
@@ -106,9 +126,13 @@ ActiveRecord::Schema.define(version: 2020_11_24_151826) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "users", column: "host_id"
+  add_foreign_key "chatrooms", "users", column: "volunteer_id"
   add_foreign_key "feed_infos", "lost_people"
   add_foreign_key "feed_infos", "users"
   add_foreign_key "lost_people", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "search_parties", "lost_people"
   add_foreign_key "search_party_attendancies", "search_parties"
   add_foreign_key "search_party_attendancies", "users"
