@@ -1,10 +1,18 @@
 <div>
-  <div class="child header-container">
-    <h1 id="title-homepage">Bienvenue sur Scoopid</h1>
-    <p id="sign-text-homepage">Afin de pouvoir mieux organiser les recherches, il est nécessaire d'être connecté pour accéder au reste de l'application.</p>
+  <div class="child header-container d-flex align-items-center flex-column">
+    <div style="margin-top:20%;">
+      <h1 id="title-homepage">Bienvenue sur Scoopid</h1>
+    </div>
+    <div>
+      <p id="sign-text-homepage">Afin de pouvoir mieux organiser les recherches, il est nécessaire d'être connecté pour accéder au reste de l'application.</p>
+    </div>
   </div>
-  <div class="child sign-button align-self-center">
-    <%= link_to "Connexion", new_user_session_path, class: "button button-primary" %>
-    <%= link_to "Créer un Compte", new_user_registration_path, class: "button button-secondary-alt" %>
+  <div class="child sign-button d-flex align-items-center flex-column" id="log-sign-buttons">
+    <div style="margin-bottom:5%;">
+      <%= link_to "Connexion", new_user_session_path, class: "button button-primary", id:"connection-button" %>
+    </div>
+    <div>
+      <%= link_to "Créer un Compte", new_user_registration_path, id:"account-creation-linK" %>
+    </div>
   </div>
 </div>
