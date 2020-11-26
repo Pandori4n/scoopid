@@ -1,0 +1,12 @@
+<div class="container form text-center col-md-6 mt-3">
+  <h1>search party details</h1>
+
+  <p>Start date time : <%= @search_party.start_date_time %></p>
+  <p>Start end time : <%= @search_party.end_date_time %></p>
+  <p>Meeting location : <%= @search_party.meeting_location %></p>
+  <p>Description : <%= @search_party.description %></p>
+
+  <% if policy(@search_party).edit? %>
+    <%= link_to "Update", edit_search_party_path(@search_party) %>
+  <% end %>
+</div>

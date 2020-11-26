@@ -1,1 +1,26 @@
-<h1>Avis de recherche</h1>
+<% content_for :meta_title, "#{@lost_person.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @lost_person.description %>
+<% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
+
+<div class="container d-flex justify-content-around text-center">
+  <div>
+    <h1>MISSING</h1>
+    <h2><%= @lost_person.first_name %> <%= @lost_person.last_name %></h2>
+    <div class="missing-person-pic" style="height: 300px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 300, width: 300, crop: :scale; %>');">
+      <span class="edit-button" style="font-size: 17px;">
+      <% if policy(@lost_person).edit? %>
+        <%= link_to "", edit_lost_person_path(@lost_person), class: "fas fa-user-edit"%>
+      <% end %>
+    </span>
+    </div>
+    <p>Age: <%= @lost_person.age %>years</p>
+    <p>Last Known Location: <%= @lost_person.last_known_location %></p>
+    <p>Last Known Clothes: <%= @lost_person.last_known_clothes %></p>
+    <p>Height: <%= @lost_person.height %>cm</p>
+    <p>Body Type: <%= @lost_person.body_type %></p>
+    <p>Description: <%= @lost_person.description %></p>
+    <p>Disparition Date and Time: <%= @lost_person.disparition_date_time.strftime("%d/%m/%Y %I:%M %p") %></p>
+    <p> Partager sur les Réseaux<%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "http://localhost:3000/posts/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name}") %></p>
+  </div>
+</div>
+

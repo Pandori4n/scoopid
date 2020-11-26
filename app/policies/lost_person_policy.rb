@@ -9,19 +9,15 @@ class LostPersonPolicy < ApplicationPolicy
      record.user == user
   end
 
-  def show?
+  def create?
     return true
   end
 
-  def create?
+  def show?
     return true
   end
 
   # def destroy?
   #   record.user == user
   # end
-
-  def create?
-    return true
-  end
 end

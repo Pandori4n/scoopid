@@ -1,4 +1,4 @@
-<div class="container-fluid login-container">
+<div class="container-fluid login-container" id="login-page">
   <h1 id="connection-title">Connectez vous</h1>
   <div class="container login-content">
 
@@ -18,7 +18,8 @@
       <%= f.button :submit, "Se Connecter", class: "button button-primary" %>
     </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+    <div id="shared-links">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 </div>

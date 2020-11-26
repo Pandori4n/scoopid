@@ -1,0 +1,81 @@
+.retractable-card{
+  position: absolute;
+  background-color: white;
+  z-index: 999;
+  bottom: 85px;
+  width: 100%;
+  right: 0;
+  left: 0;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 -1px 5px grey;
+  height: auto;
+    -webkit-transition:height,
+    12s linear;
+    -moz-transition: height,
+    12s linear;
+    -ms-transition: height,
+    12s linear;
+    -o-transition: height,
+    12s linear;
+    transition: height,
+    12s linear;
+}
+
+.up-down-icon i {
+  color: black;
+  margin-top: 5px;
+  font-size: 30px;
+}
+.text-card{
+  vertical-align: middle;
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.text-card h6,p{
+  margin-bottom: 0px!important;
+}
+
+.up-down-icon{
+  text-align: center;
+}
+
+.card-content i{
+  color: black;
+  font-size: 25px;
+}
+
+.text-card{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.slide-arrows{
+  color: rgb(27, 27, 27)!important;
+}
+
+#publish-info{
+  box-shadow: 0 0 0 0!important;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.display-none{
+  height: 0;
+  -webkit-transition:height,
+  10s linear;
+  -moz-transition: height,
+  10s linear;
+  -ms-transition: height,
+  10s linear;
+  -o-transition: height,
+  10s linear;
+  transition: height,
+  10s linear;
+}
+#card-button-display{
+  transition-duration: display 12;
+}
+#searchparty-new{
+  position: relative;
+}

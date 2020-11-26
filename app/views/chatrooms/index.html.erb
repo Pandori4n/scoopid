@@ -1,0 +1,6 @@
+<div>
+<h1>Messages</h1>
+<% @chatrooms.each do |chatroom| %>
+  <%= link_to "from : @chatroom.name @chatroom.created_at", chatroom_path(chatroom) %>
+<% end %>
+</div>
