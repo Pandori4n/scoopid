@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def profile
+    skip_authorization
+  end
+
+  def todo
+    skip_authorization
+  end
+
   def update
     @user = current_user
     authorize @user
