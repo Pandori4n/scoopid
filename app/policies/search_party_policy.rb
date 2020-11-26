@@ -18,6 +18,7 @@ class SearchPartyPolicy < ApplicationPolicy
     if user.role == "host"
       return true
     end
+  end
 
   def show?
     return true
