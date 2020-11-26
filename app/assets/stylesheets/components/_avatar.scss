@@ -20,10 +20,13 @@
 }
 
 .missing-person-pic {
+  background-size: fill;
   background-position: center;
   background-repeat: no-repeat;
+  border-radius: 15px;
 }
 
 .edit-button {
-  margin-left: 30vh;
+  float: right;
+  margin-top: -10%;
 }
