@@ -1,5 +1,5 @@
 <div class= "correspond_bar">
-  <%= link_to chatrooms_path do %>
+  <%= link_to lost_person_chatrooms_path(@chatroom.lost_person) do %>
     <i class="fas fa-chevron-circle-left"></i>
   <% end %>
   <h2><%= @chatroom.volunteer.first_name %> <%= @chatroom.volunteer.last_name %></h2>
@@ -12,7 +12,7 @@
           small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
       </i>
       <p><%= message.content %></p>
-      <i class="far fa-edit" data-toggle="modal" data-target="#chatModal"></i>
+      <i class="fas fa-share" data-toggle="modal" data-target="#chatModal"></i>
       <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
