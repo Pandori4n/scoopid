@@ -3,12 +3,22 @@
   background-color: white;
   z-index: 999;
   bottom: 85px;
-  // height: 200px;
   width: 100%;
   right: 0;
   left: 0;
   border-radius: 15px 15px 0 0;
   box-shadow: 0 -1px 5px grey;
+  height: auto;
+    -webkit-transition:height,
+    12s linear;
+    -moz-transition: height,
+    12s linear;
+    -ms-transition: height,
+    12s linear;
+    -o-transition: height,
+    12s linear;
+    transition: height,
+    12s linear;
 }
 
 .up-down-icon i {
@@ -29,10 +39,12 @@
 .up-down-icon{
   text-align: center;
 }
+
 .card-content i{
   color: black;
   font-size: 25px;
 }
+
 .text-card{
   text-align: center;
   vertical-align: middle;
@@ -49,7 +61,17 @@
 }
 
 .display-none{
-  display: none!important;
+  height: 0;
+  -webkit-transition:height,
+  10s linear;
+  -moz-transition: height,
+  10s linear;
+  -ms-transition: height,
+  10s linear;
+  -o-transition: height,
+  10s linear;
+  transition: height,
+  10s linear;
 }
 #card-button-display{
   transition-duration: display 12;
