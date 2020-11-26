@@ -35,6 +35,8 @@ gem 'pundit'
 
 gem 'cloudinary', '~> 1.16.0'
 
+gem 'social-share-button'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
