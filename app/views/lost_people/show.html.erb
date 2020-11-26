@@ -22,7 +22,7 @@
       <p><strong>Description:</strong> <%= @lost_person.description %></p>
       <p><strong>Disparition Date and Time:</strong> </br><%= @lost_person.disparition_date_time.strftime("%d/%m/%Y %I:%M %p") %></p>
       </br>
-      <p style="text-align:center!important"><strong>Partager sur les Réseaux</strong><%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "http://localhost:3000/posts/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name}") %></p>
+      <p style="text-align:center!important"><strong>Partager sur les Réseaux</strong><%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://scoopid.herokuapp.com/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name}") %></p>
     </div>
   </div>
 </div>
