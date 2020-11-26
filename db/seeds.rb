@@ -88,7 +88,72 @@ geojson_two = {
   }
 }
 
-attendancy1 = SearchPartyAttendancy.create!(itinerary: geojson_one, start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer1, search_party: search)
-attendancy2 = SearchPartyAttendancy.create!(itinerary: geojson_two, start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer2, search_party: search)
+geojson_three = {
+  'type': 'geojson',
+  'data': {
+    'type': 'Feature',
+    'properties': {},
+    'geometry': {
+      'type': 'LineString',
+      'coordinates': [
+        [48.864990, 2.380073],
+        [48.866046, 2.379197],
+        [48.866593, 2.381290],
+        [48.865113, 2.382651],
+        [48.864339, 2.383160],
+        [48.863834, 2.382274],
+        [48.864652, 2.377996],
+        [48.865661, 2.377335],
+        [48.866086, 2.379223]
+      ]
+    }
+  }
+}
+
+coordinates_three = [
+  [48.864990, 2.380073],
+  [48.866046, 2.379197],
+  [48.866593, 2.381290],
+  [48.865113, 2.382651],
+  [48.864339, 2.383160],
+  [48.863834, 2.382274],
+  [48.864652, 2.377996],
+  [48.865661, 2.377335],
+  [48.866086, 2.379223]
+ ]
+
+
+geojson_four = {
+  'type': 'geojson',
+  'data': {
+    'type': 'Feature',
+    'properties': {},
+    'geometry': {
+      'type': 'LineString',
+      'coordinates': [
+        [48.864990, 2.380073],
+        [48.866046, 2.379197],
+        [48.866373, 2.380213],
+        [48.867993, 2.378573],
+        [48.867298, 2.375913],
+        [48.865661, 2.377327],
+        [48.866089, 2.379219]
+      ]
+    }
+  }
+}
+
+coordinates_four = [
+  [48.864990, 2.380073],
+  [48.866046, 2.379197],
+  [48.866373, 2.380213],
+  [48.867993, 2.378573],
+  [48.867298, 2.375913],
+  [48.865661, 2.377327],
+  [48.866089, 2.379219]
+]
+
+attendancy1 = SearchPartyAttendancy.create!(itinerary: coordinates_three, start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer1, search_party: search)
+attendancy2 = SearchPartyAttendancy.create!(itinerary: coordinates_four, start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer2, search_party: search)
 
 p "seed done"

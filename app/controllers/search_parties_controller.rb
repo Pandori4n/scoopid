@@ -1,8 +1,9 @@
 class SearchPartiesController < ApplicationController
 
-  # def index
-  #   @searchparties = policy_scope(SearchParty)
-  # end
+  def index
+    @searchparties = policy_scope(SearchParty)
+    authorize @search_party
+  end
 
   # def new
   #   authorize @search_party

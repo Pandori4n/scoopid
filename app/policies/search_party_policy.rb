@@ -5,6 +5,10 @@ class SearchPartyPolicy < ApplicationPolicy
     end
   end
 
+  def index?
+    return true
+  end
+
   def create?
     if user.role == host
       return true
