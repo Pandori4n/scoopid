@@ -8,16 +8,23 @@
   color: white;
 }
 
-.login-content {
-  padding-top: 10%;
+// .login-content {
+//   padding-top: 10%;
+// }
+@media (max-width: 869px) {
+  #connection-title {
+    font-weight: bold;
+    padding-top: 30%;
+    text-align: center;
+  }
 }
-
-#connection-title {
-  font-weight: bold;
-  padding-top: 10px;
-  text-align: center;
+@media (min-width: 870px) {
+  #connection-title {
+    font-weight: bold;
+    padding-top: 5%;
+    text-align: center;
+  }
 }
-
 .form-actions {
   margin: 0 auto;
   width: 95%;
@@ -31,4 +38,10 @@
 #connection-signup {
   margin-top: 20%;
   margin-bottom: 20%;
+}
+
+#shared-links a{
+  font-size: large!important;
+  margin-bottom: 10px!important;
+  text-decoration: underline;
 }
