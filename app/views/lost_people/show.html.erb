@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@lost_person.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @lost_person.description %>
+<% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
+
 <div class="container d-flex justify-content-around text-center">
   <div>
     <h1>MISSING</h1>
@@ -16,7 +20,7 @@
     <p>Body Type: <%= @lost_person.body_type %></p>
     <p>Description: <%= @lost_person.description %></p>
     <p>Disparition Date and Time: <%= @lost_person.disparition_date_time.strftime("%d/%m/%Y %I:%M %p") %></p>
-    <p>  <%= social_share_button_tag('Share to Facebook', :url => lost_person_path(@lost_person), desc: @lost_person.first_name) %></p>
+    <p> Partager sur les Réseaux<%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "http://localhost:3000/posts/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name}") %></p>
   </div>
 </div>
 
