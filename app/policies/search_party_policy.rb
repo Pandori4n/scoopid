@@ -9,8 +9,12 @@ class SearchPartyPolicy < ApplicationPolicy
     return true
   end
 
+  def show?
+    create?
+  end
+
   def create?
-    if user.role == host
+    if user.role == "host"
       return true
     end
   end

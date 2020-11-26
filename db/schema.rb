@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_132336) do
+ActiveRecord::Schema.define(version: 2020_11_26_153011) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_132336) do
     t.bigint "search_party_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "color"
     t.index ["search_party_id"], name: "index_search_party_attendancies_on_search_party_id"
     t.index ["user_id"], name: "index_search_party_attendancies_on_user_id"
   end

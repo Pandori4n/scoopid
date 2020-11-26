@@ -1,14 +1,15 @@
-class SearchPartyAttendenciesController < ApplicationController
+class SearchPartyAttendanciesController < ApplicationController
   def index
     @search_party = SearchParty.find(params[:search_party_id])
     authorize @search_party
-    @search_party_attendencies = policy_scope(@search_party.search_party_attendancies)
-
+    @search_party_attendancies = policy_scope(@search_party.search_party_attendancies)
     @marker = {
       lat: @search_party.latitude,
       lng: @search_party.longitude
     }
-
+    @colors = @search_party_attendancies.where.not(itinerary: nil).map do |search_party_attendancy|
+      search_party_attendancy.color
+    end
     @itineraries = @search_party.search_party_attendancies.where.not(itinerary: nil).map do |search_party_attendancy|
       search_party_attendancy.itinerary
     end
@@ -17,20 +18,13 @@ class SearchPartyAttendenciesController < ApplicationController
   def show
     @search_party_attendancy = SearchPartyAttendancy.find(params[:id])
     authorize @search_party_attendancy
-    @search_party = SearchParty.find(params[:search_party_id])
-    authorize @search_party
-    @search_party_attendencies = policy_scope(@search_party.search_party_attendancies)
-
-    @start_marker = {
+    @search_party = @search_party_attendancy.search_party
+    @marker = {
       lat: @search_party.latitude,
       lng: @search_party.longitude
     }
-
-    # Set un timer
-    # Réception ping ttes 30s des coordonnées
-    # Récup données et les sauvegarder
-    # Associer le timer et les données
-    # Les envoyer vers la view (show) et les afficher
+    @color = @search_party_attendancy.color
+    @itinerary = @search_party_attendancy.itinerary
   end
 
   def create

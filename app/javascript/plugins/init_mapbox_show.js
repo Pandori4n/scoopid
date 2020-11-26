@@ -14,43 +14,28 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/satellite-v9'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
-    const itineraries = JSON.parse(mapElement.dataset.itineraries);
-    const colors = JSON.parse(mapElement.dataset.colors);
+    const itinerary = JSON.parse(mapElement.dataset.itinerary);
+    const color = JSON.parse(mapElement.dataset.color);
     [markers].forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
-    itineraries.forEach((itinerary, index) => {
-      // console.log(i);
+    itineraries.forEach((itinerary) => {
       map.on('load', function () {
-        map.addSource(`route-${index}`, {
-          'type': 'geojson',
-          'data': {
-            'type': 'Feature',
-            'properties': {},
-            'geometry': {
-              'type': 'LineString',
-              'coordinates': itinerary
-            }
-          }
-        });
+        map.addSource('trace', { type: 'geojson', data: data });
         map.addLayer({
-          'id': `route-${index}`,
+          'id': 'trace',
           'type': 'line',
-          'source': `route-${index}`,
-          'layout': {
-            'line-join': 'round',
-            'line-cap': 'round'
-            },
+          'source': 'trace',
           'paint': {
-            'line-color': colors[index],
-            'line-width': 8
+            'line-color': 'yellow',
+            'line-opacity': 0.75,
+            'line-width': 5
           }
         });
       });
-
     });
   }
 };
