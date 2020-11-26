@@ -1,6 +1,13 @@
 <div>
 <h1>Messages</h1>
 <% @chatrooms.each do |chatroom| %>
-  <%= link_to "from : @chatroom.name @chatroom.created_at", chatroom_path(chatroom) %>
+  <%= link_to "from : @chatroom.name @chatroom.created_at", lost_person_chatroom_path(@lost_person, chatroom) %>
 <% end %>
 </div>
+
+<i class="fas fa-comment-alt"></i>
+
+<%= simple_form_for [@lost_person, @chatroom] do |f| %> 
+<%= f.association :volunteer %>
+<%= f.submit %>
+<% end %>

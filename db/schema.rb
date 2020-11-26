@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_151144) do
+ActiveRecord::Schema.define(version: 2020_11_26_153721) do
 
 
   # These are extensions that must be enabled in order to support this database
@@ -43,7 +43,9 @@ ActiveRecord::Schema.define(version: 2020_11_25_151144) do
     t.bigint "host_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "lost_person_id", null: false
     t.index ["host_id"], name: "index_chatrooms_on_host_id"
+    t.index ["lost_person_id"], name: "index_chatrooms_on_lost_person_id"
     t.index ["volunteer_id"], name: "index_chatrooms_on_volunteer_id"
   end
 
@@ -130,6 +132,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_151144) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "chatrooms", "lost_people"
   add_foreign_key "chatrooms", "users", column: "host_id"
   add_foreign_key "chatrooms", "users", column: "volunteer_id"
   add_foreign_key "feed_infos", "lost_people"

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
   resources :lost_people do
     resources :search_party_attendencies, only: :create
-    resources :chatrooms, only: [:show, :index]
+    resources :chatrooms, only: [:show, :index, :create]
     resources :feed_infos, only: :index
   end
   resources :search_party_attendancies, only: [:show, :create, :update] do
