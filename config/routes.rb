@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   get '/todo', to: 'users#todo'
   resources :users, only: :update
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :search_parties, only: [:new, :create, :show, :edit, :update]
+  resources :search_parties, only: [:new, :create, :show, :edit, :update] do
+    resources :search_party_attendancies, only: [:index, :show]
+  end
   resources :chatrooms, only: [] do
     resources :messages, only: :create
   end
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
     resources :chatrooms, only: [:show, :index]
     resources :feed_infos, only: :index
   end
-  resources :search_party_attendencies, only: [:index, :show, :create, :update] do
+  resources :search_party_attendancies, only: [:show, :create, :update] do
     member do
       resources :user, only: :update
     end

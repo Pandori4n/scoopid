@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_11_25_151144) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -94,6 +95,8 @@ ActiveRecord::Schema.define(version: 2020_11_25_151144) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "authentication_token"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["lost_person_id"], name: "index_search_parties_on_lost_person_id"
   end
 
@@ -105,6 +108,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_151144) do
     t.bigint "search_party_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "color"
     t.index ["search_party_id"], name: "index_search_party_attendancies_on_search_party_id"
     t.index ["user_id"], name: "index_search_party_attendancies_on_user_id"
   end
