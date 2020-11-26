@@ -9,11 +9,11 @@
     <div class="message-container" id="message-<%= message.id %>">
       <i class="author">
         <span><%= message.user.first_name %></span>
-          small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+          <%= message.created_at.strftime("%a %b %e at %l:%M%p") %>
       </i>
       <p><%= message.content %></p>
-      <i class="fas fa-share" data-toggle="modal" data-target="#chatModal"></i>
-      <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <i class="fas fa-share" data-toggle="modal" data-target="#chatModal-<%= message.id %>"></i>
+      <div class="modal fade" id="chatModal-<%= message.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -23,8 +23,9 @@
               </button>
             </div>
             <div class="modal-body">
-                
-              <p><%= message.content %></p>
+              <%= simple_form_for [ @chatroom.host.lost_people.last, @feed_info ] do |f| %> 
+                <%= f.input :description,  input_html: {value: message.content} %>
+              <% end %>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
