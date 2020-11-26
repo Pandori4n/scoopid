@@ -1,5 +1,7 @@
 require "open-uri"
 
+Message.destroy_all
+Chatroom.destroy_all
 SearchPartyAttendancy.destroy_all
 SearchParty.destroy_all
 LostPerson.destroy_all
