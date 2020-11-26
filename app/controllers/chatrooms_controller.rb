@@ -3,6 +3,7 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     authorize @chatroom
+    @feed_info = FeedInfo.new
   end
 
   def index
