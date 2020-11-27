@@ -9,14 +9,16 @@
               </i>
             <% end %>
           <% end %>
-          <% if current_user.search_party_attendancies.any? %>
-            <%= link_to search_party_search_party_attendancies_path(current_user.lost_people.last), id:"map-button-navbar" do %>
+
+          <% last_search_party = current_user.search_parties.last %>
+          <% if last_search_party.present? %>
+            <%= link_to search_party_search_party_attendancies_path(last_search_party), id:"map-button-navbar" do %>
               <i class="far fa-map menu-icons">
                 <p></br>Carte</p>
               </i>
             <% end %>
           <% else %>
-            <a href="javascript:void(0)" id="map-button-navbar" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <a href="" id="map-button-navbar" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
               <i class="far fa-map menu-icons">
                 <p></br>Carte</p>
               </i>
