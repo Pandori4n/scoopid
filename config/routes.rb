@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: :update
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :search_parties, only: [:new, :create] do
-    resources :search_party_attendancies, only: [:index, :show]
+    resources :search_party_attendancies, only: [:index]
   end
   resources :lost_people do
     resources :search_party_attendancies, only: :create

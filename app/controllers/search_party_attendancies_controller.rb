@@ -3,7 +3,7 @@ class SearchPartyAttendanciesController < ApplicationController
     @search_party = SearchParty.find(params[:search_party_id])
     authorize @search_party
     @search_party_attendancies = policy_scope(@search_party.search_party_attendancies)
-    @marker = {
+    @markers = {
       lat: @search_party.latitude,
       lng: @search_party.longitude
     }
@@ -19,7 +19,7 @@ class SearchPartyAttendanciesController < ApplicationController
     @search_party_attendancy = SearchPartyAttendancy.find(params[:id])
     authorize @search_party_attendancy
     @search_party = @search_party_attendancy.search_party
-    @marker = {
+    @markers = {
       lat: @search_party.latitude,
       lng: @search_party.longitude
     }

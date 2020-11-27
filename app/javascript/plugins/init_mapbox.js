@@ -7,11 +7,11 @@ const initMapbox = () => {
   [markers].forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
   };
-  if (mapElement) {
+  if (mapElement && mapElement.dataset.itineraries) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/satellite-v9'
+      style: 'mapbox://styles/basilerieu/ckhyok575203a19o53s6png7h'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     const itineraries = JSON.parse(mapElement.dataset.itineraries);
@@ -23,7 +23,6 @@ const initMapbox = () => {
     });
     fitMapToMarkers(map, markers);
     itineraries.forEach((itinerary, index) => {
-      // console.log(i);
       map.on('load', function () {
         map.addSource(`route-${index}`, {
           'type': 'geojson',
