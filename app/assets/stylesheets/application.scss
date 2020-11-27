@@ -14,3 +14,16 @@
 @import "pages/index";
 @import "lost_people/index";
 @import "devise/index";
+@import "search_parties/index";
+@import "chatroom/show";
+
+// Share Social media button
+@import "social-share-button";
+
+.container-fluid {
+  overflow: auto;
+}
+
+.content-wrapper::-webkit-scrollbar {
+  display: none;
+}

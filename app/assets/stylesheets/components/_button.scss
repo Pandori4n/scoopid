@@ -1,6 +1,6 @@
 // General Button Styling
 .button {
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
@@ -17,41 +17,63 @@
 .button-primary {
   background-color: #108b8d;
   color: white;
-  padding: 9px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 50px;
-  font-size: 100%;
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
+  max-width: fit-content;
+  border: 0.5px solid white;
 }
 
 .button-secondary {
   background-color: #ec9a29;
   color: white;
-  padding: 9px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 50px;
-  font-size: 100%;
+  border-radius: 50px;
+  font-size: 17px;
   font-weight: bold;
   text-decoration: none;
+    max-width: fit-content;
 }
 
 .button-primary-alt {
   background-color: white;
   color: #108b8d;
-  padding: 9px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 50px;
-  font-size: 100%;
+  border-radius: 50px;
+  font-size: 20px;
+  border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
   border: medium solid #108b8d;
+  max-width: fit-content;
 }
 
 .button-secondary-alt {
   background-color: white;
   color: #ec9a29;
-  padding: 9px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
   border-radius: 50px;
-  font-size: 80%;
+  border-radius: 50px;
+  font-size: 17px;
+  border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
   border: medium solid#ec9a29;
+    max-width: fit-content;
 }
