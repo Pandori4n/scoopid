@@ -4,14 +4,16 @@
 
 <div class="container">
   <% @chatrooms.each do |chatroom| %>
-    <%= link_to "from : #{@chatroom.name} #{@chatroom.created_at}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
+    <%= link_to "from : #{chatroom.volunteer.full_name} #{chatroom.created_at}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
     <br>
   <% end %>
 </div>
 
-<div class="container">
+<div class="container" id="fixed-form">
   <%= simple_form_for [@lost_person, @chatroom] do |f| %> 
   <%= f.association :volunteer, label_method: :full_name %>
-  <%= f.submit "Send a message", class: 'button' %>
+  <div class= "d-flex flex-row-reverse">
+    <%= f.submit "Send a message", class: 'button button-secondary-alt', id:"right:5%;" %>
+  </div>
   <% end %>
 </div>

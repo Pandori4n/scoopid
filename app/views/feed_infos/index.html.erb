@@ -26,7 +26,9 @@
           <%= simple_form_for [@lost_person, @feedinfo] do |f| %> 
             <%= f.input :title %>
             <%= f.input :description %>
-            <%= f.submit 'Partager', class: 'button button-secondary-alt' %>
+            <div class= "d-flex flex-row-reverse">
+              <%= f.submit 'Partager', class: 'button button-secondary-alt' %>
+            </div>
           <% end %>
         </div>
       </div>
