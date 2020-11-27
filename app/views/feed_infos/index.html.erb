@@ -5,7 +5,7 @@
 <div class="container">
   <% @feed_infos.each do |info| %>
     <h2><%= info.title %></h2>
-    <p><%= info.description %></p>
+    <p class= "text-left"><%= info.description %></p>
   <% end %>
 </div>
 
@@ -24,11 +24,8 @@
           <%= simple_form_for [@lost_person, @feedinfo] do |f| %> 
             <%= f.input :title %>
             <%= f.input :description %>
+            <%= f.submit 'create message', class: 'button' %>
           <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Share</button>
         </div>
       </div>
     </div>

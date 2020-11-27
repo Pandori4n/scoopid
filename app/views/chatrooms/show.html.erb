@@ -25,16 +25,12 @@
             <div class="modal-body">
               <%= simple_form_for [ @chatroom.host.lost_people.last, @feed_info ] do |f| %> 
                 <%= f.input :description,  input_html: {value: message.content} %>
+                <%= f.submit "Share", class: "button button-secondary" %>
               <% end %>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Share</button>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   <% end %>
 
