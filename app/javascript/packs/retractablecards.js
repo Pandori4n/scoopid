@@ -2,12 +2,13 @@ const addClass = () => {
 
   var arrow = document.getElementById("arrow-down-retractable");
   var buttonDisplay = document.getElementById("card-button-display");
-  arrow.addEventListener('click', (event) => {
+  if (arrow) {
+    arrow.addEventListener('click', (event) => {
       buttonDisplay.classList.toggle("display-none");
-      arrow.classList.toggle("fa-chevron-down")
-      arrow.classList.toggle("fa-chevron-up")
-  })
-
+      arrow.classList.toggle("fa-chevron-down");
+      arrow.classList.toggle("fa-chevron-up");
+    })
+  }
 };
 
 export { addClass };
