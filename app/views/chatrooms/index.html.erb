@@ -4,7 +4,7 @@
 
 <div class="container">
   <% @chatrooms.each do |chatroom| %>
-    <%= link_to "from : #{@chatroom.volunteer.first_name} #{@chatroom.created_at}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
+    <%= link_to "from : #{@chatroom.name} #{@chatroom.created_at}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
     <br>
   <% end %>
 </div>
