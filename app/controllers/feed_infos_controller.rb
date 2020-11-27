@@ -18,7 +18,6 @@ class FeedInfosController < ApplicationController
   private
 
   def feed_infos_param
-    params.require(:feedinfo).permit(:title, :description, :user_id, :lost_person_id)
+    params.require(:feed_info).permit(:title, :description, :user_id, :lost_person_id)
   end
 end
-

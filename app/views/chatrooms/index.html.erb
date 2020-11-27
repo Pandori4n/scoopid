@@ -1,12 +1,17 @@
 <div class= "correspond_bar">
   <h1>Messages</h1>
-<div>
+</div>
+
+<div class="container">
   <% @chatrooms.each do |chatroom| %>
-    <%= link_to "from : @chatroom.name @chatroom.created_at", lost_person_chatroom_path(@lost_person, chatroom) %>
+    <%= link_to "from : #{@chatroom.volunteer.first_name} #{@chatroom.created_at}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
+    <br>
   <% end %>
 </div>
 
-<%= simple_form_for [@lost_person, @chatroom] do |f| %> 
-<%= f.association :volunteer, label_method: :full_name %>
-<%= f.button :submit, 'Send a message', class: 'button' %>
-<% end %>
+<div class="container">
+  <%= simple_form_for [@lost_person, @chatroom] do |f| %> 
+  <%= f.association :volunteer, label_method: :full_name %>
+  <%= f.submit "Send a message", class: 'button' %>
+  <% end %>
+</div>

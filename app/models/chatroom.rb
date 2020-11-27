@@ -5,15 +5,17 @@ class Chatroom < ApplicationRecord
 
   has_many :messages
 
-  validate :existing_chatroom
+  validates :volunteer_id, presence: true
+  validates :host_id, presence: true
 
-  private
+  # validates :existing_chatroom
 
-  def existing_chatroom
-    if Chatroom.find_by(host: :host, volunteer: :volunteer, lost_person: :lost_person)
-      chatroom = Chatroom.find_by(host: :host, volunteer: :volunteer, lost_person: :lost_person)
-      errors.add("existing chatroom: #{chatroom}")
-    end
-  end
-  
+  # private
+
+  # def existing_chatroom
+  #   if Chatroom.find_by(host: :host, volunteer: :volunteer, lost_person: :lost_person)
+  #     chatroom = Chatroom.find_by(host: :host, volunteer: :volunteer, lost_person: :lost_person)
+  #     errors.add("existing chatroom: #{chatroom}")
+  #   end
+  # end
 end
