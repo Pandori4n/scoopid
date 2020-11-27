@@ -1,49 +1,51 @@
-<% if user_signed_in? && current_user.lost_people != nil %>
+<% if user_signed_in? && current_user.lost_people.present? %>
   <div class="navbar fixed-bottom">
     <% if current_user.role == "host" %>
-      <div class="navbar-host d-flex justify-content-around align-items-center">
-        <%= link_to lost_person_feed_infos_path(current_user.lost_people.last) do %>
-          <i class="far fa-file-alt menu-icons">
-            <p></br>Fil d'Actualité</p>
-          </i>
-        <% end %>
-        <% if current_user.search_party_attendancies.any? %>
-          <%= link_to search_party_search_party_attendancies_path(current_user.lost_people.last), id:"map-button-navbar" do %>
-            <i class="far fa-map menu-icons">
-              <p></br>Carte</p>
-            </i>
-          <% end %>
-        <% else %>
-          <a href="javascript:void(0)" id="map-button-navbar" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-            <i class="far fa-map menu-icons">
-              <p></br>Carte</p>
-            </i>
-          </a>
-        <% end %>
-        <%= link_to lost_person_search_parties_path(current_user.lost_people.last) do %>
-          <i class="fas fa-search-location menu-icons">
-            <p></br>Battues</p>
-          </i>
-        <% end %>
-        <%= link_to todo_path do %>
-          <i class="far fa-calendar-check menu-icons">
-            <p></br>To Do</p>
-          </i>
-        <% end %>
-        <% if current_user.lost_people.any? %>
-          <%= link_to lost_person_path(current_user.lost_people.last) do %>
-            <% if params[:controller] == "lost_people" && params[:action] == "show" %>
-              <i class="far fa-address-card menu-icons active">
-                <p></br>Informations</p>
-              </i>
-            <% else %>
-              <i class="far fa-address-card menu-icons">
-                <p></br>Informations</p>
+        <div class="navbar-host d-flex justify-content-around align-items-center">
+          <% if current_user.lost_people.any? %>
+            <%= link_to lost_person_feed_infos_path(current_user.lost_people.last) do %>
+              <i class="far fa-file-alt menu-icons">
+                <p></br>Fil d'Actualité</p>
               </i>
             <% end %>
-          <% end%>
-        <% end %>
-      </div>
+          <% end %>
+          <% if current_user.search_party_attendancies.any? %>
+            <%= link_to search_party_search_party_attendancies_path(current_user.lost_people.last), id:"map-button-navbar" do %>
+              <i class="far fa-map menu-icons">
+                <p></br>Carte</p>
+              </i>
+            <% end %>
+          <% else %>
+            <a href="javascript:void(0)" id="map-button-navbar" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+              <i class="far fa-map menu-icons">
+                <p></br>Carte</p>
+              </i>
+            </a>
+          <% end %>
+          <%= link_to lost_person_search_parties_path(current_user.lost_people.last) do %>
+            <i class="fas fa-search-location menu-icons">
+              <p></br>Battues</p>
+            </i>
+          <% end %>
+          <%= link_to todo_path do %>
+            <i class="far fa-calendar-check menu-icons">
+              <p></br>To Do</p>
+            </i>
+          <% end %>
+          <% if current_user.lost_people.any? %>
+            <%= link_to lost_person_path(current_user.lost_people.last) do %>
+              <% if params[:controller] == "lost_people" && params[:action] == "show" %>
+                <i class="far fa-address-card menu-icons active">
+                  <p></br>Informations</p>
+                </i>
+              <% else %>
+                <i class="far fa-address-card menu-icons">
+                  <p></br>Informations</p>
+                </i>
+              <% end %>
+            <% end%>
+          <% end %>
+        </div>
     <% else %>
       <div class="navbar-volunteer d-flex justify-content-between">
           <a class="active" href="#"><i class="far fa-file-alt menu-icons"></i><p></br>Fil d'Actualité</p></a>
