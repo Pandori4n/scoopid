@@ -1,1 +1,22 @@
-<h1> Hello </h1>
+
+<div class="">
+  <div class="title-container d-flex align-items-center">
+    <h3> Vos Battues </h3>
+  </div>
+  <div class="mt-3">
+    <% @searchparties.each do |search_party| %>
+      <div class="container searchparties-card-index">
+        <h4> Battue:</h4>
+        <h6><%= search_party.meeting_location %></h6>
+        </br>
+        <p><%= search_party.start_date_time.strftime("%d/%m/%Y %I:%M %p") %> </p>
+        <p><%= search_party.end_date_time.strftime("%d/%m/%Y %I:%M %p") %></p>
+        </br>
+        <div class="text-center mb-3">
+        <%= link_to 'Voir les parcours', search_party_search_party_attendancies_path(search_party), class:"button-secondary-alt" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+    <%= link_to 'Créer une Battue', new_search_party_path, class:"button button-primary", style:"margin:0 auto;"%>
+</div>
