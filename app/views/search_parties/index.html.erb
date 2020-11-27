@@ -1,5 +1,5 @@
 
-<div class="">
+<div class="" style="overflow:scroll;">
   <div class="title-container d-flex align-items-center">
     <h3> Vos Battues </h3>
   </div>
@@ -18,5 +18,9 @@
       </div>
     <% end %>
   </div>
-    <%= link_to 'Créer une Battue', new_search_party_path, class:"button button-primary", style:"margin:0 auto;"%>
+  <% if @searchparties.any? %>
+    <%= link_to '+', new_search_party_path, class:"", id:"button-new-searchparty"%>
+  <% else %>
+      <%= link_to "Créer une Battue", new_search_party_path, class: "button button-primary fixed-bottom", style: "margin:0 auto;", id: "button-new-searchparty-big" %>
+  <% end %>
 </div>
