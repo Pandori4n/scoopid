@@ -1,4 +1,6 @@
 class LostPeopleController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
+
   def index
     # @restaurants = policy_scope(LostPerson)
   end

@@ -1,9 +1,10 @@
 require "open-uri"
 
+Message.destroy_all
 SearchPartyAttendancy.destroy_all
 SearchParty.destroy_all
+FeedInfo.destroy_all
 LostPerson.destroy_all
-Message.destroy_all
 Chatroom.destroy_all
 User.destroy_all
 
@@ -17,10 +18,17 @@ lost_one = LostPerson.new(first_name: "Missy", last_name: "Liberty", age: "25", 
 file1 = URI.open('https://media.vogue.fr/photos/5c2f627093cd057e910d5789/master/w_828%2cc_limit/gettyimages_529372481_jpg_7253.jpg')
 lost_one.photo.attach(io: file1, filename: 'missy.jpg', content_type: 'image/jpg')
 lost_one.save!
-p lost_one
+
+chatroom1 = Chatroom.create!(name: "Saturday Search Party", volunteer: volunteer1, host: host, lost_person: lost_one)
+chatroom2 = Chatroom.create!(name: "Meeting", volunteer: volunteer2, host: host, lost_person: lost_one)
+
+message1 = Message.create!(content: "Are you available tomorrow at 10 for a meeting?", chatroom: chatroom2, user: volunteer2)
+
+feed_info1 = FeedInfo.create!(title: "Meeting", description: "Meeting saturday at 10 at home, 12 rue de Rivoli", user: host, lost_person: lost_one)
+feed_info2 = FeedInfo.create!(title: "Search Party", description: "Thank you for being volunteers", user: host, lost_person: lost_one)
+feed_info3 = FeedInfo.create!(title: "News", description: "We receive a call from the police", user: host, lost_person: lost_one)
 
 search = SearchParty.create!(start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), meeting_location: "16, villa Gaudelet, Paris", description: "Big search for liberty", radius: 10, lost_person: lost_one, authentication_token: "ABCDE")
-p search
 
 coordinates_three = [
   [2.380073, 48.864990],

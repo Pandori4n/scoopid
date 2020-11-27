@@ -1,21 +1,23 @@
 <div class= "correspond_bar">
-  <h1>Feed info</h1>
+  <h1>Fil d'actualité</h1>
 </div>
 
 <div class="container">
   <% @feed_infos.each do |info| %>
     <h2><%= info.title %></h2>
-    <p><%= info.description %></p>
+    <p class= "text-left"><%= info.description %></p>
   <% end %>
 </div>
 
 <div class="container">
- <i class="fas fa-plus-circle" data-toggle="modal" data-target="#feedinfoModal"></i>
+  <div id="fixed-button">
+    <i class="fas fa-plus-circle" data-toggle="modal" data-target="#feedinfoModal"></i>
+  </div>
   <div class="modal fade" id="feedinfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Share a message in my feed info</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Partager une information</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -24,11 +26,10 @@
           <%= simple_form_for [@lost_person, @feedinfo] do |f| %> 
             <%= f.input :title %>
             <%= f.input :description %>
+            <div class= "d-flex flex-row-reverse">
+              <%= f.submit 'Partager', class: 'button button-secondary-alt' %>
+            </div>
           <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Share</button>
         </div>
       </div>
     </div>

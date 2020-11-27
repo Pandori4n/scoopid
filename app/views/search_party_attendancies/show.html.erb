@@ -4,3 +4,32 @@
     data-itinerary="<%= @itinerary.to_json %>"
     data-color="<%= @color.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+<div class="retractable-card">
+    <div class="up-down-icon">
+      <i class="fas fa-chevron-down" id="arrow-down-retractable"></i>
+    </div>
+    <div class="card-content d-flex align-items-center justify-content-around">
+      <div class="text-card">
+      <%= link_to(search_party_search_party_attendancies_path(@search_party)) do %>
+        <i class="fas fa-angle-left slide-arrows"></i>
+      <% end %>
+        <h6>Jean-Pierre</h6>
+        <p>En cours</p>
+      </div>
+     <!--  <%#= link_to(search_party_search_party_attendancies_path(@search_party)) do %>
+        <a href="", class="fas fa-angle-right slide-arrows">
+          <p class="fas fa-angle-right slide-arrows"> </p>
+      <#% end %> -->
+
+    </div>
+    <div class="card-button d-flex align-items-center flex-column" id="card-button-display">
+      <%= link_to(lost_person_chatroom_path(@search_party.lost_person, @chatroom)) do %>
+        <i class="fas fa-angle-left slide-arrows"></i>
+        <p>Envoyer un message  <i class="fas fa-paper-plane"></i></p>
+      <% end %>
+    </div>
+  </div>
+
+
+

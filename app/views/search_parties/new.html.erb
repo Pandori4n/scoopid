@@ -5,9 +5,9 @@
   <div class="container form text-center col-md-6">
     <h1 class="form-title">Nouvelle Battue</h1>
     <%= simple_form_for [@search_party] do |f| %>
-      <%= f.input :start_date_time %>
-      <%= f.input :end_date_time %>
-      <%= f.input :meeting_location %>
+      <%= f.input :start_date_time, label:"Date et Horaire de début" %>
+      <%= f.input :end_date_time, label:"Date et Horaire de fin" %>
+      <%= f.input :meeting_location, label:"Lieu de Rendez-vous"  %>
       <%= f.input :description %>
       <%= f.input :radius %>
       <div class="form-actions d-flex align-items-center flex-column" id="searchparty-create">
