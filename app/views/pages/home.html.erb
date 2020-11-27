@@ -17,10 +17,16 @@
 <% elsif user_signed_in? && current_user.role == "volunteer"%>
   <h1>Hello <%= current_user.first_name %></h1>
 <% elsif user_signed_in? && current_user.role == nil %>
-  <h1>choose</h1>
-  <div class="container">
-    <%= link_to "HOST", user_path(current_user, role: "host"), method: :patch, :class => "btn btn-primary" %>
-    <%= link_to "VOLUNTEER", user_path(current_user, role: "volunteer"), method: :patch, :class => "btn btn-primary" %>
+<div class="container profile">
+  <h2>Vous êtes un</h2>
+  <div class="button-host">
+    <%= link_to "Organisateur", user_path(current_user, role: "host"), method: :patch, class: "button button-primary" %>
+  </div>
+  <h3>Vous êtes un</h3>
+  <div class="button-vol">
+    <%= link_to "Volontaire", user_path(current_user, role: "volunteer"), method: :patch, class: "button button-primary" %>
+  </div>
+</div>
   </div>
 <% else %>
   <div>
