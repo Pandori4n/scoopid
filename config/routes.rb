@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resources :lost_people do
-    resources :search_party_attendencies, only: :create
+    resources :search_parties, only: :index
+    resources :search_party_attendancies, only: :create
     resources :chatrooms, only: [:show, :index, :create]
     resources :feed_infos, only: :index
   end
