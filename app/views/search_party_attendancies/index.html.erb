@@ -1,6 +1,23 @@
 <div id="map"
-    style="width: 100%; height: 600px;"
+    style="width: 100%; height: 100%;"
     data-markers="<%= @markers.to_json %>"
     data-itineraries="<%= @itineraries.to_json %>"
     data-colors="<%= @colors.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <div class="retractable-card">
+    <div class="up-down-icon">
+      <i class="fas fa-chevron-down" id="arrow-down-retractable"></i>
+    </div>
+    <div class="card-content d-flex align-items-center justify-content-around">
+      <i class="fas fa-angle-left slide-arrows"></i>
+      <div class="text-card">
+        <h6>Battues du 20 Janvier 2018</h6>
+        <p>Vue Globale</p>
+      </div>
+      <i class="fas fa-angle-right slide-arrows"></i>
+    </div>
+    <div class="card-button d-flex align-items-center flex-column" id="card-button-display">
+      <a href="#" class="button button-secondary" id="publish-info">Publier une information <i class="fas fa-paper-plane"></i></a>
+    </div>
+  </div>
