@@ -1,1 +1,36 @@
-<h1>coucou</h1>
+<div class= "correspond_bar">
+  <h1>Feed info</h1>
+</div>
+
+<div class="container">
+  <% @feed_infos.each do |info| %>
+    <h2><%= info.title %></h2>
+    <p><%= info.description %></p>
+  <% end %>
+</div>
+
+<div class="container">
+ <i class="fas fa-plus-circle" data-toggle="modal" data-target="#feedinfoModal"></i>
+  <div class="modal fade" id="feedinfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Share a message in my feed info</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [@lost_person, @feedinfo] do |f| %> 
+            <%= f.input :title %>
+            <%= f.input :description %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Share</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

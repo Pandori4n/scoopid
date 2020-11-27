@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :lost_people do
     resources :search_party_attendencies, only: :create
     resources :chatrooms, only: [:show, :index, :create]
-    resources :feed_infos, only: :index
+    resources :feed_infos, only: [:index, :create]
   end
   resources :search_party_attendancies, only: [:show, :create, :update] do
     member do
