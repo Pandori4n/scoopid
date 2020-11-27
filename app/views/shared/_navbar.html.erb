@@ -1,18 +1,26 @@
 <% if user_signed_in? && current_user.lost_people != nil %>
   <div class="navbar fixed-bottom">
     <% if current_user.role == "host" %>
-      <div class="navbar-host d-flex justify-content-between align-items-center">
-        <%= link_to lost_person_feed_infos_path(current_user.lost_people) do %>
+      <div class="navbar-host d-flex justify-content-around align-items-center">
+        <%= link_to lost_person_feed_infos_path(current_user.lost_people.last) do %>
           <i class="far fa-file-alt menu-icons">
             <p></br>Fil d'Actualité</p>
           </i>
         <% end %>
-        <%= link_to "" do %>
-          <i class="far fa-map menu-icons">
-            <p></br>Carte</p>
-          </i>
+        <% if current_user.search_party_attendancies.any? %>
+          <%= link_to search_party_search_party_attendancies_path(current_user.lost_people.last), id:"map-button-navbar" do %>
+            <i class="far fa-map menu-icons">
+              <p></br>Carte</p>
+            </i>
+          <% end %>
+        <% else %>
+          <a href="javascript:void(0)" id="map-button-navbar" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <i class="far fa-map menu-icons">
+              <p></br>Carte</p>
+            </i>
+          </a>
         <% end %>
-        <%= link_to "" do %>
+        <%= link_to lost_person_search_parties_path(current_user.lost_people.last) do %>
           <i class="fas fa-search-location menu-icons">
             <p></br>Battues</p>
           </i>
