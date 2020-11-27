@@ -1,5 +1,5 @@
 class SearchPartyAttendanciesController < ApplicationController
-  before_action :set_chatroom
+  #before_action :set_chatroom
 
   def index
     @search_party = SearchParty.find(params[:search_party_id])
@@ -18,6 +18,9 @@ class SearchPartyAttendanciesController < ApplicationController
   end
 
   def show
+    @search_party_attendancy = SearchPartyAttendancy.find(params[:id])
+    @chatroom = Chatroom.find_or_create_by(volunteer: @search_party_attendancy.user,
+      host: current_user, lost_person: @search_party_attendancy.search_party.lost_person)
     authorize @search_party_attendancy
     @search_party = @search_party_attendancy.search_party
     @markers = {
@@ -49,6 +52,7 @@ class SearchPartyAttendanciesController < ApplicationController
 
   def set_chatroom
     @search_party_attendancy = SearchPartyAttendancy.find(params[:id])
-    @chatroom = Chatroom.find_or_create_by(volunteer: @search_party_attendancy.user, host: current_user, lost_person: @search_party_attendancy.search_party.lost_person)
+    @chatroom = Chatroom.find_or_create_by(volunteer: @search_party_attendancy.user,
+      host: current_user, lost_person: @search_party_attendancy.search_party.lost_person)
   end
 end
