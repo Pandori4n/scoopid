@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :lost_people, dependent: :destroy
+  has_many :search_parties, through: :lost_people
   has_many :feed_infos
   has_many :search_party_attendancies
   has_many :volunteer_chatrooms, class_name: 'Chatroom', foreign_key: 'volunteer_id'
