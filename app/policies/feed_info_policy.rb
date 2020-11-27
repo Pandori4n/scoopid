@@ -8,4 +8,8 @@ class FeedInfoPolicy < ApplicationPolicy
   def index?
     return true
   end
+
+  def create?
+    return true
+  end
 end

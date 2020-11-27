@@ -3,6 +3,7 @@ class LostPerson < ApplicationRecord
 
   has_many :search_parties
   has_many :feed_infos
+  has_many :chatrooms, dependent: :destroy
 
   has_one_attached :photo
 
