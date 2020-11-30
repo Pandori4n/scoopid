@@ -18,6 +18,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def end_search
+    @user = current_user
+    authorize @user
+    if current_user.role == 'host'
+      current_user.update(role: 'nil')
+      current_user.lost_people.destroy
+    end
+    redirect_to profile_path
+  end
+
   private
 
   def user_params

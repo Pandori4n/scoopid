@@ -1,0 +1,28 @@
+.todo-content{
+  max-height: 700px;
+}
+
+.slide-todo-container{
+  overflow: scroll;
+  max-width: 500px;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.slide-todo-container p{
+  text-align: start !important;
+}
+.todo-content li{
+  display: inline;
+}
+
+.swiper-container{
+  max-height: 430px;
+}
+
+.swiper-slide p{
+  max-height: 280px;
+}
+
+.swiper-wrapper{
+  margin-bottom: 20px;
+}
