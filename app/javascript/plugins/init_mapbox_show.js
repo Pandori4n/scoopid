@@ -22,30 +22,59 @@ const initMapboxShow = () => {
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
-     map.on('load', function () {
-        var coordinates = data.features[0].geometry.coordinates;
-        map.addSource('trace', {
-          type: "FeatureCollection",
-          features: [
-            {
+    map.on('load', function () {
+      let data = {
+        type: "FeatureCollection",
+        features:[
+          {
             type: "Feature",
-            geometry: {
+            geometry:{
               type: "LineString",
               coordinates: itinerary
             }
           }
-        });
-        map.addLayer({
-          'id': 'trace',
-          'type': 'line',
-          'source': 'trace',
-          'paint': {
-            'line-color': 'yellow',
-            'line-opacity': 0.75,
-            'line-width': 5
-          }
-        });
+        ]
+      };
+
+      // let coordinates = itinerary;
+      // coordinates = [coordinates[0]];
+      console.log(data.features[0].geometry.coordinates);
+      var coordinates = data.features[0].geometry.coordinates;
+      const coordinatesLength = coordinates.length;
+      data.features[0].geometry.coordinates = [coordinates[0]];
+      console.log(data.features[0].geometry.coordinates);
+
+      map.addSource('trace', { type: 'geojson', data: data });
+      map.addLayer({
+        'id': 'trace',
+        'type': 'line',
+        'source': 'trace',
+        'paint': {
+        'line-color': 'yellow',
+        'line-opacity': 0.75,
+        'line-width': 5
+        }
       });
+      map.jumpTo({ 'center': coordinates[0], 'zoom': 14 });
+      map.setPitch(30);
+      var i = 0;
+      var timer = window.setInterval(function () {
+        console.log(coordinates.length);
+        if (i < coordinatesLength) {
+          coordinates.push(coordinates[i]);
+          console.log(coordinates);
+          data.features[0].geometry.coordinates.push(
+          coordinates[i]
+          );
+          map.getSource('trace').setData(data);
+          map.panTo(coordinates[i]);
+          i++;
+          console.log(i);
+        } else {
+          window.clearInterval(timer);
+        }
+      }, 2000);
+    });
   };
 };
 
