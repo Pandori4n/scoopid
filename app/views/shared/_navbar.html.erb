@@ -4,35 +4,38 @@
         <div class="navbar-host d-flex justify-content-around align-items-center">
           <% if current_user.lost_people.any? %>
             <%= link_to lost_person_feed_infos_path(current_user.lost_people.last) do %>
-              <i class="far fa-file-alt menu-icons">
-                <p></br>Fil d'Actualité</p>
-              </i>
+              <% if params[:controller] == "feed_infos" %>
+                <i class="far fa-file-alt menu-icons active">
+                  <p></br>Fil d'Actualité</p>
+                </i>
+              <% else %>
+                <i class="far fa-file-alt menu-icons">
+                  <p></br>Fil d'Actualité</p>
+                </i>
+              <% end %>
             <% end %>
-          <% end %>
-
-          <% last_search_party = current_user.search_parties.last %>
-          <% if last_search_party.present? %>
-            <%= link_to search_party_search_party_attendancies_path(last_search_party), id:"map-button-navbar" do %>
-              <i class="far fa-map menu-icons">
-                <p></br>Carte</p>
-              </i>
-            <% end %>
-          <% else %>
-            <a href="" id="map-button-navbar" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
-              <i class="far fa-map menu-icons">
-                <p></br>Carte</p>
-              </i>
-            </a>
           <% end %>
           <%= link_to lost_person_search_parties_path(current_user.lost_people.last) do %>
-            <i class="fas fa-search-location menu-icons">
-              <p></br>Battues</p>
-            </i>
+            <% if params[:controller] == "search_parties" || params[:controller] == "search_party_attendancies" %>
+              <i class="fas fa-search-location menu-icons active">
+                <p></br>Battues</p>
+              </i>
+            <% else %>
+              <i class="fas fa-search-location menu-icons">
+                <p></br>Battues</p>
+              </i>
+            <% end %>
           <% end %>
           <%= link_to todo_path do %>
-            <i class="far fa-calendar-check menu-icons">
-              <p></br>To Do</p>
-            </i>
+            <% if params[:controller] == "users" %>
+              <i class="far fa-calendar-check menu-icons active">
+                <p></br>To Do</p>
+              </i>
+            <% else %>
+              <i class="far fa-calendar-check menu-icons">
+                <p></br>To Do</p>
+              </i>
+            <% end %>
           <% end %>
           <% if current_user.lost_people.any? %>
             <%= link_to lost_person_path(current_user.lost_people.last) do %>
@@ -48,7 +51,7 @@
             <% end%>
           <% end %>
         </div>
-    <% else %>
+    <% elsif current_user.role == "volunteer" %>
       <div class="navbar-volunteer d-flex justify-content-between">
           <a class="active" href="#"><i class="far fa-file-alt menu-icons"></i><p></br>Fil d'Actualité</p></a>
           <a href="#"><i class="far fa-map menu-icons"></i><p></br>Carte</p></a>
