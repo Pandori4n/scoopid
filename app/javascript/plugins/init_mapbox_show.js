@@ -50,7 +50,7 @@ const initMapboxShow = () => {
         'type': 'line',
         'source': 'trace',
         'paint': {
-        'line-color': 'yellow',
+        'line-color': '#0e8b8d',
         'line-opacity': 0.75,
         'line-width': 5
         }
