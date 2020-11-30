@@ -52,7 +52,8 @@ coordinates_four = [
   [2.379219, 48.866089]
 ]
 
-attendancy1 = SearchPartyAttendancy.create!(itinerary: coordinates_three, color: "#777", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer1, search_party: search)
+
+attendancy1 = SearchPartyAttendancy.create!(itinerary: coordinates_three, color: "#777", start_date_time: DateTime.new(2020, 12, 1, 14), end_date_time: DateTime.new(2020, 12, 1, 18), user: volunteer1, search_party: search)
 attendancy2 = SearchPartyAttendancy.create!(itinerary: coordinates_four, color: "#222", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer2, search_party: search)
 
 p "seed done"

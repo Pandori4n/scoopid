@@ -92,3 +92,32 @@
   justify-content: center;
   align-items: center;
 }
+
+.button-end {
+  display: flex;
+   justify-content: center;
+}
+
+.button-white-background {
+   background-color: #108b8d;
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  max-width: fit-content;
+  border: 0.5px solid white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Maven Pro', sans-serif;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

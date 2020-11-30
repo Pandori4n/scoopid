@@ -9,4 +9,7 @@ class UserPolicy < ApplicationPolicy
     true
   end
 
+  def end_search?
+    true
+  end
 end
