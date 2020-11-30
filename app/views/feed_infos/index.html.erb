@@ -1,13 +1,15 @@
-<div class= "correspond_bar">
-  <h1>Fil d'actualité</h1>
-</div>
+<div class="" style="overflow:scroll;">
+  <div class="title-container d-flex align-items-center">
+    <h3> Fil d'actualité </h3>
+  </div>
 
-<div class="container">
   <% @feed_infos.each do |info| %>
-    <h2><%= info.title %></h2>
-    <p class= "text-left"><%= info.description %></p>
+    <div class="container searchparties-card-index">
+      <p class= "text-left"> <%= info.created_at.strftime("%d/%m/%Y %HH%M") %> </p>
+      <h4><%= info.title %></h4>
+      <p class= "text-left"><%= info.description %></p>
+      </div>
   <% end %>
-</div>
 
 <div class="container">
   <div id="fixed-button">
