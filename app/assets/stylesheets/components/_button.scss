@@ -1,6 +1,6 @@
 // General Button Styling
 .button {
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
@@ -8,6 +8,7 @@
   display: block;
   text-align: center;
   margin-top: 10px;
+  width:358px;
 }
 
 .button:hover {
@@ -21,12 +22,11 @@
   padding-bottom: 9px;
   padding-left: 40px;
   padding-right: 40px;
-  border-radius: 50px;
+  border-radius: 17px;
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   max-width: fit-content;
-  border: 0.5px solid white;
 }
 
 .button-secondary {
@@ -36,12 +36,11 @@
   padding-bottom: 9px;
   padding-left: 40px;
   padding-right: 40px;
-  border-radius: 50px;
-  border-radius: 50px;
+  border-radius: 17px;
   font-size: 17px;
   font-weight: bold;
   text-decoration: none;
-    max-width: fit-content;
+  max-width: fit-content;
 }
 
 .button-primary-alt {
@@ -51,10 +50,8 @@
   padding-bottom: 9px;
   padding-left: 40px;
   padding-right: 40px;
-  border-radius: 50px;
-  border-radius: 50px;
+  border-radius: 15px;
   font-size: 20px;
-  border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
   border: medium solid #108b8d;
@@ -68,10 +65,8 @@
   padding-bottom: 9px;
   padding-left: 40px;
   padding-right: 40px;
-  border-radius: 50px;
-  border-radius: 50px;
+  border-radius: 15px;
   font-size: 17px;
-  border-radius: 50px;
   font-weight: bold;
   text-decoration: none;
   border: medium solid#ec9a29;
@@ -85,10 +80,39 @@
   font-size: 3em;
   background-color: white;
   color: #ec9a29;
-  border-radius: 50px;
+  border-radius: 17px;
   height: 50px;
   width: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button-end {
+  display: flex;
+  justify-content: center;
+}
+
+.button-white-background {
+  background-color: #108b8d;
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  max-width: fit-content;
+  border: 0.5px solid white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Maven Pro', sans-serif;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

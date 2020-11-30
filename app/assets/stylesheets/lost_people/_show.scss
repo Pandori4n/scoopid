@@ -17,3 +17,24 @@
 #missing-person-info p{
   text-align: justify;
 }
+
+.todo-content{
+  padding:15px;
+  overflow: scroll;
+  max-height: 600px !important;
+}
+
+.swiper-slide{
+  overflow: scroll;
+  max-height: 500px !important;
+}
+
+.todo-content h6{
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.lost-show {
+  overflow: scroll;
+  height: 800px;
+}
