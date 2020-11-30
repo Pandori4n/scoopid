@@ -1,36 +1,36 @@
 <% content_for :meta_title, "#{@lost_person.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @lost_person.description %>
 <% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
-
-<div class="container justify-content-around text-center lost-show"  style="overflow:auto;">
-  <% if user_signed_in? %>
-  <p>
-  <%= link_to('', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt pull-left mt-3") %>
-  <% end %>
-  <div>
-    <h1>MISSING</h1>
-    <h2><%= @lost_person.first_name %> <%= @lost_person.last_name %></h2>
-    <div class="missing-person-pic" style="height: 300px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 300, width: 300, crop: :scale; %>');">
-      <span class="edit-button">
+<div class="lost-show">
+  <div class="missing-person-pic" style="height: 350px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 900, width: 900, crop: :fill; %>');">
+    <div class="edit-person-info">
       <% if policy(@lost_person).edit? %>
-        <%= link_to "Modifier", edit_lost_person_path(@lost_person), class: "button-white-background", id:"edit-poster"%>
+      <%= link_to edit_lost_person_path(@lost_person) do %>
+      <i class="far fa-edit edit-button"></i>
       <% end %>
-    </span>
+    <% end %>
     </div>
-    <div id="missing-person-info">
-      <p><strong>Age:</strong> <%= @lost_person.age %>years</p>
-      <p><strong>Last Known Location:</strong> <%= @lost_person.last_known_location %></p>
-      <p><strong>Last Known Clothes:</strong> <%= @lost_person.last_known_clothes %></p>
-      <p><strong>Height:</strong> <%= @lost_person.height %>cm</p>
-      <p><strong>Body Type:</strong> <%= @lost_person.body_type %></p>
-      <p><strong>Description:</strong> <%= @lost_person.description %></p>
-      <p><strong>Disparition Date and Time:</strong> </br><%= @lost_person.disparition_date_time.strftime("%d/%m/%Y %I:%M %p") %></p>
-      </br>
-      <p style="text-align:center!important"><strong>Partager sur les Réseaux</strong><%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://scoopid.herokuapp.com/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name}") %></p>
-    </div>
+     <% if user_signed_in? %>
+      <%= link_to('', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt pull-left mt-3") %>
+      <% end %>
   </div>
-  <div class="button-end">
-  <%= link_to "Mettre fin aux Recherches", end_search_path, class: "button button-primary", data: {confirm: "Êtes-vous sûr de vouloir supprimer cette Recherche?"}%>
+  <div class="container justify-content-around">
+    <div class="missing-person-info">
+      <h2><strong><%= @lost_person.first_name %> <%= @lost_person.last_name %></strong>, <%= @lost_person.age %> ans</h2>
+      <div class="disparition">
+        <span><strong>Disparition:</strong> le <%= @lost_person.disparition_date_time.strftime("%d %h %Y à %H:%M") %></span>
+      </div>
+      <p>Vêtements: <strong><%= @lost_person.last_known_clothes %></strong></p>
+      <p>Taille: <strong><%= @lost_person.height %> cm</strong></p>
+      <p>Morphologie: <strong><%= @lost_person.body_type %></strong></p>
+      <p>Description: <strong><%= @lost_person.description %></strong></p>
+      </br>
+      <p style="text-align:center!important"><strong>Partager sur les Réseaux</strong></p>
+        <div> <%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://scoopid.herokuapp.com/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name} #{@lost_person.last_name}") %>
+          </div>
+    </div>
+    <div class="button-end">
+      <%= link_to "Mettre fin aux Recherches", end_search_path, class: "button button-primary", data: {confirm: "Êtes-vous sûr de vouloir supprimer cette Recherche?"}%>
+    </div>
   </div>
 </div>
-
