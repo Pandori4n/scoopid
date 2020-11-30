@@ -31,12 +31,14 @@ import { initMapboxShow } from '../plugins/init_mapbox_show';
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel';
+import { flatpicker } from '../plugins/flatpickr';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initMapboxShow();
-  initChatroomCable()
-  addClass()
+  initChatroomCable();
+  addClass();
+  flatpicker();
 });

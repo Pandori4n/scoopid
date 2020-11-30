@@ -9,8 +9,9 @@
         <h4> Battue:</h4>
         <h6><%= search_party.meeting_location %></h6>
         </br>
-        <p><%= search_party.start_date_time.strftime("%d/%m/%Y %I:%M %p") %> </p>
-        <p><%= search_party.end_date_time.strftime("%d/%m/%Y %I:%M %p") %></p>
+        <p><%= search_party.date.strftime("%d/%m/%Y %I:%M %p") %> </p>
+        <p><%= search_party.start_time.hour %> </p>
+        <p><%= search_party.end_time.hour %></p>
         </br>
         <div class="text-center mb-3">
         <%= link_to 'Voir les parcours', search_party_search_party_attendancies_path(search_party), class:"button-secondary-alt" %>

@@ -8,6 +8,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import 'mapbox-gl/dist/mapbox-gl';
+@import "flatpickr/dist/flatpickr";
 
 // Your CSS partials
 @import "components/index";
@@ -15,8 +16,7 @@
 @import "lost_people/index";
 @import "devise/index";
 @import "search_parties/index";
-@import "chatroom/show";
-@import "chatroom/index";
+@import "chatrooms/index";
 
 // Share Social media button
 @import "social-share-button";
