@@ -1,2 +1,29 @@
-
-
+<%# <% if policy(SearchParty).create? %>
+  <%#= link_to "New Search Party", new_searchparty_path %>
+<%# end %>
+<div class="container-fluid" id="searchparty-new">
+  <div class="container form text-center col-md-6">
+    <h1 class="form-title">Nouvelle Battue</h1>
+    <p></p>
+    <%= simple_form_for [@search_party] do |f| %>
+      <%= f.input :date, label:"Date de la battue", as: :string, required: false, input_html: {class: "datepicker"} %>
+      <div class="form-row">
+        <div class="col">
+          <%= f.input :start_time, label:"Horaire de début",  as: :string, required: false, input_html: {class: "hourpicker"} %>
+        </div>
+        <div class="col">
+          <%= f.input :end_time, label:"Horaire de fin",  as: :string, required: false, input_html: {class: "hourpicker"} %>
+        </div>
+      </div>
+      <%= f.input :meeting_location, label:"Lieu de Rendez-vous", placeholder: "Entrez ici l'adresse de rendez-vous"%>
+      <%= f.input :description, label:"Détails" , placeholder: 'Avez-vous des informations supplémentaires à communiquer?' %>
+      <%#= f.input :radius, as: :range, label:"Périmètre de recherche", input_html: { class: "custom-range", min: "0", max: "5", step: "0.5" }, collection: [[1, "1km"], [2, "2km"]] %>
+      <%= f.input :radius, label:"Périmètre de recherche" %>
+      <div>
+      </div>
+      <div class="form-actions d-flex align-items-center flex-column" id="searchparty-create">
+        <%= f.button :submit, "Créer une battue", class: "button button-primary", method: "patch" %>
+      </div>
+    <% end %>
+  </div>
+</div>
