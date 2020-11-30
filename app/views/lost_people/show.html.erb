@@ -3,6 +3,10 @@
 <% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
 
 <div class="container justify-content-around text-center lost-show"  style="overflow:auto;">
+  <% if user_signed_in? %>
+  <p>
+  <%= link_to('', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt pull-left mt-3") %>
+  <% end %>
   <div>
     <h1>MISSING</h1>
     <h2><%= @lost_person.first_name %> <%= @lost_person.last_name %></h2>
