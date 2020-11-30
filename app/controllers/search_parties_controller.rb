@@ -38,6 +38,6 @@ class SearchPartiesController < ApplicationController
   private
 
   def search_party_params
-    params.require(:search_party).permit(:start_date_time, :end_date_time, :meeting_location, :description, :radius)
+    params.require(:search_party).permit(:date, :start_time, :end_time, :meeting_location, :description, :radius)
   end
 end

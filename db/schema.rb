@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_26_153721) do
+ActiveRecord::Schema.define(version: 2020_11_30_103727) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,8 +87,6 @@ ActiveRecord::Schema.define(version: 2020_11_26_153721) do
   end
 
   create_table "search_parties", force: :cascade do |t|
-    t.datetime "start_date_time"
-    t.datetime "end_date_time"
     t.string "meeting_location"
     t.text "description"
     t.integer "radius"
@@ -98,6 +96,9 @@ ActiveRecord::Schema.define(version: 2020_11_26_153721) do
     t.string "authentication_token"
     t.float "latitude"
     t.float "longitude"
+    t.date "date"
+    t.time "start_time"
+    t.time "end_time"
     t.index ["lost_person_id"], name: "index_search_parties_on_lost_person_id"
   end
 

@@ -28,7 +28,7 @@ feed_info1 = FeedInfo.create!(title: "Meeting", description: "Meeting saturday a
 feed_info2 = FeedInfo.create!(title: "Search Party", description: "Thank you for being volunteers", user: host, lost_person: lost_one)
 feed_info3 = FeedInfo.create!(title: "News", description: "We receive a call from the police", user: host, lost_person: lost_one)
 
-search = SearchParty.create!(start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), meeting_location: "16, villa Gaudelet, Paris", description: "Big search for liberty", radius: 10, lost_person: lost_one, authentication_token: "ABCDE")
+search = SearchParty.create!(date: DateTime.new(2020,12,1), start_time: DateTime.new(2020,12,1,14), end_time: DateTime.new(2020,12,1,18), meeting_location: "16, villa Gaudelet, Paris", description: "Big search for liberty", radius: 10, lost_person: lost_one, authentication_token: "ABCDE")
 
 coordinates_three = [
   [2.380073, 48.864990],
