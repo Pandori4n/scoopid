@@ -23,14 +23,15 @@ const initMapboxShow = () => {
     });
     fitMapToMarkers(map, markers);
      map.on('load', function () {
+        var coordinates = data.features[0].geometry.coordinates;
         map.addSource('trace', {
-          type: 'geojson',
-          'data': {
-            'type': 'Feature',
-            'properties': {},
-            'geometry': {
-              'type': 'LineString',
-              'coordinates': itinerary
+          type: "FeatureCollection",
+          features: [
+            {
+            type: "Feature",
+            geometry: {
+              type: "LineString",
+              coordinates: itinerary
             }
           }
         });
@@ -45,7 +46,7 @@ const initMapboxShow = () => {
           }
         });
       });
-  }
+  };
 };
 
 export { initMapboxShow };
