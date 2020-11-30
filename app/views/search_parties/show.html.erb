@@ -1,13 +1,23 @@
-<div class="container form text-center col-md-6 mt-3">
-  <h1>search party details</h1>
-
-  <p>Date : <%= @search_party.date %></p>
-  <p>Start time : <%= @search_party.start_time.hour %></p>
-  <p>Start time : <%= @search_party.end_time.hour %></p>
-  <p>Meeting location : <%= @search_party.meeting_location %></p>
-  <p>Description : <%= @search_party.description %></p>
-
-  <% if policy(@search_party).edit? %>
-    <%= link_to "Update", edit_search_party_path(@search_party) %>
-  <% end %>
+<div class="container-fluid" id="searchparty-new">
+  <div class="container form text-center col-md-6">
+    <h1 class="form-title">Détails de votre battue</h1>
+    <div class="mt-3">
+      <div class="container searchparties-card-show">
+        <h4><p>Date : <%= @search_party.date.strftime("%d/%m/%Y") %></p></h4>
+        <p>Heure de RDV : <%= @search_party.start_time.hour %> h <%= @search_party.start_time.min %></p>
+        <p>Heure estimée de fin : <%= @search_party.end_time.hour %> h <%= @search_party.end_time.min %></p>
+        <p>Point de rencontre : <%= @search_party.meeting_location %></p>
+        <div class="card-show">
+          <p>Description : <%= @search_party.description %></p>
+        </div>
+      </div>
+        <% if policy(@search_party).edit? %>
+          <%= link_to "Modifier", edit_search_party_path(@search_party) %>
+        <% end %>
+        <br>
+        <% if policy(@search_party).edit? %>
+          <%= link_to "Vos battues", lost_person_search_parties_path(@search_party) %>
+        <% end %>
+    </div>
+  </div>
 </div>
