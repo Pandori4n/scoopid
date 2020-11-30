@@ -48,7 +48,7 @@
             <% end%>
           <% end %>
         </div>
-    <% else %>
+    <% elsif current_user.role == "volunteer"  %>
       <div class="navbar-volunteer d-flex justify-content-between">
           <a class="active" href="#"><i class="far fa-file-alt menu-icons"></i><p></br>Fil d'Actualité</p></a>
           <a href="#"><i class="far fa-map menu-icons"></i><p></br>Carte</p></a>

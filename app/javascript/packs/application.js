@@ -32,11 +32,16 @@ import { initMapboxShow } from '../plugins/init_mapbox_show';
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel';
 
+// Swiper JS
+import { mySwiper } from '../plugins/swiper';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   initMapboxShow();
-  initChatroomCable()
-  addClass()
+  initChatroomCable();
+  addClass();
+  mySwiper();
 });
+
