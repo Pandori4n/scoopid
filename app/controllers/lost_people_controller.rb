@@ -38,6 +38,13 @@ class LostPeopleController < ApplicationController
     redirect_to lost_person_path(@lost_person)
   end
 
+  def destroy
+    @lost_person = LostPerson.find(params[:id])
+    authorize @lost_person
+    @lost_person.destroy
+    redirect_to profile_path
+  end
+
   private
 
   def lost_person_params
