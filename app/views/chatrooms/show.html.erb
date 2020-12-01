@@ -23,7 +23,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <%= simple_form_for [ @chatroom.host.lost_people.last, @feed_info ] do |f| %> 
+              <%= simple_form_for [ @chatroom.host.lost_people.last, @feed_info ] do |f| %>
                 <%= f.input :title %>
                 <%= f.input :description,  input_html: {value: message.content} %>
                 <%= f.submit "Share", class: "button button-secondary" %>
@@ -36,7 +36,7 @@
   <% end %>
 
   <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
-  <%= f.input :content, label: false, placeholder: "Write your message here#{@chatroom.name}" %>
+  <%= f.input :content, label: false, placeholder: "Ecrire à #{@chatroom.volunteer.first_name}" %>
 <% end %>
 </div>
 
