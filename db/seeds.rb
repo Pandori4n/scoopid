@@ -24,7 +24,10 @@ lost_one.save!
 chatroom1 = Chatroom.create!(name: "Battue samedi", volunteer: volunteer1, host: host, lost_person: lost_one)
 chatroom2 = Chatroom.create!(name: "RDV", volunteer: volunteer2, host: host, lost_person: lost_one)
 
-message1 = Message.create!(content: "Etes vous disponibles pour une réunion demain à 10h?", chatroom: chatroom2, user: volunteer2)
+message1 = Message.create!(content: "Oui ! J'espère qu'on va le retrouver !!! ", chatroom: chatroom2, user: volunteer2)
+message2 = Message.create!(content: "Etes vous disponibles pour une réunion demain à 10h?", chatroom: chatroom2, user: host)
+message1 = Message.create!(content: "La boulangère de la rue l'aurai vu ce matin.", chatroom: chatroom2, user: volunteer2)
+message2 = Message.create!(content: "Ok, tourne à droite, on vient de me confirmer qu'il serait dans cette rue.", chatroom: chatroom2, user: host)
 
 feed_info1 = FeedInfo.create!(title: "Infos", description: "Nous avons reçu un appel de la police, tout est deployé pour nous aider", user: host, lost_person: lost_one)
 feed_info2 = FeedInfo.create!(title: "RDV", description: "RDV demain matin, 12 rue oberkampf, Paris, code 1971, 2eme etage", user: host, lost_person: lost_one)
