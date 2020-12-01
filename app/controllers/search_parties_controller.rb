@@ -2,7 +2,8 @@ class SearchPartiesController < ApplicationController
   before_action :search_party_params, only: [:update, :create]
 
   def index
-    @searchparties = policy_scope(SearchParty)
+    @lost_person = current_user.lost_people.last
+    @searchparties = policy_scope(SearchParty).where(lost_person: @lost_person)
   end
 
   def show

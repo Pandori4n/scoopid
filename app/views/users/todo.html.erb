@@ -1,46 +1,40 @@
-<div class="card-todo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/mims/image/upload/v1606480054/boussole_upcghf.jpg)"><h1>
-  GUIDE PRATIQUE</h1>
+<div class="title-container d-flex align-items-center">
+  <h1><h3>Guide Pratique</h3></h1>
 </div>
-<div class="todo-content">
-  <h6>Les démarches à entreprendre en cas de disparition</h6>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide slide-todo-container">
-        <ul>
-          <li>Commissariat ou Gendarmerie</li>
-        </ul>
-        <p>Si vous considérez que sa disparition est inquiétante, vous pouvez demander le déclenchement d'une enquête. Vous devez vous adressez à la police ou à la gendarmerie. </br>Vous devez être un proche de la personne disparue (époux, concubin, frère, sœur, parent, enfant...) ou son employeur. </br>Il n'y a pas de critères précis pour définir une disparition inquiétante : départ sans affaires personnelles, courrier suicidaire, radicalisation religieuse... </br>Une enquête pour disparition inquiétante peut aussi être ouverte si la personne disparue est vulnérable du fait de son âge ou d'une maladie. Dans tous les cas, une fois retrouvée, une personne majeure est libre de ne plus contacter ses proches.</p>
+<div class="container">
+  <div id="accordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Commissariat ou Gendarmerie
+          </button>
+        </h5>
       </div>
-      <div class="swiper-slide slide-todo-container">
-        <ul>
-          <li>Tribunal judiciaire ou de proximité</li>
-        </ul>
-        <p>Dans les cas les plus graves, une enquête judiciaire peut être ouverte, notamment en cas de soupçon d'infraction (séquestration, enlèvement, embrigadement sectaire...). L'enquête sera sous la responsabilité d'un magistrat (procureur ou juge d'instruction).La famille pourra déposer plainte et se porter partie civile. L'enquête judiciaire peut être ouverte suite à une enquête administrative si des éléments découverts font penser qu'une infraction a été commise.</p>
+      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <p>Si vous considérez que sa disparition est inquiétante, vous pouvez demander le déclenchement d'une enquête. Vous devez vous adressez à la police ou à la gendarmerie. </br>Vous devez être un proche de la personne disparue (époux, concubin, frère, sœur, parent, enfant...) ou son employeur. </br>Il n'y a pas de critères précis pour définir une disparition inquiétante : départ sans affaires personnelles, courrier suicidaire, radicalisation religieuse... </br>Une enquête pour disparition inquiétante peut aussi être ouverte si la personne disparue est vulnérable du fait de son âge ou d'une maladie. Dans tous les cas, une fois retrouvée, une personne majeure est libre de ne plus contacter ses proches.</p>
+        </div>
       </div>
     </div>
-  <div class="swiper-pagination"></div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Tribunal judiciaire ou de proximité
+          </button>
+        </h5>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+        <div class="card-body">
+          <p>Dans les cas les plus graves, une enquête judiciaire peut être ouverte, notamment en cas de soupçon d'infraction (séquestration, enlèvement, embrigadement sectaire...). L'enquête sera sous la responsabilité d'un magistrat (procureur ou juge d'instruction).La famille pourra déposer plainte et se porter partie civile. L'enquête judiciaire peut être ouverte suite à une enquête administrative si des éléments découverts font penser qu'une infraction a été commise.</p>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="button-todo">
   <% if policy(SearchParty).create? %>
     <%= link_to "Créer Une Battue", new_search_party_path, class: "button button-primary" %>
   <% end %>
   </div>
-</div>
-  <script>
-  var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  })
-  </script>
 

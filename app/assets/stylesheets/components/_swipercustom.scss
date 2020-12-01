@@ -16,11 +16,17 @@
 }
 
 .swiper-container{
-  max-height: 430px;
+  // max-height: 430px;
+  max-width: 100%;
+}
+
+.swiper-slide{
+  max-width: 300px;
+  max-height: fit-content;
 }
 
 .swiper-slide p{
-  max-height: 280px;
+  // max-height: 280px;
 }
 
 .swiper-wrapper{

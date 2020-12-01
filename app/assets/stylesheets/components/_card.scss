@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 40px;
+  font-size: 35px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
   text-shadow: 10px 10px 40px rgba(0,0,0,5);
@@ -20,13 +20,13 @@
     text-decoration: none;
     font-family: 'Barlow', sans-serif;
     display: block;
-    font-size: 12px;
+    font-size: 10px;
     margin-right: 30px;
     text-align: center;
 }
 
 .card-todo-infos h1 {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bold;
   margin: 0;
   margin-bottom: 5px;
@@ -34,7 +34,7 @@
 }
 
 .card-todo-infos li {
-  font-size: 15px;
+  font-size: 13px;
   margin: 0;
   margin-top: 5px;
 }

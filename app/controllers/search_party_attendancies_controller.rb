@@ -7,7 +7,8 @@ class SearchPartyAttendanciesController < ApplicationController
     @search_party_attendancies = policy_scope(@search_party.search_party_attendancies)
     @markers = {
       lat: @search_party.latitude,
-      lng: @search_party.longitude
+      lng: @search_party.longitude,
+      image_url: helpers.asset_url('Icone_map_pimp.png')
     }
     @colors = @search_party_attendancies.where.not(itinerary: nil).map do |search_party_attendancy|
       search_party_attendancy.color
@@ -25,7 +26,8 @@ class SearchPartyAttendanciesController < ApplicationController
     @search_party = @search_party_attendancy.search_party
     @markers = {
       lat: @search_party.latitude,
-      lng: @search_party.longitude
+      lng: @search_party.longitude,
+      image_url: helpers.asset_url('Icone_map_pimp.png')
     }
     @color = @search_party_attendancy.color
     @itinerary = @search_party_attendancy.itinerary
