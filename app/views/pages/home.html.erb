@@ -18,16 +18,16 @@
   <h1>Hello <%= current_user.first_name %></h1>
 <% elsif user_signed_in? && current_user.role == nil %>
 <div class="container profile">
-  <h2>Vous êtes un</h2>
-  <div class="button-host">
-    <%= link_to "Organisateur", user_path(current_user, role: "host"), method: :patch, class: "button button-primary" %>
+  <img class="logo" src="https://res.cloudinary.com/mims/image/upload/v1606827948/logo_transparent_ruh8uj.png">
+  <h2>Vous recherchez <br> quelqu'un ?</h2>
+  <p>Organisez rapidement une battue et trouvez des volontaires pour vous aider à retrouver ceux qui vous sont chers</p>
+  <div class="host button button-primary">
+    <%= link_to "Je suis organisateur", user_path(current_user, role: "host"), method: :patch%>
   </div>
-  <h3>Vous êtes un</h3>
-  <div class="button-vol">
-    <%= link_to "Volontaire", user_path(current_user, role: "volunteer"), method: :patch, class: "button button-primary" %>
+  <div class="volunteer button button-primary">
+    <%= link_to "Je suis volontaire", user_path(current_user, role: "volunteer"), method: :patch%>
   </div>
 </div>
-  </div>
 <% else %>
   <div>
     <div class="child header-container d-flex align-items-center flex-column">
