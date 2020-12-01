@@ -84,7 +84,7 @@
 }
 
 .disparition {
-  background-color: #e5e5e5;
+  background-color: #f2f3f2;
   padding-top: 7px;
   padding-bottom: 7px;
   padding-left: 10px;
@@ -138,6 +138,9 @@
   text-align: center;
   margin: 0 auto;
   font-weight: 400;
+  border: none;
+  background-color: #f2f3f2;
+  box-shadow: none!important;
 }
 
 strong {
@@ -145,7 +148,7 @@ strong {
 }
 
 .button-end a {
-padding: 7px 33px;
+padding: 7px 31px;
 background-color: #108b8d;
 color: white;
 font-weight: 600;
@@ -153,6 +156,8 @@ font-weight: 600;
 
 .button-end {
 margin-bottom: 30px;
+box-shadow: none!important;
+border: none;
 }
 
 :focus {
