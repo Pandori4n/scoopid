@@ -9,7 +9,7 @@
     <%= f.input :height %>
     <%= f.input :body_type %>
     <%= f.input :description %>
-    <%= f.input :disparition_date_time %>
+    <%= f.input :disparition_date_time, html5: true %>
     <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
     <%= f.button :submit, class: "btn-primary" %>
   <% end %>
