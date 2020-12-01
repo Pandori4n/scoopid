@@ -43,5 +43,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   addClass();
   flatpicker();
-  mySwiper();
 });
+
+mySwiper();

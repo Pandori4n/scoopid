@@ -24,9 +24,6 @@
   max-height: fit-content;
   width: 75%!important;
   cursor: grab;
-}
-
-.swiper-slide-active{
   margin-left:50px!important;
   margin-right: 50px!important;
 }
@@ -37,4 +34,13 @@
 
 .swiper-wrapper{
   margin-bottom: 20px;
+}
+
+.swiper-pagination-bullet {
+  background-color: white!important;
+  opacity: 1!important;
+}
+
+.swiper-pagination-bullet-active{
+  background-color: #108b8d !important;
 }

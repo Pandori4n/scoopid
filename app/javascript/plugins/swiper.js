@@ -5,23 +5,16 @@ import 'swiper/swiper-bundle.css';
 const mySwiper = () => {
 //initialize swiper when document ready
   if (document.querySelector('.swiper-container')) {
-    new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      slidesPerView: 1,
-      loop: false,
-      centeredSlidesBounds: true,
-
-      // If we need pagination
+    new Swiper('.swiper-container', {
       pagination: {
         el: '.swiper-pagination',
+        type: 'progressbar',
       },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-    })
+    });
   }
 }
 export { mySwiper };
