@@ -1,3 +1,69 @@
 .users-profile .navbar {
   display: none;
  }
+
+.profile {
+position: absolute;
+bottom: 0;
+}
+
+.profile p {
+  color: white!important;
+  text-shadow: black 1px 0 10px;
+  font-size: 1.2rem;
+}
+
+.profile h2 {
+  text-align: center;
+  text-shadow: black 1px 0 10px;
+  margin-bottom: 40px;
+  font-weight: 900!important;
+  font-size: 3rem;
+}
+
+.host {
+  margin-top: 25px!important;
+  margin-bottom: 25px;
+  height: 60px;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  display: flex;
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.host a {
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.volunteer {
+  margin-top: 15px;
+  margin-bottom: 50px;
+  height: 60px;
+  background-color: white;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.volunteer a {
+  color: #108b8d;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.logo {
+  height: 200px;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  margin: 0 auto;
+}
