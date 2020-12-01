@@ -16,8 +16,16 @@ const initMapboxShow = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     const itinerary = JSON.parse(mapElement.dataset.itinerary);
     const color = JSON.parse(mapElement.dataset.color);
+    console.log(color);
     [markers].forEach((marker) => {
-      new mapboxgl.Marker()
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '30px';
+      element.style.height = '30px';
+      console.log(marker.image_url);
+      new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     });
@@ -50,7 +58,7 @@ const initMapboxShow = () => {
         'type': 'line',
         'source': 'trace',
         'paint': {
-        'line-color': '#0e8b8d',
+        'line-color': `${color}`,
         'line-opacity': 0.75,
         'line-width': 5
         }
