@@ -73,19 +73,19 @@ coordinates_five = [
 coordinates_six = [
   [2.380073, 48.864990],
   [2.379197, 48.866046],
-  [2.382840, 48.866993], 
-  [2.386595, 48.867975], 
-  [2.385277, 48.868780], 
-  [2.382512, 48.867692], 
+  [2.382840, 48.866993],
+  [2.386595, 48.867975],
+  [2.385277, 48.868780],
+  [2.382512, 48.867692],
   [2.378147, 48.870744],
   [2.375471, 48.869950],
-  [2.373937, 48.869500], 
-  [2.377318, 48.865677], 
-] 
+  [2.373937, 48.869500],
+  [2.377318, 48.865677],
+]
 
-attendancy1 = SearchPartyAttendancy.create!(itinerary: coordinates_three, color: "#777", start_date_time: DateTime.new(2020, 12, 1, 14), end_date_time: DateTime.new(2020, 12, 1, 18), user: volunteer1, search_party: search)
-attendancy2 = SearchPartyAttendancy.create!(itinerary: coordinates_four, color: "#222", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer2, search_party: search)
-attendancy3 = SearchPartyAttendancy.create!(itinerary: coordinates_five, color: "#222", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer3, search_party: search)
-attendancy4 = SearchPartyAttendancy.create!(itinerary: coordinates_six, color: "#222", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer4, search_party: search)
+attendancy1 = SearchPartyAttendancy.create!(itinerary: coordinates_three, color: "#E9C46A", start_date_time: DateTime.new(2020, 12, 1, 14), end_date_time: DateTime.new(2020, 12, 1, 18), user: volunteer1, search_party: search)
+attendancy2 = SearchPartyAttendancy.create!(itinerary: coordinates_four, color: "#E76F51", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer2, search_party: search)
+attendancy3 = SearchPartyAttendancy.create!(itinerary: coordinates_five, color: "#9A031E", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer3, search_party: search)
+attendancy4 = SearchPartyAttendancy.create!(itinerary: coordinates_six, color: "#5F0F40", start_date_time: DateTime.new(2020,12,1,14), end_date_time: DateTime.new(2020,12,1,18), user: volunteer4, search_party: search)
 
 p "seed done"
