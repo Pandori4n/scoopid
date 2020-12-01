@@ -13,18 +13,30 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position:relative;
 }
 
 .missing-person-info{
   margin-top: 5px;
+  color: black !important;
 }
 .missing-person-info h2{
-  margin-top: 10px;
+  margin-top: 15px;
+  font-size: 1.7rem;
+  font-weight: 300;
 }
 
+.missing-person-info h2 span {
+ font-weight: 600;
+  }
+
+
 .missing-person-info p{
-  text-align: justify;
+  text-align: left;
   margin-top: 5px;
+  color: black !important;
+  line-height: 20px;
+  font-weight: 300;
 }
 
 .todo-content{
@@ -45,7 +57,7 @@
 
 .lost-show {
   overflow: scroll;
-  height: 800px;
+  height: 780px;
 }
 
 .edit-button {
@@ -60,30 +72,42 @@
   align-items: center;
 }
 
+.edit-button img {
+  width: 20px;
+}
+
 .edit-person-info {
   position: absolute;
-  top: 320px;
+  top: 315px;
   right: 0px;
   margin-top: 5px;
 }
 
 .disparition {
-  background-color: #e5e5e5;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
+  background-color: #f2f3f2;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
   border-radius: 50px;
   opacity: 0.6;
   text-decoration: none;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 15px;
   width: 300px;
+  color: black !important;
+
 }
 
-  .far.fa-edit {
-    font-size: 18px;
-  }
+.disparition span {
+  color: black !important;
+  font-size: 14px;
+}
+
+.far.fa-edit {
+    font-size: 20px;
+}
 
 .fas.fa-sign-out-alt {
   color: white;
@@ -110,4 +134,42 @@
     margin-bottom: 15px;
 }
 
+.diffuse {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 400;
+  border: none;
+  background-color: #f2f3f2;
+  box-shadow: none!important;
+}
 
+strong {
+  font-weight: 600!important;
+}
+
+.button-end a {
+padding: 7px 31px;
+background-color: #108b8d;
+color: white;
+font-weight: 600;
+}
+
+.button-end {
+margin-bottom: 30px;
+box-shadow: none!important;
+border: none;
+}
+
+:focus {
+  outline: none!important;
+}
+
+.modal-content {
+    margin-top: 70%;
+    border-radius: 20px;
+    color: #108b8d;
+}
+
+.fas.fa-upload {
+  margin-left: 3px;
+}
