@@ -49,6 +49,22 @@
     </div>
     </div>
   </div>
-    <%= link_to "Créer une Battue", new_search_party_path, class: "button button-primary fixed-bottom", style: "margin:0 auto;", id: "button-new-searchparty-big" %>
+  <div class="button-index-search">
+    <%= link_to "Créer une Battue", new_search_party_path, class: "button button-primary" %>
+  </div>
 </div>
-
+<!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+</script>
