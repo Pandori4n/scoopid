@@ -46,15 +46,6 @@ body.pages-home {
   background-color: #363636;
 }
 
-#searchparty-new {
-  background-image: url('https://images.unsplash.com/photo-1487525219605-eadb39ae229c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1582&q=80');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  color: white;
-}
-
 .search_parties-index {
   background-image: url('https://res.cloudinary.com/mims/image/upload/v1606835054/Rectangle_74_pj4ixt.png');
   background-position: top;
@@ -103,4 +94,14 @@ body.pages-home {
   height: 100vh;
   top: 0;
   background-color: #363636;
+}
+
+.search_parties-new{
+    background-image: url('https://res.cloudinary.com/mims/image/upload/v1606835054/Rectangle_74_pj4ixt.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    // background-size: cover;
+    height: 100vh;
+    top: 0;
+    background-color: #363636;
 }
