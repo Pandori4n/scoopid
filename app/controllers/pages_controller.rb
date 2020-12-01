@@ -4,6 +4,9 @@ class PagesController < ApplicationController
   def home
   end
 
+  def end_search_message
+  end
+
   def join_search
     if params[:authentication_token].present?
       search_party = SearchParty.find_by(authentication_token: params[:authentication_token])
