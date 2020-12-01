@@ -22,18 +22,31 @@
               <p>Périmètre de la recherche : <%= search_party.radius %>km</p>
               <% if search_party.description != "" %>
                 <hr>
-                <p>Informations supplémentaires : <br>
-                <%= search_party.description %> </p>
+                <div class="textleftcard">
+                  <p>Point de rencontre :<%= search_party.meeting_location %></p>
+                  <br>
+                  <p>Date :<%= search_party.date.strftime("%d/%m/%Y") %> </p>
+                  <p>Heure de RDV :<%= search_party.start_time.hour %>H<%= search_party.start_time.strftime("%H") %> </p>
+                  <p>Heure estimée de fin : <%= search_party.end_time.hour %>H<%= search_party.start_time.strftime("%H") %></p>
+                  <br>
+                  <p>Périmètre de la recherche : <%= search_party.radius %>km</p>
+                  <% if search_party.description != "" %>
+                    <hr>
+                    <p>Informations supplémentaires : <br>
+                    <%= search_party.description %> </p>
+                  <% end %>
+                  <br>
+                  <div class="text-center d-flex align-items-end justify-content-center">
+                    <%= link_to "Voir les parcours", search_party_search_party_attendancies_path(search_party), class: "button-primary-alt" %>
+                  </div>
+                </div>
               <% end %>
-              <br>
-              <div class="text-center d-flex align-items-end justify-content-center">
-                <%= link_to "Voir les parcours", search_party_search_party_attendancies_path(search_party), class: "button-primary-alt" %>
-              </div>
             </div>
           </div>
         <% end %>
       </div>
-      <div class="swiper-pagination"></div>
+    <div class="swiper-pagination">
+    </div>
     </div>
   </div>
   <div class="button-index-search">
