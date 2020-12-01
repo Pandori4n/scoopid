@@ -16,11 +16,23 @@
 }
 
 .swiper-container{
-  max-height: 430px;
+  // max-height: 430px;
+  max-width: 100%;
+}
+
+.swiper-slide{
+  max-height: fit-content;
+  width: 75%!important;
+  cursor: grab;
+}
+
+.swiper-slide-active{
+  margin-left:50px!important;
+  margin-right: 50px!important;
 }
 
 .swiper-slide p{
-  max-height: 280px;
+  // max-height: 280px;
 }
 
 .swiper-wrapper{

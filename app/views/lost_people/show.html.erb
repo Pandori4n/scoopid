@@ -6,7 +6,9 @@
     <div class="edit-person-info">
       <% if policy(@lost_person).edit? %>
       <%= link_to edit_lost_person_path(@lost_person) do %>
-      <i class="far fa-edit edit-button"></i>
+      <div class="edit-button">
+      <img src="https://res.cloudinary.com/mims/image/upload/v1606817873/pen_cz2wm8.png">
+      </div>
       <% end %>
     <% end %>
     </div>
@@ -16,21 +18,45 @@
   </div>
   <div class="container justify-content-around">
     <div class="missing-person-info">
-      <h2><strong><%= @lost_person.first_name %> <%= @lost_person.last_name %></strong>, <%= @lost_person.age %> ans</h2>
+      <h2><span><%= @lost_person.first_name %> <%= @lost_person.last_name %></span>, <%= @lost_person.age %> ans</h2>
       <div class="disparition">
-        <span><strong>Disparition:</strong> le <%= @lost_person.disparition_date_time.strftime("%d %h %Y à %H:%M") %></span>
+        <span>
+          <strong>Disparition:</strong> le <%= @lost_person.disparition_date_time.strftime("%d %h %Y à %H:%M") %>
+        </span>
       </div>
-      <p>Vêtements: <strong><%= @lost_person.last_known_clothes %></strong></p>
-      <p>Taille: <strong><%= @lost_person.height %> cm</strong></p>
-      <p>Morphologie: <strong><%= @lost_person.body_type %></strong></p>
-      <p>Description: <strong><%= @lost_person.description %></strong></p>
+      <p>Vêtements:</p>
+       <p><strong><%= @lost_person.last_known_clothes %></strong></p>
+      <p>Taille:</p>
+      <p><strong><%= @lost_person.height %> cm</strong></p>
+      <p>Morphologie:</p>
+       <p><strong><%= @lost_person.body_type %></strong></p>
+      <p>Description:</p>
+       <p><strong><%= @lost_person.description %></strong></p>
       </br>
-      <p style="text-align:center!important"><strong>Partager sur les Réseaux</strong></p>
-        <div> <%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://scoopid.herokuapp.com/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name} #{@lost_person.last_name}") %>
-          </div>
+
+    <!-- Button trigger modal -->
+<button type="button" class="diffuse button button-primary-alt"  data-toggle="modal" data-target="#exampleModal">
+  Diffuser l'information <i class="fas fa-upload"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Partager sur les réseaux sociaux</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://scoopid.herokuapp.com/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name} #{@lost_person.last_name}") %>
+      </div>
     </div>
+  </div>
+</div>
     <div class="button-end">
-      <%= link_to "Mettre fin aux Recherches", end_search_path, class: "button button-primary", data: {confirm: "Êtes-vous sûr de vouloir supprimer cette Recherche?"}%>
+      <%= link_to "Mettre fin aux recherches", end_search_path, class: "button button-primary-alt", data: {confirm: "Êtes-vous sûr de vouloir supprimer cette Recherche?"}%>
     </div>
   </div>
 </div>
