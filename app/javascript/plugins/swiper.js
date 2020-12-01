@@ -1,30 +1,27 @@
 import Swiper from 'swiper';
 // import Swiper styles
 import 'swiper/swiper-bundle.css';
-window.onload = function () {
+
+const mySwiper = () => {
 //initialize swiper when document ready
-  var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
+  if (document.querySelector('.swiper-container')) {
+    new Swiper ('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      slidesPerView: 1,
+      loop: false,
+      centeredSlidesBounds: true,
 
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      bulletElement: '.slide-todo-container',
-    },
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  })
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    })
+  }
 }
 export { mySwiper };
