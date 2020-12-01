@@ -48,7 +48,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://scoopid.herokuapp.com/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name} #{@lost_person.last_name}") %>
+        <%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://www.huchi.io/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name} #{@lost_person.last_name}") %>
       </div>
     </div>
   </div>

@@ -61,3 +61,47 @@
 .textleftcard p{
  text-align: start;
 }
+
+.textleftcard p {
+  text-align: start;
+  font-size: 16px !important;
+}
+
+#date-time-info-card {
+  background-color: #F2F2F2;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#date-time-info-card p {
+  text-align: center !important;
+  font-weight: bold;
+}
+
+.searchparties-card-index p {
+  color: black !important;
+}
+
+#button-search-party-card {
+  margin-top: 50px;
+}
+
+.searchparties-card-index-real {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 30px;
+  color: black!important;
+  width: 86%;
+  height: 500px!important;
+}
+
+.searchparties-card-index-real h4{
+  font-weight: bold;
+}
+
+.searchparties-card-index-real p{
+    color: black !important;
+}

@@ -13,7 +13,7 @@
       </div>
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
         <div class="card-body">
-          <p>Si vous considérez que sa disparition est inquiétante, vous pouvez demander le déclenchement d'une enquête. Vous devez vous adressez à la police ou à la gendarmerie. </br>Vous devez être un proche de la personne disparue (époux, concubin, frère, sœur, parent, enfant...) ou son employeur. </br>Il n'y a pas de critères précis pour définir une disparition inquiétante : départ sans affaires personnelles, courrier suicidaire, radicalisation religieuse... </br>Une enquête pour disparition inquiétante peut aussi être ouverte si la personne disparue est vulnérable du fait de son âge ou d'une maladie. Dans tous les cas, une fois retrouvée, une personne majeure est libre de ne plus contacter ses proches.</p>
+          <p>Si vous considérez que sa disparition est inquiétante, vous pouvez demander le déclenchement d'une enquête. Vous devez vous adressez à la police ou à la gendarmerie. </br>Vous devez être un proche de la personne disparue (époux, concubin, frère, sœur, parent, enfant...) ou son employeur. </br>Il n'y a pas de critères précis pour définir une disparition inquiétante : départ sans affaires personnelles, courrier suicidaire, radicalisation religieuse...</p>
         </div>
       </div>
     </div>
@@ -31,11 +31,25 @@
         </div>
       </div>
     </div>
+        <div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+          <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Rassemblement & Réseaux Sociaux
+          </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+          <p>Les réseaux sociaux sont souvent très utile dans ce genre de circonstance. La bienveillance des gens est plus forte qu'on ne peut penser, il faut y faire appel.</br>Créez-vous une page facebook afin de pouvoir communiquer depuis un seul endroit au début, vous pourrez le faire via Huchi par la suite, une fois avoir rassembler suffisament de personnes. Partagez l'avis de recherche qu'Huchi génère automatiquement, demandez à tout le monde de partager l'information.</p>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-  <div class="button-index-search">
-  <% if policy(SearchParty).create? %>
-    <%= link_to "Créer une battue", new_search_party_path, class: "button button-primary" %>
-  <% end %>
-  </div>
+</div>
+<div class="button-index-search">
+<% if policy(SearchParty).create? %>
+  <%= link_to "Créer une battue", new_search_party_path, class: "button button-primary" %>
+<% end %>
+</div>
 
