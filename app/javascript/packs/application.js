@@ -32,6 +32,7 @@ import { initMapboxShow } from '../plugins/init_mapbox_show';
 // import { initSelect2 } from '../components/init_select2';
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { flatpicker } from '../plugins/flatpickr';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { mySwiper } from "../plugins/swiper";
 
@@ -43,6 +44,6 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   addClass();
   flatpicker();
+  initAutocomplete();
+  mySwiper();
 });
-
-mySwiper();
