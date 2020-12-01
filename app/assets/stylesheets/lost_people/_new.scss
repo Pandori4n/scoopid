@@ -2,3 +2,61 @@
   display: none;
 }
 
+#new_lost_person {
+  padding: 15px;
+  margin-bottom: 30px;
+}
+
+#new_lost_person input {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    border: none;
+    border-bottom: 3px solid #108b8d;
+}
+
+#new_lost_person textarea {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 0px;
+    border: 3px solid #108b8d;
+}
+
+
+#new_lost_person label {
+  color: black;
+}
+
+#new_lost_person label.file.required.upload-photo {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 30px;
+}
+
+#new_lost_person input[type="submit"] {
+  background-color: #108b8d;
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 17px;
+  font-size: 17px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+#new_lost_person .card-header {
+ background-color: none;
+ border-bottom: none;
+}
+
+.btn:focus, .btn.focus {
+  box-shadow: none;
+}
+
+.infosObli {
+  text-align: center;
+  margin: 0 auto;
+}
