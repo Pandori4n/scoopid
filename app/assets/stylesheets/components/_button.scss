@@ -8,11 +8,10 @@
   display: block;
   text-align: center;
   margin-top: 10px;
-  width:358px;
 }
 
 .button:hover {
-  text-decoration: none;
+  text-decoration: none!important;
 }
 
 .button-primary {
@@ -23,10 +22,10 @@
   padding-left: 40px;
   padding-right: 40px;
   border-radius: 17px;
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   text-decoration: none;
-  max-width: fit-content;
+  // max-width: fit-content;
 }
 
 .button-secondary {
@@ -55,7 +54,20 @@
   font-weight: bold;
   text-decoration: none;
   border: medium solid #108b8d;
-  max-width: fit-content;
+  // max-width: fit-content;
+}
+
+.button-primary-third {
+  background-color: #f2f3f2;
+  color: #108b8d;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 15px;
+  font-size: 17px;
+  text-decoration: none;
+  // max-width: fit-content;
 }
 
 .button-secondary-alt {
@@ -71,6 +83,10 @@
   text-decoration: none;
   border: medium solid#ec9a29;
     max-width: fit-content;
+}
+.homepage-sign-buttons{
+  padding-top: 15px!important;
+  padding-bottom: 15px!important;
 }
 
 #fixed-button {
@@ -114,4 +130,13 @@
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.full-width-button{
+  width: 100%!important;
+  max-width: 100%!important;
+}
+
+.full-width-button a{
+  margin: 0 auto;
 }
