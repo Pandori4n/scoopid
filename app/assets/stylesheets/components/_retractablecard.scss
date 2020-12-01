@@ -58,11 +58,13 @@
 }
 
 .display-none{
-  height: 0;
+  display: none!important;
 }
-#card-button-display{
-  transition-duration: display 12;
-}
+
 #searchparty-new{
   position: relative;
+}
+
+#card-button-display{
+  margin-bottom: 20px;
 }

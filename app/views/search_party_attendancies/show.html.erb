@@ -10,23 +10,26 @@
       <i class="fas fa-chevron-down" id="arrow-down-retractable"></i>
     </div>
     <div class="card-content d-flex align-items-center justify-content-around">
-      <div class="text-card">
       <%= link_to(search_party_search_party_attendancies_path(@search_party)) do %>
         <i class="fas fa-angle-left slide-arrows"></i>
       <% end %>
+      <div class="text-card">
         <h6>Jean-Pierre</h6>
         <p>En cours</p>
       </div>
+      <%= link_to(search_party_search_party_attendancies_path(@search_party)) do %>
+        <i class="fas fa-angle-right slide-arrows"></i>
+      <% end %>
      <!--  <%#= link_to(search_party_search_party_attendancies_path(@search_party)) do %>
         <a href="", class="fas fa-angle-right slide-arrows">
           <p class="fas fa-angle-right slide-arrows"> </p>
       <#% end %> -->
 
     </div>
-    <div class="card-button d-flex align-items-center flex-column" id="card-button-display">
+    <div class="card-button d-flex justify-content-between align-items-center flex-column" id="card-button-display">
       <%= link_to(lost_person_chatroom_path(@search_party.lost_person, @chatroom)) do %>
         <!-- <i class="fas fa-angle-left slide-arrows"></i> -->
-        <p>Envoyer un message  <i class="fas fa-paper-plane"></i></p>
+          <h6 class="button button-primary-alt retrac-card-button mt-4">Envoyer un message  <i class="fas fa-paper-plane"></i></h6>
       <% end %>
     </div>
   </div>
