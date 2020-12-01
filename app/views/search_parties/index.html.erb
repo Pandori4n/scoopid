@@ -6,7 +6,7 @@
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <% @searchparties.each do |search_party| %>
-          <div class="container searchparties-card-index">
+          <div class="swiper-slide searchparties-card-index">
             <% if search_party.date > Time.now %>
               <h4> Battue à venir :</h4>
               <% else %>
@@ -48,22 +48,7 @@
     <div class="swiper-pagination">
     </div>
     </div>
-      <%= link_to "Créer une Battue", new_search_party_path, class: "button button-primary fixed-bottom", style: "margin:0 auto;", id: "button-new-searchparty-big" %>
+  </div>
+    <%= link_to "Créer une Battue", new_search_party_path, class: "button button-primary fixed-bottom", style: "margin:0 auto;", id: "button-new-searchparty-big" %>
 </div>
-  <script>
-    var mySwiper = new Swiper ('.swiper-container', {
-      // Optional parameters
-      direction: 'horizontal',
-      loop: true,
 
-      // If we need pagination
-      pagination: {
-        el: '.swiper-pagination',
-      },
-
-      // And if we need scrollbar
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-    })
-  </script>

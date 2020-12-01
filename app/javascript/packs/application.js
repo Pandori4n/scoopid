@@ -33,6 +33,8 @@ import { initMapboxShow } from '../plugins/init_mapbox_show';
 import { initChatroomCable } from '../channels/chatroom_channel';
 import { flatpicker } from '../plugins/flatpickr';
 
+import { mySwiper } from "../plugins/swiper";
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -41,4 +43,5 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
   addClass();
   flatpicker();
+  mySwiper();
 });

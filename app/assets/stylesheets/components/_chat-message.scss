@@ -1,0 +1,12 @@
+.message-content {
+  display: flex;
+  align-items: center;
+  padding: 1.5em 0;
+  justify-content: space-between;
+  p {
+    flex-basis: 80%;
+    text-align: left;
+    word-break: break-all;
+  }
+
+}
