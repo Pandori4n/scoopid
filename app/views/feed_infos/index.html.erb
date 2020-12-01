@@ -3,6 +3,7 @@
     <h3> Fil d'actualité </h3>
   </div>
 
+<div class="" style="max-height:650px!important;overflow:scroll;">
   <% @feed_infos.each do |info| %>
     <div class="container searchparties-card-index">
       <p class= "text-left"> <%= info.created_at.strftime("%d/%m/%Y %HH%M") %> </p>
@@ -10,11 +11,11 @@
       <p class= "text-left"><%= info.description %></p>
       </div>
   <% end %>
-
-<div class="container">
-  <div id="fixed-button">
-    <i class="fas fa-plus-circle" data-toggle="modal" data-target="#feedinfoModal"></i>
+</div>
+  <div class="button-index-search">
+      <span class="button button-primary" data-toggle="modal" data-target="#feedinfoModal">Envoyer une informations</span>
   </div>
+<div class="container">
   <div class="modal fade" id="feedinfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -25,7 +26,7 @@
             </button>
         </div>
         <div class="modal-body">
-          <%= simple_form_for [@lost_person, @feedinfo] do |f| %> 
+          <%= simple_form_for [@lost_person, @feedinfo] do |f| %>
             <%= f.input :title %>
             <%= f.input :description %>
             <div class= "d-flex flex-row-reverse">

@@ -21,9 +21,9 @@
   padding-bottom: 9px;
   padding-left: 40px;
   padding-right: 40px;
-  border-radius: 17px;
-  font-size: 17px;
-  font-weight: bold;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 600;
   text-decoration: none;
   // max-width: fit-content;
 }
@@ -145,6 +145,7 @@
   bottom: 100px;
   display: flex;
   justify-content: center;
-  width: 100%
+  width: 100%;
+  padding-left: -15px!important;
 }
 
