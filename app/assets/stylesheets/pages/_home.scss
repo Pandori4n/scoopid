@@ -30,7 +30,7 @@ body.pages-home {
 
 .child {
   position: relative;
-  width: 95%;
+  width: 100%;
   padding: 10px 15px;
   margin: 0 auto;
 }
@@ -42,15 +42,9 @@ body.pages-home {
   right: 0;
   text-align: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
-#account-creation-linK {
-  color: white;
-  font-size: medium;
-  text-decoration: underline;
-  line-height: 1.5rem;
-  font-size: 110%;
-}
 
 #goto-search {
   position: absolute;

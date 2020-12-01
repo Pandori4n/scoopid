@@ -39,11 +39,11 @@
       </div>
     </div>
     <div class="child sign-button d-flex align-items-center flex-column" id="log-sign-buttons">
-      <div style="margin-bottom:5%;">
-        <%= link_to "Connexion", new_user_session_path, class: "button button-primary", id:"connection-button" %>
+      <div style="margin-bottom:5%;" class="full-width-button">
+        <%= link_to "Connexion", new_user_session_path, class: "button button-primary ", id:"connection-button" %>
       </div>
-      <div>
-        <%= link_to "Créer un Compte", new_user_registration_path, id:"account-creation-linK" %>
+      <div class="full-width-button">
+        <%= link_to "Créer un Compte", new_user_registration_path, class:"button button-primary-third" %>
       </div>
     </div>
   </div>
