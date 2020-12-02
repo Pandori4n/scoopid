@@ -6,14 +6,14 @@
 <div class="" style="max-height:650px!important;overflow:scroll;">
   <% @feed_infos.each do |info| %>
     <div class="container searchparties-card-index">
-      <p class= "text-left"> <%= info.created_at.strftime("%d/%m/%Y %HH%M") %> </p>
-      <h4><%= info.title %></h4>
-      <p class= "text-left"><%= info.description %></p>
+      <p class="text-left" id="date-time-feedinfos">🕒 <%= info.created_at.strftime("%d/%m/%Y à %HH%M") %> </p>
+      <h4 id="title-feedinfos"><%= info.title %></h4>
+      <p class="text-left" id="text-feedinfos">💬 <%= info.description %></p>
       </div>
   <% end %>
 </div>
   <div class="button-index-search">
-      <span class="button button-primary" data-toggle="modal" data-target="#feedinfoModal">Envoyer une informations</span>
+      <span class="button button-primary" data-toggle="modal" data-target="#feedinfoModal">Envoyer une information</span>
   </div>
 <div class="container">
   <div class="modal fade" id="feedinfoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
