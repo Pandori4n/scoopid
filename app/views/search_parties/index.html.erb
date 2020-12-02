@@ -7,7 +7,8 @@
       <div class="swiper-wrapper">
         <% @searchparties.each do |search_party| %>
           <div class="swiper-slide searchparties-card-index-real">
-            <% if search_party.date > Time.now %>
+            <% t = Time.now  %>
+            <% if search_party.date > t.day %>
               <h4> Battue à venir :</h4>
             <% else %>
               <h4> Battue terminée :</h4>
@@ -17,8 +18,8 @@
               <br>
               <div class="container" id="date-time-info-card">
                 <p><%= search_party.date.strftime("%d/%m/%Y") %> </p>
-                <p><%= search_party.start_time.hour %>H<%= search_party.start_time.strftime("%M") %> </p>
-                <p><%= search_party.end_time.hour %>H<%= search_party.start_time.strftime("%M") %></p>
+                <p>Heure de RDV :<%= search_party.start_time.hour %>H<%= search_party.start_time.strftime("%M") %> </p>
+                <p>Heure estimée de fin : <%= search_party.end_time.hour %>H<%= search_party.start_time.strftime("%M") %></p>
                 <p>Périmètre de la recherche : <%= search_party.radius %>km</p>
               </div>
               <br>
