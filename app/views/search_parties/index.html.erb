@@ -9,7 +9,7 @@
           <div class="swiper-slide searchparties-card-index-real">
             <% if search_party.date > Time.now %>
               <h4> Battue à venir :</h4>
-              <% else %>
+            <% else %>
               <h4> Battue terminée :</h4>
             <% end %>
             <div class="textleftcard">
@@ -41,14 +41,14 @@
     <%= link_to "Créer une battue", new_search_party_path, class: "button button-primary" %>
   </div>
 </div>
-<<!-- Swiper JS -->
+<!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <!-- Initialize Swiper -->
 <script>
   var swiper = new Swiper('.swiper-container', {
     pagination: {
       el: '.swiper-pagination',
-      type: 'bullets',
+      // type: 'bullets',
     },
     navigation: {
       nextEl: '.swiper-button-next',
