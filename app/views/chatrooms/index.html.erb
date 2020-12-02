@@ -1,19 +1,20 @@
-<div class= "correspond_bar">
-  <h1>Messages</h1>
-</div>
-
 <div class="container">
+  <div class="title-container d-flex align-items-center">
+    <h3>Messages</h3>
+  </div>
+  <div class="container">
   <% @chatrooms.each do |chatroom| %>
-    <%= link_to "from : #{chatroom.volunteer.full_name} #{chatroom.created_at}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
-    <br>
-  <% end %>
-</div>
-
-<div class="container" id="fixed-form">
-  <%= simple_form_for [@lost_person, @chatroom] do |f| %> 
-  <%= f.association :volunteer, label_method: :full_name %>
-  <div class= "d-flex flex-row-reverse">
-    <%= f.submit "Send a message", class: 'button button-secondary-alt', id:"right:5%;" %>
+    <div class="bubble-container">
+    <%= link_to "Message de: #{chatroom.volunteer.full_name} #{chatroom.created_at.strftime("à %Hh%M")}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
+    </div>
+      <% end %>
+  </div>
+  <div id="fixed-form">
+  <%= simple_form_for [@lost_person, @chatroom] do |f| %>
+  <%= f.association :volunteer, label: 'Volontaires', label_method: :full_name %>
+  <div class= "button-send">
+    <%= f.submit "Send a message", class: 'button button-secondary-alt' %>
   </div>
   <% end %>
+  </div>
 </div>

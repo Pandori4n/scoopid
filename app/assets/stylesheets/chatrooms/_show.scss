@@ -12,3 +12,24 @@
   bottom: 100px;
 }
 
+
+.button-send {
+  position: relative;
+  left: 160px;
+}
+
+.bubble-container {
+    border: 1px solid lightgrey;
+    border-radius: 21px;
+    min-height: 40px;
+    padding-top: 6px;
+    padding-right: 15px;
+    padding-left: 15px;
+    background-color: white;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#fixed-form label {
+  color: white;
+}
