@@ -13,13 +13,19 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.new(chatrooms_param)
-    authorize @chatroom
     @lost_person = LostPerson.find(params[:lost_person_id])
-    @chatroom.lost_person = @lost_person
-    @chatroom.host = current_user
-    @chatroom.save
-    redirect_to lost_person_chatroom_path(@lost_person, @chatroom)
+    # if Chatroom.where(volunteer_id: params[:chatroom][:volunteer_id].to_i, lost_person_id: params[:lost_person_id].to_i)
+    #   @chatroom = Chatroom.where(volunteer_id: params[:chatroom][:volunteer_id].to_i, lost_person_id: params[:lost_person_id].to_i)
+    #   authorize @chatroom
+    #   redirect_to lost_person_chatroom_path(@lost_person, @chatroom)
+    # else
+      @chatroom = Chatroom.new(chatrooms_param)
+      authorize @chatroom
+      @chatroom.lost_person = @lost_person
+      @chatroom.host = current_user
+      @chatroom.save
+      redirect_to lost_person_chatroom_path(@lost_person, @chatroom)
+    # end
   end
 
   private

@@ -3,18 +3,20 @@
     <h3>Messages</h3>
   </div>
   <div class="container">
-  <% @chatrooms.each do |chatroom| %>
-    <div class="bubble-container">
-    <%= link_to "Message de: #{chatroom.volunteer.full_name} #{chatroom.created_at.strftime("à %Hh%M")}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
-    </div>
-      <% end %>
-  </div>
   <div id="fixed-form">
   <%= simple_form_for [@lost_person, @chatroom] do |f| %>
-  <%= f.association :volunteer, label: 'Volontaires', label_method: :full_name %>
+  <%= f.association :volunteer, label: 'Rechercher', prompt: 'Volontaire', label_method: :full_name %>
   <div class= "button-send">
-    <%= f.submit "Send a message", class: 'button button-secondary-alt' %>
+    <%= f.submit "Envoyer", class: 'button button-secondary-alt' %>
   </div>
   <% end %>
+  </div>
+  <div class="new-message title-container d-flex align-items-center"> <h3>🔔 Nouveau message 🔔</h3></div>
+  <td><i class="fas fa-chevron-down"></i></td>
+  <% @chatrooms.each do |chatroom| %>
+    <div class="bubble-container">
+    <%= link_to "#{chatroom.volunteer.full_name} #{chatroom.created_at.strftime("à %Hh%M")}", lost_person_chatroom_path(@lost_person, chatroom), id:"link" %>
+    </div>
+      <% end %>
   </div>
 </div>
