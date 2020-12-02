@@ -11,8 +11,10 @@
 
 .message-container {
   border: 1px solid lightgrey;
+  border-radius: 21px;
   min-height: 40px;
-  padding-top: 6px;
+  padding-top: 15px;
+  padding-bottom: 20px;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -41,23 +43,39 @@
 .host-message {
   height: auto;
   text-align: right;
-  // p {
-  //   text-align: right;
-  // }
+  background-color: #e5e5e5;
+  opacity: 0.9;
 }
 
 .volunteer-message {
   height: auto;
   text-align: left;
+  background-color: white;
   .message-content {
     flex-direction: row-reverse;
   }
 }
 
 .author {
-  color: grey;
+  .User-name {
+  color: black;
+  }
+  #Date {
+  color: lightgrey;
+  }
 }
 
 .input-host {
-
+  display: flex;
+  min-width: 50px;
+  padding-bottom: 30px;
+  align-items: baseline;
+  justify-content: space-around;
+  color: #0e8b8d;
+  .fa-paper-plane {
+    font-size: 25px;
+  }
+  #message_content {
+    width: 80vw;
+  }
 }

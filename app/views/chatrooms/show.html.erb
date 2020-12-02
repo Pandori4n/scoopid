@@ -1,7 +1,7 @@
-<div style="overflow:scroll;">
+<div class="main-content-chatroom" style="overflow:scroll;">
     <div class="title-container d-flex align-items-center">
-      <%= link_to lost_person_chatrooms_path(@chatroom.lost_person) do %>
-        <i class="fas fa-chevron-left button-secondary">Messages</i>
+      <%= link_to lost_person_chatrooms_path(@chatroom.lost_person), id:"back-button", class:"button button-secondary" do %>
+        <span><i class="fas fa-chevron-left"></i> Messages</span>
       <% end %>
     <h3 class style="margin: 7vh;"><%= @chatroom.volunteer.first_name %> <%= @chatroom.volunteer.last_name %></h3>
     </div>
@@ -12,10 +12,9 @@
             <% @chatroom.messages.each do |message| %>
                 <div class="message-container mt-1 mb-4 pb-1
                     <%= message.user.role == "host" ? "host-message" : "volunteer-message" %>"
-                    style="background-color: white;" id="message-<%= message.id %>" >
-                  <i class="author"><span><%= message.user.first_name %></span>
-                    <%= message.created_at.strftime("%a %b %e at %l:%M%p") %>
-                  </i>
+                    id="message-<%= message.id %>" >
+                  <div class="author align-items-center"><div class="User-name-host"><strong><%= message.user.first_name %></strong> - <em><%= message.created_at.strftime("%d %h %Y à %Hh%M") %></em></div>
+                  </div>
                   <div class="message-content mt-1">
                     <div class="message-transfert">
                       <i class="fas fa-share" data-toggle="modal" data-target="#chatModal-<%= message.id %>"></i>
@@ -35,9 +34,11 @@
                       </div>
                       <div class="modal-body">
                         <%= simple_form_for [ @chatroom.host.lost_people.last, @feed_info ] do |f| %>
-                          <%= f.input :title %>
+                          <%= f.input :title, label: "Titre" %>
                           <%= f.input :description,  input_html: {value: message.content} %>
-                          <%= f.submit "Partager", class: "button button-secondary" %>
+                          <div class= "d-flex flex-row-reverse">
+                            <%= f.submit 'Partager', class: 'button button-secondary-alt' %>
+                          </div>
                         <% end %>
                       </div>
                     </div>
@@ -46,10 +47,11 @@
             <% end %>
           </div>
         </div>
-        <div class="input-host pb-5">
+        <div class="input-host">
           <%= simple_form_for [ @chatroom, @message ], remote: true do |f| %>
           <%= f.input :content, label: false, placeholder: "Ecrire à #{@chatroom.volunteer.first_name}" %>
           <% end %>
+          <i class="fas fa-paper-plane"></i>
         </div>
       </div>
     </div>
