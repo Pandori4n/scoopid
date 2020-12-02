@@ -25,7 +25,7 @@ class UsersController < ApplicationController
       current_user.update(role: 'nil')
       current_user.lost_people.destroy
     end
-    redirect_to profile_path
+    redirect_to end_search_message_path
   end
 
   private

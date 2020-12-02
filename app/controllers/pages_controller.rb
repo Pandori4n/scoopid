@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def end_search_message
+    @lost_person = LostPerson.find(params[:lost_person_id])
+    @lost_person
   end
 
   def join_search

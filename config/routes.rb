@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/profile', to: 'users#profile'
   get '/todo', to: 'users#todo'
-  get '/end_search_message', to: 'pages#end_search_message'
-  get '/end_search', to: 'users#end_search'
+  get '/end_search_message', to: 'users#end_search' 
+  get '/end_search', to: 'pages#end_search_message'
   resources :users, only: :update
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :search_parties, only: [:new, :create, :show, :edit, :update] do

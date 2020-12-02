@@ -42,7 +42,7 @@ class LostPeopleController < ApplicationController
     @lost_person = LostPerson.find(params[:id])
     authorize @lost_person
     @lost_person.destroy
-    redirect_to profile_path
+    redirect_to root_path
   end
 
   private

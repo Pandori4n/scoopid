@@ -10,3 +10,35 @@
 .pages-end_search_message .navbar {
   display: none;
 }
+
+.button-end-page {
+  padding: 7px 31px;
+  background-color: #108b8d;
+  color: white;
+  font-weight: 600;
+}
+
+#title-endpage {
+  text-shadow: black 1px 0 10px;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  padding-top: 10%;
+  font-size: 300%;
+}
+
+#sign-text-endpage {
+  text-shadow: black 1px 0 10px;
+  margin-top: 25px;
+  text-align: center;
+  color: white;
+  font-size: 150%;
+}
+
+.back-button-end {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 20px;
+  padding-top: 30px;
+  color: white
+}
