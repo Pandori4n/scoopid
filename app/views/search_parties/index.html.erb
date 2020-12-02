@@ -9,22 +9,27 @@
           <div class="swiper-slide searchparties-card-index-real">
             <% t = Time.now  %>
             <% if search_party.date > t.day %>
-              <h4> ⏱ Battue à venir :</h4>
+              <h4>⏱ Battue à venir :</h4>
             <% else %>
-              <h4> Battue terminée :</h4>
+              <h4>⏱ Battue terminée :</h4>
             <% end %>
             <div class="textleftcard">
-              <p><strong>📍 Point de rencontre :</br><%= search_party.meeting_location %></strong></p>
+              <div class="d-flex justify-content-start">
+                <p>📍</p>
+                <p><strong>Point de rencontre :</br><%= search_party.meeting_location %></strong></p>
+              </div>
               <br>
               <div class="container" id="date-time-info-card">
                 <p>🗓 <%= search_party.date.strftime("%d/%m/%Y") %> </p>
-                <p>🕒De <%= search_party.start_time.hour %>H<%= search_party.start_time.strftime("%M") %> à <%= search_party.end_time.hour %>H<%= search_party.start_time.strftime("%M") %></p>
+                <p>🕒 De <%= search_party.start_time.hour %>H<%= search_party.start_time.strftime("%M") %> à <%= search_party.end_time.hour %>H<%= search_party.start_time.strftime("%M") %></p>
                 <p>🔎 Périmètre de la recherche : <%= search_party.radius %>km</p>
               </div>
               <br>
               <% if search_party.description != "" %>
-                <p>💬 Informations supplémentaires : <br>
-                <%= search_party.description %> </p>
+                <div class="d-flex justify-content-start">
+                  <p>💬</p>
+                  <p><strong>Informations supplémentaires :</strong></br><%= search_party.description %></p>
+                </div>
               <% end %>
               <br>
               <div class="text-center d-flex align-items-end justify-content-center" id="button-search-party-card">

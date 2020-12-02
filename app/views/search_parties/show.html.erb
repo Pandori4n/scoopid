@@ -7,12 +7,15 @@
       <div class="container searchparties-card-show searchparties-card-edit-show" id="searchparties-card-index">
         <div class="textleftcard">
           <div id="date-time-info-card" style="margin-top:20px;">
-              <h4><p>🗓 Date : <%= @search_party.date.strftime("%d/%m/%Y") %></p></h4>
-              <p>🕒 Heure de RDV : <%= @search_party.start_time.hour %>H<%= @search_party.start_time.strftime("%M") %></p>
-              <p>🕘 Heure estimée de fin : <%= @search_party.end_time.hour %>H<%= @search_party.start_time.strftime("%M")%></p>
+              <h4><p>🗓 Date : <strong><%= @search_party.date.strftime("%d/%m/%Y") %></strong></p></h4>
+              <p>🕒 Heure de RDV : <strong><%= @search_party.start_time.hour %>H<%= @search_party.start_time.strftime("%M") %></strong></p>
+              <p>🕘 Heure estimée de fin : <strong><%= @search_party.end_time.hour %>H<%= @search_party.start_time.strftime("%M")%></strong></p>
           </div>
           <div id="date-time-info-card" style="margin-top:30px;background-color:white;">
-            <p>📍 Point de rencontre : </br><%= @search_party.meeting_location %></p>
+            <div class="d-flex justify-content-start">
+              <p>📍</p>
+              <p>Point de rencontre : </br><strong><%= @search_party.meeting_location %></strong></p>
+            </div>
             <% if @search_party.description != "" %>
             <hr>
             <p>💬 Informations supplémentaires : <br>
