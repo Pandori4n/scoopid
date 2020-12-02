@@ -1,14 +1,12 @@
-import Swiper from 'swiper';
-// import Swiper styles
-import 'swiper/swiper-bundle.css';
+import Swiper from 'swiper/bundle';
 
 const mySwiper = () => {
-//initialize swiper when document ready
+  //initialize swiper when document ready
   if (document.querySelector('.swiper-container')) {
     new Swiper('.swiper-container', {
       pagination: {
         el: '.swiper-pagination',
-        type: 'progressbar',
+        // type: 'bullets',
       },
       navigation: {
         nextEl: '.swiper-button-next',
