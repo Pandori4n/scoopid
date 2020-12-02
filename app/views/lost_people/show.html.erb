@@ -2,12 +2,12 @@
 <% content_for :meta_description, @lost_person.description %>
 <% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
 <div class="lost-show">
-  <div class="missing-person-pic" style="height: 350px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 900, width: 900, crop: :fill; %>');">
+  <div class="missing-person-pic" style="height: 350px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 1000, width: 1000, crop: :fill; %>');">
     <div class="edit-person-info">
       <% if policy(@lost_person).edit? %>
       <%= link_to edit_lost_person_path(@lost_person) do %>
       <div class="edit-button">
-      <img src="https://res.cloudinary.com/mims/image/upload/v1606817873/pen_cz2wm8.png">
+      <img class="edit-pen" src="https://res.cloudinary.com/mims/image/upload/v1606817873/pen_cz2wm8.png">
       </div>
       <% end %>
     <% end %>
@@ -34,7 +34,7 @@
 
     <!-- Button trigger modal -->
 <button type="button" class="diffuse button button-primary-alt"  data-toggle="modal" data-target="#exampleModal">
-  Diffuser l'information <i class="fas fa-upload"></i>
+  Diffuser l'information <img class="share" src="https://res.cloudinary.com/mims/image/upload/v1606900507/Group_6802dwnld_akxyjc.png" alt="">
 </button>
 
 <!-- Modal -->
