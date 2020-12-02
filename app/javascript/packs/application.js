@@ -45,5 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   addClass();
   flatpicker();
   initAutocomplete();
-  // mySwiper();
+  mySwiper();
 });
