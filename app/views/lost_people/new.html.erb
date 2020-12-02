@@ -13,11 +13,11 @@
         </div>
         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            <%= f.input :first_name, label:"Prénom" %>
-            <%= f.input :last_name, label:"Nom de famille" %>
-            <%= f.input :age %>
-            <%= f.input :height, placeholder: 'en cm...', label:"Taille", input_html: { class: 'text-center' } %>
-            <%= f.input :disparition_date_time, label:"Date de disparition", html5: true %>
+            <%= f.input :first_name, placeholder: 'Prénom', label:"Prénom" %>
+            <%= f.input :last_name, placeholder: 'Nom de famille', label:"Nom de famille" %>
+            <%= f.input :age, placeholder: 'Age' %>
+            <%= f.input :height, placeholder: 'Taille en cm', label:"Taille" %>
+            <%= f.input :disparition_date_time, placeholder: 'Date de disparition', label:"Date de disparition", html5: true %>
           </div>
         </div>
       </div>
@@ -25,14 +25,14 @@
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Informations non obligatoires
+              Informations complémentaires
             </button>
           </h5>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
           <div class="card-body">
-            <%= f.input :last_known_location, label:"Dernier endroit aperçu", input_html: { id: "search_address"} %>
-            <%= f.input :description %>
+            <%= f.input :last_known_location, placeholder: 'Exemple: adresse, lieu public, domicile, quartier...', label:"Dernier endroit aperçu", input_html: { id: "search_address"} %>
+            <%= f.input :description, label:"Autres informations utiles", placeholder: 'Vêtements portés le jour de la disparition, habitudes...' %>
           </div>
         </div>
       </div>
