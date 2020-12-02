@@ -14,7 +14,7 @@
         <i class="fas fa-angle-left slide-arrows"></i>
       <% end %>
       <div class="text-card">
-        <h6> <%= search_party_attendancies.volonteer.name %></h6>
+        <h6><%= @chatroom.volunteer.first_name %></h6>
         <p>En cours</p>
       </div>
       <%= link_to(search_party_search_party_attendancies_path(@search_party)) do %>
