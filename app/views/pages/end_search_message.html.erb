@@ -1,10 +1,10 @@
-
+<%= link_to "", lost_person_path(@lost_person), class: "fas fa-chevron-left back-button-end" %>
 <div class="container end-message">
-    <h1 id="title-homepage">Merci pour votre confiance</h1>
-    <p id="sign-text-homepage">Nous espérons vous avoir accompagné au mieux dans vos recherches</p>
-    <div class="full-width-button">
+    <h1 id="title-endpage">Merci pour votre confiance</h1>
+    <p id="sign-text-endpage">Nous espérons vous avoir accompagné au mieux dans vos recherches</p>
     <br>
-      <%= link_to "Mettre fin aux recherches", end_search_path, class: "button button-primary", data: {confirm: "Êtes-vous sûr de vouloir supprimer cette Recherche?"}%>
+    <br>
+    <div class="button-end">
+      <%= link_to "Mettre fin à vos recherches", root_path, class: "button button-primary-alt" %> 
     </div>
-</div>
-        
+</div>      
