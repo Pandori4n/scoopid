@@ -24,7 +24,13 @@ lost_one.save!
 chatroom1 = Chatroom.create!(name: "Battue samedi", volunteer: volunteer1, host: host, lost_person: lost_one)
 chatroom2 = Chatroom.create!(name: "RDV", volunteer: volunteer2, host: host, lost_person: lost_one)
 
-message1 = Message.create!(content: "Hey ! Merci de m'aider à retrouver Marcel. Je suis très inquiète...", chatroom: chatroom2, user: host)
+message1 = Message.create!(content: "Hey ! Merci Nora de m'aider à retrouver Marcel. Je suis très inquiète avec sa maladie...", chatroom: chatroom1, user: host)
+message2 = Message.create!(content: "T'inquiète pas, on va le retrouver !", chatroom: chatroom1, user: volunteer2)
+message1 = Message.create!(content: "Tourne à gauche et demande dans la boulangerie", chatroom: chatroom1, user: host)
+message2 = Message.create!(content: "Bien joué ! Ils l'ont vu passer il y a 5min !", chatroom: chatroom1, user: volunteer2)
+message2 = Message.create!(content: "J'ai trouvé Marcel !", chatroom: chatroom1, user: volunteer2)
+
+message1 = Message.create!(content: "Hey ! Merci Jules de m'aider à retrouver Marcel !", chatroom: chatroom2, user: host)
 message2 = Message.create!(content: "Pas de soucis ! J'espère qu'on va le retrouver !!!", chatroom: chatroom2, user: volunteer2)
 message2 = Message.create!(content: "La boulangère de la rue l'aurai vu ce matin.", chatroom: chatroom2, user: volunteer2)
 message1 = Message.create!(content: "Ok, tourne à droite, on vient de me confirmer qu'il serait dans cette rue.", chatroom: chatroom2, user: host)
