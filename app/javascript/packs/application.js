@@ -36,6 +36,8 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 
 import { mySwiper } from "../plugins/swiper";
 
+import {addClassAccordion } from "../plugins/retractable_accordion";
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -46,4 +48,5 @@ document.addEventListener('turbolinks:load', () => {
   flatpicker();
   initAutocomplete();
   mySwiper();
+  addClassAccordion();
 });
