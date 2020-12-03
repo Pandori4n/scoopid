@@ -1,5 +1,5 @@
 <% if user_signed_in? && current_user.lost_people.present? %>
-  <div class="navbar sticky-bottom">
+  <div class="navbar fixed-bottom">
     <% if current_user.role == "host" %>
         <div class="navbar-host d-flex justify-content-around align-items-center">
           <% if current_user.lost_people.any? %>
