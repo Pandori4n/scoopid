@@ -26,15 +26,15 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Partager une information</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Partager avec les volontaires</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
           <%= simple_form_for [@lost_person, @feedinfo] do |f| %>
-            <%= f.input :title %>
-            <%= f.input :description %>
+            <%= f.input :title, collection: ["❗️ Urgent", "🔎 Battues", "📍 RDV", "✏️ Commentaire", "💪 Motivation", "🙏 Remerciements"],label: "Catégorie" %>
+            <%= f.input :description, label:"Message:"%>
             <div class= "d-flex flex-row-reverse">
               <%= f.submit 'Partager', class: 'button button-secondary-alt' %>
             </div>
