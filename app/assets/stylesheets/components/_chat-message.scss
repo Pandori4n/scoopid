@@ -83,7 +83,7 @@
 
 .input-host {
   position: sticky;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .input-host #new_message {
@@ -103,6 +103,7 @@
   width: 329px;
   border-radius: 24px;
   padding-left: 15px;
+  margin-top: 15px;
 }
 
 .paper-plane {
@@ -115,5 +116,6 @@
   border: none!important;
   color: white;
   font-size: 25px;
+  margin-top: 15px;
 }
 
