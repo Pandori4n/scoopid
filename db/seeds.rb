@@ -37,8 +37,8 @@ message1 = Message.create!(content: "Ok, tourne à droite, on vient de me confir
 message1 = Message.create!(content: "On y est presque, j'en suis sûr !", chatroom: chatroom2, user: host)
 
 # feed_info1 = FeedInfo.create!(title: "Infos", description: "Nous avons reçu un appel de la police, tout est deployé pour nous aider", user: host, lost_person: lost_one)
-feed_info2 = FeedInfo.create!(title: "RDV", description: "RDV demain matin, 12 rue oberkampf, Paris, code 1971, 2eme etage", user: host, lost_person: lost_one)
-feed_info3 = FeedInfo.create!(title: "Battue", description: "Merci à tous les volontaires!", user: host, lost_person: lost_one)
+feed_info2 = FeedInfo.create!(title: "📍 RDV", description: "RDV demain matin, 12 rue oberkampf, Paris, code 1971, 2eme etage", user: host, lost_person: lost_one)
+feed_info3 = FeedInfo.create!(title: "🔎 Battues", description: "Merci à tous les volontaires!", user: host, lost_person: lost_one)
 
 search = SearchParty.create!(date: DateTime.new(2020,12,3), start_time: DateTime.new(2020,12,3,14,00), end_time: DateTime.new(2020,12,3,18,00), meeting_location: "16 villa gaudelet, Paris", description: "Battue autour d'Oberkampf", radius: 1, lost_person: lost_one, authentication_token: "ABCDE")
 
