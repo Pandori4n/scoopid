@@ -6,10 +6,14 @@
 <div class="" style="max-height:650px!important;overflow:scroll;">
   <% @feed_infos.each do |info| %>
     <div class="container searchparties-card-index">
-      <p class="text-left" id="date-time-feedinfos">🕒 <%= info.created_at.strftime("%d/%m/%Y à %HH%M") %> </p>
-      <h4 id="title-feedinfos"><%= info.title %></h4>
-      <p class="text-left" id="text-feedinfos">💬 <%= info.description %></p>
+      <div class="d-flex justify-content-between">
+        <p class="text-left" id="date-time-feedinfos">🕒 <%= info.created_at.strftime("%d/%m/%Y à %HH%M") %></p>
+        <h4 id="title-feedinfos"><%= info.title %></h4>
       </div>
+      <div>
+        <p class="text-left" id="text-feedinfos">"<%= info.description %>"</p>
+      </div>
+    </div>
   <% end %>
 </div>
   <div class="button-index-search">
