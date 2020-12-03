@@ -1,5 +1,5 @@
 const addClassAccordion = () => {
-  // var buttonAccordion = document.getElementsByClassName('btn-link');
+  // var buttonAccordion = document.querySelectorAll('btn-link');
   var arrows = document.querySelectorAll(".arrow-down-accordion");
   if (arrows) {
     arrows.forEach((arrow) => {
