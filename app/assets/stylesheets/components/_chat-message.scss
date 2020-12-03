@@ -12,6 +12,12 @@
   overflow: scroll;
 }
 
+.chevron-text h6 {
+  position: absolute;
+  top: -3px;
+  left: 12px;
+  font-weight: bold;
+}
 .message-container {
   border: 1px solid lightgrey;
   border-radius: 21px;

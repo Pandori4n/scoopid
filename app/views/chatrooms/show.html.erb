@@ -1,12 +1,16 @@
 <div class="main-content-chatroom" style="overflow:scroll;">
     <div class="title-container d-flex align-items-center">
-      <%= link_to search_party_search_party_attendancies_path(@chatroom.lost_person.search_parties.last), id:"back-button" do %>
-        <span><i class="fas fa-chevron-left"></i> Carte</span>
+      <%= link_to lost_person_chatrooms_path(@chatroom.lost_person), id:"back-button" do %>
+      <div class="chevron-text">
+      <i class="fas fa-chevron-left messages"><h6>Messagerie</h6></i>
+      </div>
       <% end %>
-    <h3 class style="margin: 4vh;"><%= @chatroom.volunteer.first_name %> <%= @chatroom.volunteer.last_name %></h3>
-    <%= link_to lost_person_chatrooms_path(@chatroom.lost_person) do %>
-        <i class="far fa-comment-dots"></i>
-  <% end %>
+      <div class="title-container d-flex align-items-center">
+    <h3><%= @chatroom.volunteer.first_name %> <%= @chatroom.volunteer.last_name %></h3>
+    </div>
+    <%= link_to search_party_search_party_attendancies_path(@chatroom.lost_person.search_parties.last) do %>
+        <i class="fas fa-map-marker-alt"></i>
+        <% end %>
     </div>
     <div class="container">
       <div class="container-all">
