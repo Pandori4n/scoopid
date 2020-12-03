@@ -31,3 +31,8 @@
 .content-wrapper::-webkit-scrollbar {
   display: none;
 }
+
+a:hover, a:active{
+  text-decoration: none!important;
+  color: inherit!important;
+}
