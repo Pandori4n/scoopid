@@ -20,6 +20,8 @@
 .missing-person-info{
   margin-top: 5px;
   color: black !important;
+  overflow: scroll;
+  height: 515px !important;
 }
 .missing-person-info h2{
   margin-top: 20px;
@@ -53,7 +55,7 @@
 
 .lost-show {
   overflow: scroll;
-  height: 780px;
+  height: 790px;
 }
 
 .edit-button {
