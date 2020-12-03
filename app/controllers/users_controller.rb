@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def todo
     skip_authorization
+    @lost_person = current_user.lost_people.last
   end
 
   def update
