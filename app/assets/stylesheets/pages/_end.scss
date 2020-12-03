@@ -3,6 +3,14 @@
   bottom: 100px;
 }
 
+ .logo-end-page {
+  height: 200px;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+ }
 // .end_search_message .navbar{
 //   display: none;
 // }
@@ -11,12 +19,6 @@
   display: none;
 }
 
-.button-end-page {
-  padding: 7px 31px;
-  background-color: #108b8d;
-  color: white;
-  font-weight: 600;
-}
 
 #title-endpage {
   text-shadow: black 1px 0 10px;
