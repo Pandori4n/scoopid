@@ -36,8 +36,8 @@
                       </div>
                       <div class="modal-body">
                         <%= simple_form_for [ @chatroom.host.lost_people.last, @feed_info ] do |f| %>
-                          <%= f.input :title, label: "Titre" %>
-                          <%= f.input :description,  input_html: {value: message.content} %>
+                          <%= f.input :title, collection: ["❗️ Urgent", "🔎 Battues", "📍 RDV", "✏️ Commentaire", "💪 Motivation", "🙏 Remerciements"],label: "Catégorie" %>
+                          <%= f.input :description, label:"Message:", input_html: {value: message.content} %>
                           <div class= "d-flex flex-row-reverse">
                             <%= f.submit 'Partager', class: 'button button-secondary-alt' %>
                           </div>
