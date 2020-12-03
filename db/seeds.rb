@@ -16,7 +16,7 @@ volunteer2 = User.create!(email: "volunteer2@lewagon.fr", password: "123456", fi
 volunteer3 = User.create!(email: "volunteer3@lewagon.fr", password: "123456", first_name: "Clémence", last_name: "Poret", role: "volunteer")
 volunteer4 = User.create!(email: "volunteer4@lewagon.fr", password: "123456", first_name: "Anais", last_name: "Lafaye", role: "volunteer")
 
-lost_one = LostPerson.new(first_name: "Marcel", last_name: "Desnoyers", age: "75", last_known_location: "Oberkampf, Paris", last_known_clothes: "Pull noir et pantalon beige", height: 170, body_type: "Mince", description: "Marcel se promène chaque matin rue Oberkampf, il porte souvent un chapeau noir et fait son marché boulevard de Belleville.", disparition_date_time: DateTime.new(2020,12,1,14), user_id: host.id)
+lost_one = LostPerson.new(first_name: "Marcel", last_name: "Desnoyers", age: "75", last_known_location: "Oberkampf, Paris", last_known_clothes: "Pull noir et pantalon beige", height: 170, body_type: "Mince", description: "Marcel a quitté son domicile à 14h et n'est pas revenu. Il est vêtu d'un pantalon beige, un pull col roulé noir, et un long manteau noir.", disparition_date_time: DateTime.new(2020,12,1,14), user_id: host.id)
 file1 = URI.open('https://i.pinimg.com/564x/19/b3/fd/19b3fd5856523d2e97c1df62b3945377.jpg')
 lost_one.photo.attach(io: file1, filename: 'missy.jpg', content_type: 'image/jpg')
 lost_one.save!
@@ -36,10 +36,9 @@ message2 = Message.create!(content: "La boulangère de la rue l'aurai vu ce mati
 message1 = Message.create!(content: "Ok, tourne à droite, on vient de me confirmer qu'il serait dans cette rue.", chatroom: chatroom2, user: host)
 message1 = Message.create!(content: "On y est presque, j'en suis sûr !", chatroom: chatroom2, user: host)
 
-feed_info1 = FeedInfo.create!(title: "Infos", description: "Nous avons reçu un appel de la police, tout est deployé pour nous aider", user: host, lost_person: lost_one)
+# feed_info1 = FeedInfo.create!(title: "Infos", description: "Nous avons reçu un appel de la police, tout est deployé pour nous aider", user: host, lost_person: lost_one)
 feed_info2 = FeedInfo.create!(title: "RDV", description: "RDV demain matin, 12 rue oberkampf, Paris, code 1971, 2eme etage", user: host, lost_person: lost_one)
 feed_info3 = FeedInfo.create!(title: "Battue", description: "Merci à tous les volontaires!", user: host, lost_person: lost_one)
-
 
 search = SearchParty.create!(date: DateTime.new(2020,12,3), start_time: DateTime.new(2020,12,3,14,00), end_time: DateTime.new(2020,12,3,18,00), meeting_location: "16 villa gaudelet, Paris", description: "Battue autour d'Oberkampf", radius: 1, lost_person: lost_one, authentication_token: "ABCDE")
 
