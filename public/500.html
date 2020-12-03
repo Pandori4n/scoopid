@@ -1,66 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Huchi - 500</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
+  body{
+    font-family: 'Barlow', sans-serif;
   }
+  .huchi-500{
+    background-image: url('https://res.cloudinary.com/mims/image/upload/v1606835054/Rectangle_74_pj4ixt.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    // background-size: cover;
+    height: 100vh;
+    top: 0;
+    background-color: #363636;
+  }
+  .title-container {
+  background-color: transparent;
+  color: white;
+  top: 85px;
+  width: 100%;
+  border-radius: 0 0 15px 15px;
+  // box-shadow: 0 1px 5px grey;
+  height: 60px;
+  // padding: 0 auto;
+  padding-top: 30px;
+  margin-bottom: 30px;
+}
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+.title-container h3{
+  font-size: 24px;
+  margin: 0 auto;
+  font-weight: bold;
+}
+.button {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Barlow', sans-serif;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+.button:hover {
+  text-decoration: none!important;
+}
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+.button-primary {
+  background-color: #108b8d;
+  color: white;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  width: 150px;
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-  </style>
+  // max-width: fit-content;
+}
+</style>
 </head>
 
-<body class="rails-default-error-page">
+<body class="huchi-500">
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
+  <div class="title-container" style="text-align: center;">
+    <h3 style="font-size:50px;margin-top: 70px;">Désolé</h3>
+  </div>
+  <div class="d-flex align-items-center" style="color:white;margin-top: 300px;text-align: center;font-size: 24px;">
+    <h5>Une erreur a eu lieu.</h5>
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <a href="https://www.huchi.io/" class="button button-primary" style="color:white!important; cursor: pointer;margin:0 auto;">Retourner à l'acceuil </a>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
 </body>
 </html>
