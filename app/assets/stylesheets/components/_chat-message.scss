@@ -108,16 +108,16 @@
   margin-top: 15px;
 }
 
-.paper-plane {
-  // margin-right: 8px;
-}
 
 .paper-plane button {
   background-color: rgba(0, 0, 0, 0)!important;
+  background: none!important
   box-shadow: none!important;
   border: none!important;
   color: white;
   font-size: 25px;
-  margin-top: 15px;
+  position: absolute;
+  top: 15px;
+  right: -45px;
 }
 
