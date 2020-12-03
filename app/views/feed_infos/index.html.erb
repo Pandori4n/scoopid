@@ -2,7 +2,9 @@
   <div class="title-container d-flex align-items-center">
     <h3> Fil d'actualité </h3>
   </div>
-
+<%= link_to lost_person_chatrooms_path(@lost_person) do %>
+        <i class="far fa-comment-dots"></i>
+  <% end %>
 <div class="" style="max-height:650px!important;overflow:scroll;">
   <% @feed_infos.each do |info| %>
     <div class="container searchparties-card-index">
