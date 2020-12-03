@@ -81,7 +81,7 @@ const initMapboxShow = () => {
         } else {
           window.clearInterval(timer);
         }
-      }, 2000);
+      }, 1000);
     });
   };
 };
