@@ -10,7 +10,8 @@ User.destroy_all
 
 p "everything is destroyed"
 
-host = User.create!(email: "host@lewagon.fr", password: "123456", first_name: "Emilie", last_name: "Chabert", role: "host")
+host = User.create!(email: "host@lewagon.fr", password: "123456", first_name: "Aymeric", last_name: "Faidherbe", role: "host")
+user1 = User.create!(email: "aymeric@lewagon.fr", password: "123456", first_name: "Aymeric", last_name: "Faidherbe")
 volunteer1 = User.create!(email: "volunteer1@lewagon.fr", password: "123456", first_name: "Nora", last_name: "Chaffay", role: "volunteer")
 volunteer2 = User.create!(email: "volunteer2@lewagon.fr", password: "123456", first_name: "Jules", last_name: "Martin", role: "volunteer")
 volunteer3 = User.create!(email: "volunteer3@lewagon.fr", password: "123456", first_name: "Clémence", last_name: "Poret", role: "volunteer")
