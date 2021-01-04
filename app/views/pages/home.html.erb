@@ -15,7 +15,17 @@
       <% end %>
     </div>
 <% elsif user_signed_in? && current_user.role == "volunteer"%>
-  <h1>Hello <%= current_user.first_name %></h1>
+ <h1>Hello <%= current_user.first_name %></h1>
+    <p>Veuillez indiquer le code pour rejoindre une recherche</p>
+    <p>Sinon veuillez indiquer une ville</p>
+  <%= form_tag join_search_path, method: :get do %>
+  <%= text_field_tag :authentication_token,
+    params[:authentication_token],
+    class: "form-control",
+    placeholder: "Code"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
 <% elsif user_signed_in? && current_user.role == nil %>
 <div class="container profile">
   <img class="logo" src="https://res.cloudinary.com/mims/image/upload/v1606827948/logo_transparent_ruh8uj.png">

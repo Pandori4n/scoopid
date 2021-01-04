@@ -10,8 +10,8 @@ class PagesController < ApplicationController
   end
 
   def join_search
-    if params[:authentication_token].present?
-      search_party = SearchParty.find_by(authentication_token: params[:authentication_token])
+    if params[:code].present?
+      search_party = SearchParty.find_by(code: params[:code])
       if search_party
         redirect_to lost_person_path(search_party.lost_person)
       else

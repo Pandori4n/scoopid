@@ -1,3 +1,5 @@
+require 'securerandom'
+
 class LostPerson < ApplicationRecord
   belongs_to :user
 
@@ -13,4 +15,11 @@ class LostPerson < ApplicationRecord
   validates :photo, presence: true
   validates :height, presence: true
   validates :disparition_date_time, presence: true
+  after_validation :generate_code, on: :create
+
+  private
+
+  def generate_code
+    self.code = SecureRandom.alphanumeric(5)
+  end
 end
