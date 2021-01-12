@@ -14,30 +14,43 @@
         <%= link_to "Créer une recherche", new_lost_person_path, class: "button button-primary" %>
       <% end %>
     </div>
-<% elsif user_signed_in? && current_user.role == "volunteer"%>
+<% elsif user_signed_in? && current_user.role == "volunteer" %>
  <h1>Hello <%= current_user.first_name %></h1>
     <p>Veuillez indiquer le code pour rejoindre une recherche</p>
     <p>Sinon veuillez indiquer une ville</p>
-  <%= form_tag join_search_path, method: :get do %>
-  <%= text_field_tag :authentication_token,
-    params[:authentication_token],
+
+  <%= form_tag lost_people_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
     class: "form-control",
-    placeholder: "Code"
+    placeholder: "Code, Nom ou Ville"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+  <% end %>
+  <%# <%= submit_tag "Rejoindre la recherche", class: "btn btn-primary" %>
+  <%# <% end %>
+    <%# <input type="search" name="query" placeholder="Code, Nom, Ville">
+    <input type="submit" value="Retrouver" > %>
+
+    <%# <input type="search_by_location" name="query" placeholder="Ville">
+    <input type="submit" name=”commit” value="Rejoindre" >
+
+    <input type="search_by_name" name="query" placeholder="Nom">
+    <input type="submit" name=”commit” value="Retrouver" > %>
+
+
+
 <% elsif user_signed_in? && current_user.role == nil %>
-<div class="container profile">
-  <img class="logo" src="https://res.cloudinary.com/mims/image/upload/v1606827948/logo_transparent_ruh8uj.png">
-  <h2>Vous recherchez <br> quelqu'un ?</h2>
-  <p>Organisez rapidement une battue et trouvez des volontaires pour vous aider à retrouver ceux qui vous sont chers</p>
-  <div class="host button button-primary">
-    <%= link_to "Je suis organisateur", user_path(current_user, role: "host"), method: :patch%>
+  <div class="container profile">
+    <img class="logo" src="https://res.cloudinary.com/mims/image/upload/v1606827948/logo_transparent_ruh8uj.png">
+    <h2>Vous recherchez <br> quelqu'un ?</h2>
+    <p>Organisez rapidement une battue et trouvez des volontaires pour vous aider à retrouver ceux qui vous sont chers</p>
+    <div class="host button button-primary">
+      <%= link_to "Je suis organisateur", user_path(current_user, role: "host"), method: :patch%>
+    </div>
+    <div class="volunteer button button-primary">
+      <%= link_to "Je suis volontaire", user_path(current_user, role: "volunteer"), method: :patch%>
+    </div>
   </div>
-  <div class="volunteer button button-primary">
-    <%= link_to "Je suis volontaire", user_path(current_user, role: "volunteer"), method: :patch%>
-  </div>
-</div>
 <% else %>
   <div>
     <div class="child header-container d-flex align-items-center flex-column">
