@@ -1,0 +1,15 @@
+<% if @lost_people_with_name || @lost_people_by_location %>
+  <p>les gens par nom</p>
+  <% @lost_people_with_name.each do |p| %>
+    <%= p.first_name %>
+  <% end %>
+
+  <p>les gens par ville</p>
+  <% @lost_people_by_location.each do |p| %>
+    <%= p.last_known_location %>
+  <% end %>
+<% else %>
+  <% @lost_people.each do |p| %>
+    <%= p.last_name %>
+  <% end %>
+<% end %>

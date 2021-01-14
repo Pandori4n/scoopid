@@ -1,8 +1,16 @@
 class LostPeopleController < ApplicationController
-  skip_before_action :authenticate_user!, only: :show
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    # @restaurants = policy_scope(LostPerson)
+    if params[:query].present?
+      @lost_person = policy_scope(LostPerson).find_by_code(params[:query])
+      redirect_to lost_person_path(@lost_person.code) if @lost_person.present?
+
+      @lost_people_with_name = policy_scope(LostPerson).search_by_full_name(params[:query])
+      @lost_people_by_location = policy_scope(LostPerson).search_by_location(params[:query])
+    else
+      @lost_people = policy_scope(LostPerson).all
+    end
   end
 
   def new
@@ -22,7 +30,7 @@ class LostPeopleController < ApplicationController
   end
 
   def show
-    @lost_person = LostPerson.find(params[:id])
+    @lost_person = LostPerson.find_by_code(params[:code])
     authorize @lost_person
   end
 
@@ -48,7 +56,7 @@ class LostPeopleController < ApplicationController
   private
 
   def lost_person_params
-    params.require(:lost_person).permit(:first_name, :last_name, :age, :last_known_location, :last_known_clothes,
-                                        :height, :body_type, :description, :disparition_date_time, :photo)
+    params.permit(:first_name, :last_name, :age, :last_known_location, :last_known_clothes,
+                                        :height, :body_type, :description, :disparition_date_time, :photo, :code)
   end
 end
