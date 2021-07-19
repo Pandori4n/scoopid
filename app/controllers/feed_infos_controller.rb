@@ -12,6 +12,9 @@ class FeedInfosController < ApplicationController
     @feedinfo.lost_person = @lost_person
     @feedinfo.user = current_user
     @feedinfo.save
+    (@feed_infos.users.uniq - [current_user]).each do |user|
+      Notification.create(recipient: user, actor: current_user, action: "posted", notifiable: @feedinfo)
+    end
     redirect_to lost_person_feed_infos_path(@lost_person, @feedinfo)
   end
 

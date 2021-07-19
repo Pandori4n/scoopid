@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :volunteer_chatrooms, class_name: 'Chatroom', foreign_key: 'volunteer_id'
   has_many :host_chatrooms, class_name: 'Chatroom', foreign_key: 'host_id'
   has_many :messages, dependent: :destroy
+  has_many :notifications, foreign_key: :recipient_id
 
   validates :first_name, presence: true
   validates :last_name, presence: true
