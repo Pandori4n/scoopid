@@ -30,7 +30,7 @@ class LostPeopleController < ApplicationController
   end
 
   def show
-    @lost_person = LostPerson.find_by_code(params[:code])
+    @lost_person = LostPerson.find_by(params[:id])
     authorize @lost_person
   end
 
@@ -56,7 +56,8 @@ class LostPeopleController < ApplicationController
   private
 
   def lost_person_params
-    params.permit(:first_name, :last_name, :age, :last_known_location, :last_known_clothes,
-                                        :height, :body_type, :description, :disparition_date_time, :photo, :code)
+    params.require(:lost_person).permit(:first_name, :last_name, :age, :last_known_location, :last_known_clothes,
+                                        :height, :body_type, :description, :disparition_date_time, :photo, :code,
+                                        :authentication_token, :photo, :commit)
   end
 end

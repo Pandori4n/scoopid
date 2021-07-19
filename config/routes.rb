@@ -15,13 +15,13 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [] do
     resources :messages, only: :create
   end
-  resources :lost_people, only: :show, param: :code
   resources :lost_people, except: :show do
     resources :search_parties, only: :index
     resources :search_party_attendancies, only: :create
     resources :chatrooms, only: [:show, :index, :create]
     resources :feed_infos, only: [:index, :create]
   end
+  resources :lost_people, only: :show, param: :code
   resources :search_party_attendancies, only: [:show, :create, :update] do
     member do
       resources :user, only: :update

@@ -3,6 +3,10 @@ class LostPersonPolicy < ApplicationPolicy
     return true
   end
 
+  def new?
+    return true
+  end
+
   def update?
     record.user == user
   end
