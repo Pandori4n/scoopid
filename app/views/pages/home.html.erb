@@ -10,7 +10,7 @@
     <div class="child sign-button d-flex align-items-center flex-column" id="goto-search">
       <% if current_user.lost_people.any? %>
         <%= link_to 'Continuer la recherche', lost_person_path(current_user.lost_people.last), class:"button button-primary"%>
-      <% else %>
+      <% elsif current_user.lost_people == nil %>
         <%= link_to "Créer une recherche", new_lost_person_path, class: "button button-primary" %>
       <% end %>
     </div>
