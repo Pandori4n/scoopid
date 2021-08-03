@@ -32,7 +32,8 @@
   <h2>Vous recherchez <br> quelqu'un ?</h2>
   <p>Organisez rapidement une battue et trouvez des volontaires pour vous aider à retrouver ceux qui vous sont chers</p>
   <div class="host button button-primary">
-    <%= link_to "Je suis organisateur", user_path(current_user, role: "host"), method: :patch%>
+    <%# <%= link_to "Je suis organisateur", user_path(current_user, role: "host"), method: :patch%>
+    <%= link_to "Je suis organisateur", new_lost_person_path(current_user, role: "host"), method: :get%>
   </div>
   <div class="volunteer button button-primary">
     <%= link_to "Je suis volontaire", user_path(current_user, role: "volunteer"), method: :patch%>
