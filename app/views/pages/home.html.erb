@@ -24,7 +24,8 @@
     class: "form-control",
     placeholder: "Code"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= link_to 'Rejoindre', lost_person_path(current_user.lost_people), class:"button button-primary"%>
+  <%# <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 <% elsif user_signed_in? && current_user.role == nil %>
 <div class="container profile">
