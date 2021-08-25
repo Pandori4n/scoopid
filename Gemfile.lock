@@ -216,6 +216,10 @@ GEM
     simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    simple_token_authentication (1.17.0)
+      actionmailer (>= 3.2.6, < 7)
+      actionpack (>= 3.2.6, < 7)
+      devise (>= 3.2, < 6)
     social-share-button (1.2.3)
       coffee-rails
     spring (2.1.1)
@@ -287,6 +291,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   simple_form
+  simple_token_authentication (~> 1.0)
   social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -300,4 +305,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.1.4
+   2.2.15
