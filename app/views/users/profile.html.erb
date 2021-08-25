@@ -6,6 +6,6 @@
     <%= link_to "Je suis organisateur", user_path(current_user, role: "host"), method: :patch%>
   </div>
   <div class="volunteer button button-primary">
-    <%= link_to "Je suis volontaire", user_path(current_user, role: "volunteer"), method: :patch%>
+    <%= link_to "Je suis volontaire", join_search_path(current_user, role: "volunteer"), method: :patch %>
   </div>
 </div>

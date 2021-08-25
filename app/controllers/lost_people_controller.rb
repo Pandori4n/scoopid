@@ -2,7 +2,7 @@ class LostPeopleController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def index
-    # @restaurants = policy_scope(LostPerson)
+    # @lost_people = LostPerson.all
   end
 
   def new
@@ -24,6 +24,11 @@ class LostPeopleController < ApplicationController
   def show
     @lost_person = LostPerson.find(params[:id])
     authorize @lost_person
+# if code == lost_person && code == authentication_token
+#   link_to @lost_person
+# else
+#   error message
+# end
   end
 
   def edit
