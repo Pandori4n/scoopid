@@ -1,12 +1,10 @@
 class LostPersonPolicy < ApplicationPolicy
-  class Scope < Scope
-    def resolve
-      scope.all
-    end
+  def index?
+    return true
   end
 
   def update?
-     record.user == user
+    record.user == user
   end
 
   def create?
@@ -16,8 +14,4 @@ class LostPersonPolicy < ApplicationPolicy
   def show?
     return true
   end
-
-  # def destroy?
-  #   record.user == user
-  # end
 end

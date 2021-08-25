@@ -1,68 +1,118 @@
-<% content_for :meta_title, "#{@lost_person.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_description, @lost_person.description %>
-<% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
-<div class="lost-show">
-  <div class="missing-person-pic" style="height: 350px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 1000, width: 1000, crop: :fill; %>');">
-    <div class="edit-person-info">
-      <% if policy(@lost_person).edit? %>
-        <%= link_to edit_lost_person_path(@lost_person) do %>
-          <div class="edit-button">
-          <img class="edit-pen" src="https://res.cloudinary.com/mims/image/upload/v1606817873/pen_cz2wm8.png">
-          </div>
+<% if user_signed_in? && current_user.role == "host" %>
+  <% content_for :meta_title, "#{@lost_person.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+  <% content_for :meta_description, @lost_person.description %>
+  <% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
+  <div class="lost-show">
+    <div class="missing-person-pic" style="height: 350px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 1000, width: 1000, crop: :fill; %>');">
+      <div class="edit-person-info">
+        <% if policy(@lost_person).edit? %>
+          <%= link_to edit_lost_person_path(@lost_person) do %>
+            <div class="edit-button">
+            <img class="edit-pen" src="https://res.cloudinary.com/mims/image/upload/v1606817873/pen_cz2wm8.png">
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-     <% if user_signed_in? %>
-      <%= link_to('', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt pull-left mt-3", style:'position:fixed;') %>
-      <% end %>
-  </div>
-  <div class="container justify-content-around">
-    <div class="missing-person-info">
-      <h2><span><%= @lost_person.first_name %> <%= @lost_person.last_name %></span>, <%= @lost_person.age %> ans</h2>
-      <div class="disparition">
-        <span>
-          <strong>Disparition:</strong> le <%= @lost_person.disparition_date_time.strftime("%d %h %Y à %H:%M") %>
-        </span>
       </div>
-      <div class="d-flex justify-content-between" style="margin-bottom:20px">
-        <div>
-          <p>Taille:</p>
-          <p><strong><%= @lost_person.height %> cm</strong></p>
+      <% if user_signed_in? %>
+        <%= link_to('', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt pull-left mt-3", style:'position:fixed;') %>
+        <% end %>
+    </div>
+    <div class="container justify-content-around">
+      <div class="missing-person-info">
+        <h2><span><%= @lost_person.first_name %> <%= @lost_person.last_name %></span>, <%= @lost_person.age %> ans</h2>
+        <div class="disparition">
+          <span>
+            <strong>Disparition:</strong> le <%= @lost_person.disparition_date_time.strftime("%d %h %Y à %H:%M") %>
+          </span>
         </div>
-        <div>
-          <p>Vu pour la dernière fois:</p>
-          <p><strong><%= @lost_person.last_known_location %></strong></p>
+        <div class="d-flex justify-content-between" style="margin-bottom:20px">
+          <div>
+            <p>Taille:</p>
+            <p><strong><%= @lost_person.height %> cm</strong></p>
+          </div>
+          <div>
+            <p>Vu pour la dernière fois:</p>
+            <p><strong><%= @lost_person.last_known_location %></strong></p>
+          </div>
+        </div>
+        <p>Description:</p>
+        <p><strong><%= @lost_person.description %></strong></p>
+        <p>Code:</p>
+        <p><strong><%= @lost_person.code %></strong></p>
+        </br>
+
+      <!-- Button trigger modal -->
+    <button type="button" class="diffuse button button-primary-alt"  data-toggle="modal" data-target="#exampleModal">
+      Diffuser l'information <img class="share" src="https://res.cloudinary.com/mims/image/upload/v1606924909/Group_6802dwnld_uktwvi.png" alt="">
+    </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Partager sur les réseaux sociaux</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://www.huchi.io/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name} #{@lost_person.last_name}") %>
         </div>
       </div>
-      <p>Description:</p>
-      <p><strong><%= @lost_person.description %></strong></p>
-      <p>Code:</p>
-      <p><strong><%= @lost_person.code %></strong></p>
-      </br>
-
-    <!-- Button trigger modal -->
-  <button type="button" class="diffuse button button-primary-alt"  data-toggle="modal" data-target="#exampleModal">
-    Diffuser l'information <img class="share" src="https://res.cloudinary.com/mims/image/upload/v1606924909/Group_6802dwnld_uktwvi.png" alt="">
-  </button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Partager sur les réseaux sociaux</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= social_share_button_tag("Nous recherchons #{@lost_person.first_name}", image: cl_image_path(@lost_person.photo.key), :url => "https://www.huchi.io/lost_people/#{@lost_person.id}", desc: "Aidez nous à trouver #{@lost_person.first_name} #{@lost_person.last_name}") %>
+    </div>
+  </div>
+      <div class="button-end">
+        <%= link_to "Mettre fin aux recherches", end_search_path(:lost_person_id => @lost_person.id), class: "button button-primary-alt", data: {confirm: "Êtes-vous sûr de vouloir supprimer cette Recherche?"}%>
       </div>
     </div>
   </div>
-</div>
-    <div class="button-end">
-      <%= link_to "Mettre fin aux recherches", end_search_path(:lost_person_id => @lost_person.id), class: "button button-primary-alt", data: {confirm: "Êtes-vous sûr de vouloir supprimer cette Recherche?"}%>
+<% elsif user_signed_in? && current_user.role == "volunteer" %>
+  <% content_for :meta_title, "#{@lost_person.first_name} is on #{DEFAULT_META["meta_product_name"]}" %>
+  <% content_for :meta_description, @lost_person.description %>
+  <% content_for :meta_image, cl_image_path(@lost_person.photo.key) %>
+  <div class="lost-show">
+    <div class="missing-person-pic" style="height: 350px; background-image: url('<%= cl_image_path @lost_person.photo.key, height: 1000, width: 1000, crop: :fill; %>');">
+      <div class="edit-person-info">
+        <% if policy(@lost_person).edit? %>
+          <%= link_to edit_lost_person_path(@lost_person) do %>
+            <div class="edit-button">
+            <img class="edit-pen" src="https://res.cloudinary.com/mims/image/upload/v1606817873/pen_cz2wm8.png">
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <%= link_to('', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt pull-left mt-3", style:'position:fixed;') %>
+        <% end %>
     </div>
-  </div>
-</div>
+    <div class="container justify-content-around">
+      <div class="missing-person-info">
+        <h2><span><%= @lost_person.first_name %> <%= @lost_person.last_name %></span>, <%= @lost_person.age %> ans</h2>
+        <div class="disparition">
+          <span>
+            <strong>Disparition:</strong> le <%= @lost_person.disparition_date_time.strftime("%d %h %Y à %H:%M") %>
+          </span>
+        </div>
+        <div class="d-flex justify-content-between" style="margin-bottom:20px">
+          <div>
+            <p>Taille:</p>
+            <p><strong><%= @lost_person.height %> cm</strong></p>
+          </div>
+          <div>
+            <p>Vu pour la dernière fois:</p>
+            <p><strong><%= @lost_person.last_known_location %></strong></p>
+          </div>
+        </div>
+        <p>Description:</p>
+        <p><strong><%= @lost_person.description %></strong></p>
+        <p>Code:</p>
+        <p><strong><%= @lost_person.code %></strong></p>
+        </br>
+
+      <!-- Button trigger modal -->
+    <button type="button" class="diffuse button button-primary-alt"  data-toggle="modal" data-target="#exampleModal">
+      Diffuser l'information <img class="share" src="https://res.cloudinary.com/mims/image/upload/v1606924909/Group_6802dwnld_uktwvi.png" alt="">
+    </button>
+  <% end %>
+
