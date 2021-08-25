@@ -1,0 +1,16 @@
+<%# Log-out button %>
+<% if user_signed_in? %>
+  <%= link_to('', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt pull-left mt-3", style:'position:fixed;') %>
+<% end %>
+
+<h1>Hello <%= current_user.first_name %></h1>
+  <p>Veuillez indiquer le code pour rejoindre une recherche</p>
+  <p>Sinon veuillez indiquer une ville</p>
+<%= form_tag join_search_path, method: :get do %>
+  <%= text_field_tag :authentication_token
+    params[:authentication_token],
+    class: "form-control",
+    placeholder: "Code"
+  %>
+<% end %>
+<%= link_to 'Rejoindre', search_party_path(current_user.search_party_ids), class:"button button-primary"%>

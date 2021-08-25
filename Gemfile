@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'devise'
 
+gem 'simple_token_authentication', '~> 1.0'
+
 # Authorization
 gem 'pundit'
 # Gemfile

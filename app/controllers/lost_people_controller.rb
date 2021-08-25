@@ -32,6 +32,11 @@ class LostPeopleController < ApplicationController
   def show
     @lost_person = LostPerson.find_by_code(params[:code])
     authorize @lost_person
+# if code == lost_person && code == authentication_token
+#   link_to @lost_person
+# else
+#   error message
+# end
   end
 
   def edit
