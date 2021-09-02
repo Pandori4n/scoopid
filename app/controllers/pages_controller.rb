@@ -9,16 +9,16 @@ class PagesController < ApplicationController
     @lost_person
   end
 
-  def join_search
-    if params[:code].present?
-      @lost_person = LostPerson.find_by(code: params[:code])
-      if @lost_person
-        redirect_to lost_person_path(search_party.lost_person)
-      else
-        flash[:alert] = "Mauvais code"
-      end
-    end
-  end
+  # def join_search
+  #   if params[:code].present?
+  #     @lost_person = LostPerson.find_by(code: params[:code])
+  #     if @lost_person
+  #       redirect_to lost_person_path(search_party.lost_person)
+  #     else
+  #       flash[:alert] = "Mauvais code"
+  #     end
+  #   end
+  # end
 end
 
 # renvoi sur "singnup or login"

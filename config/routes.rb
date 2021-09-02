@@ -16,9 +16,9 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
 
-  # devise_for :lost_people, only: [:search_parties], controllers: {search_parties: 'lost_people/search_parties'}
+  devise_for :lost_people, only: [:search_parties], controllers: {search_parties: 'lost_people/search_parties'}
 
-  resources :lost_people, only: :show, param: :code
+  # resources :lost_people, only: :show, param: :code
   resources :lost_people, except: :show do
     resources :search_parties, only: :index
     resources :search_party_attendancies, only: :create

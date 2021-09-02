@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2021_08_25_101724) do
+ActiveRecord::Schema.define(version: 2021_09_02_152934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_trgm"
@@ -76,8 +75,6 @@ ActiveRecord::Schema.define(version: 2021_08_25_101724) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "found", default: false
     t.string "code"
-    t.string "authentication_token", limit: 7
-    t.index ["authentication_token"], name: "index_lost_people_on_authentication_token", unique: true
     t.index ["user_id"], name: "index_lost_people_on_user_id"
   end
 

@@ -1,43 +1,45 @@
-<div class="container form text-center col-md-6 mt-3">
-  <div class="title-container"> <h3>Avis de recherche</h3>
-  </div>
-  <%= simple_form_for [@lost_person] do |f| %>
-    <div id="accordion">
-      <div class="card">
-        <div class="card-header" id="headingOne">
-          <h5 class="mb-0">
-            <button class="btn btn-link d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Informations obligatoires *<i class="fas fa-chevron-down arrow-down-accordion"></i>
-            </button>
-          </h5>
-        </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-          <div class="card-body">
-            <%= f.input :first_name, placeholder: 'Prénom', label:"Prénom" %>
-            <%= f.input :last_name, placeholder: 'Nom de famille', label:"Nom de famille" %>
-            <%= f.input :age, placeholder: 'Age' %>
-            <%= f.input :height, placeholder: 'Taille en cm', label:"Taille" %>
-            <%= f.input :disparition_date_time, placeholder: 'Date de disparition', label:"Date de disparition", html5: true %>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-header" id="headingTwo">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Informations complémentaires <i class="fas fa-chevron-down arrow-down-accordion"></i>
-            </button>
-          </h5>
-        </div>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-          <div class="card-body">
-            <%= f.input :last_known_location, placeholder: 'Exemple: adresse, lieu public, domicile, quartier...', label:"Dernier endroit aperçu", input_html: { id: "search_address"} %>
-            <%= f.input :description, label:"Autres informations utiles", placeholder: 'Vêtements portés le jour de la disparition, habitudes...' %>
-          </div>
-        </div>
-      </div>
+<% if user_signed_in? && current_user.role == "host" %>
+  <div class="container form text-center col-md-6 mt-3">
+    <div class="title-container"> <h3>Avis de recherche</h3>
     </div>
-    <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo' %>
-    <%= f.button :submit, "Créer l'avis de recherche", class: "button button-primary" %>
-  <% end %>
-</div>
+    <%= simple_form_for [@lost_person] do |f| %>
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+              <button class="btn btn-link d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Informations obligatoires *<i class="fas fa-chevron-down arrow-down-accordion"></i>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              <%= f.input :first_name, placeholder: 'Prénom', label:"Prénom" %>
+              <%= f.input :last_name, placeholder: 'Nom de famille', label:"Nom de famille" %>
+              <%= f.input :age, placeholder: 'Age' %>
+              <%= f.input :height, placeholder: 'Taille en cm', label:"Taille" %>
+              <%= f.input :disparition_date_time, placeholder: 'Date de disparition', label:"Date de disparition", html5: true %>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed d-flex justify-content-between align-items-center" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Informations complémentaires <i class="fas fa-chevron-down arrow-down-accordion"></i>
+              </button>
+            </h5>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+              <%= f.input :last_known_location, placeholder: 'Exemple: adresse, lieu public, domicile, quartier...', label:"Dernier endroit aperçu", input_html: { id: "search_address"} %>
+              <%= f.input :description, label:"Autres informations utiles", placeholder: 'Vêtements portés le jour de la disparition, habitudes...' %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= f.input :photo, input_html: { class: 'd-none' }, label_html: { class: 'upload-photo'}, label: '📷 Ajouter une photo' %>
+      <%= f.button :submit, "Créer l'avis de recherche", class: "button button-primary" %>
+    <% end %>
+  </div>
+<% end %>
