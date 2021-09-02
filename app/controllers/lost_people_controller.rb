@@ -23,7 +23,7 @@ class LostPeopleController < ApplicationController
     authorize @lost_person
     @lost_person.user = current_user
     if @lost_person.save
-      redirect_to lost_person_path(@lost_person)
+      redirect_to new_lost_person_path(@lost_person)
     else
       render :new
     end
