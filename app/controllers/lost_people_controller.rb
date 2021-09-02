@@ -30,13 +30,8 @@ class LostPeopleController < ApplicationController
   end
 
   def show
-    @lost_person = LostPerson.find_by_code(params[:code])
+    @lost_person = LostPerson.find_by(params[:id])
     authorize @lost_person
-# if code == lost_person && code == authentication_token
-#   link_to @lost_person
-# else
-#   error message
-# end
   end
 
   def edit
@@ -58,10 +53,22 @@ class LostPeopleController < ApplicationController
     redirect_to root_path
   end
 
+  def join_search
+    if params[:code].present?
+      search_party = SearchParty.find_by(code: params[:code])
+      if search_party
+        redirect_to lost_person_path(search_party.lost_person)
+      else
+        flash[:alert] = "Mauvais code"
+      end
+    end
+  end
+
   private
 
   def lost_person_params
     params.permit(:first_name, :last_name, :age, :last_known_location, :last_known_clothes,
                                         :height, :body_type, :description, :disparition_date_time, :photo, :code)
   end
+
 end
