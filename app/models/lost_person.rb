@@ -1,21 +1,21 @@
 require 'securerandom'
 
 class LostPerson < ApplicationRecord
-  acts_as_token_authenticatable
-  # Note: you can include any module you want. If available,
-  # token authentication will be performed before any other
-  # Devise authentication method.
-  #
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :invitable, :database_authenticatable,
-         :recoverable, :rememberable, :trackable, :validatable,
-         :lockable
+  # acts_as_token_authenticatable
+  # # Note: you can include any module you want. If available,
+  # # token authentication will be performed before any other
+  # # Devise authentication method.
+  # #
+  # # Include default devise modules. Others available are:
+  # # :confirmable, :lockable, :timeoutable and :omniauthable
+  # devise :invitable, :database_authenticatable,
+  #        :recoverable, :rememberable, :trackable, :validatable,
+  #        :lockable
 
   belongs_to :user
 
   include PgSearch::Model
-  # pg_search_scope :search, against: [:code, :last_known_location, :first_name, :last_name]
+  pg_search_scope :search, against: [:code, :last_known_location, :first_name, :last_name, :authentication_token]
   pg_search_scope :search_by_code, against: :code
   pg_search_scope :search_by_location,
                   against: :last_known_location,
@@ -39,6 +39,8 @@ class LostPerson < ApplicationRecord
                       prefix: true
                     }
                   }
+  pg_search_scope :search_by_authentication_token, against: :authentication_token
+
   has_many :search_parties
   has_many :feed_infos
   has_many :chatrooms, dependent: :destroy

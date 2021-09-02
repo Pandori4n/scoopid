@@ -11,8 +11,8 @@ class PagesController < ApplicationController
 
   def join_search
     if params[:code].present?
-      search_party = SearchParty.find_by(code: params[:code])
-      if search_party
+      @lost_person = LostPerson.find_by(code: params[:code])
+      if @lost_person
         redirect_to lost_person_path(search_party.lost_person)
       else
         flash[:alert] = "Mauvais code"

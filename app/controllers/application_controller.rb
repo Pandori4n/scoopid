@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :phone_number])
   end
 
-  acts_as_token_authentication_handler_for LostPerson
+  # acts_as_token_authentication_for LostPerson
 
   private
 
